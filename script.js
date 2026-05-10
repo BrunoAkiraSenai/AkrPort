@@ -85,6 +85,9 @@ function atualizarSistema() {
     atualizarDashboard();
     atualizarDashboardDistribuicao();
     atualizarPainelLojas();
+        atualizarExtratos();
+         atualizarLancamentos50();
+
 }
 
 // =========================
@@ -137,7 +140,8 @@ function criarLinhaDistribuicao(item = {}) {
         <td>
             <select>
                 <option value="Sandra" ${item.pessoa === "Sandra" ? "selected" : ""}>Sandra</option>
-                <option value="Suely" ${item.pessoa === "Suely" ? "selected" : ""}>Suely</option>
+
+<option value="Suely" ${item.pessoa === "Suely" ? "selected" : ""}>Suely</option>
             </select>
         </td>
         <td>
@@ -187,6 +191,7 @@ function atualizarDistribuicao() {
     salvarStorage();
     atualizarDashboardDistribuicao();
     atualizarDashboard();
+    atualizarExtratos();
 }
 
 // =========================
@@ -345,6 +350,8 @@ dados.forEach(criarLinha);
 distribuicoes.forEach(criarLinhaDistribuicao);
 atualizarSistema();
 atualizarDistribuicao();
+atualizarExtratos(); // garante render inicial mesmo sem interação
+atualizarLancamentos50();
 
 // =========================
 // BACKUP
@@ -355,6 +362,8 @@ btnImportar.onclick = () => inputBackup.click();
 function salvarManual() {
     atualizarSistema();
     atualizarDistribuicao();
+    atualizarLancamentos50();
+
 
     const backup = {
         data: new Date().toISOString(),
@@ -375,6 +384,7 @@ function salvarManual() {
     a.click();
 
     URL.revokeObjectURL(url);
+    atualizarLancamentos50();
 }
 
 // =========================
@@ -401,7 +411,193 @@ inputBackup.addEventListener("change", () => {
         salvarStorage();
         atualizarSistema();
         atualizarDistribuicao();
+        atualizarExtratos();
+          atualizarLancamentos50(); 
     };
 
     reader.readAsText(file);
 });
+
+
+
+// =========================
+// EXTRATOS INDIVIDUAIS
+// =========================
+
+// =========================
+// EXTRATOS INDIVIDUAIS
+// =========================
+function atualizarExtratos() {
+    const tbodySuely  = document.getElementById("extratoSuely");
+    const tbodySayuri = document.getElementById("extratoSayuri");
+    if (!tbodySuely || !tbodySayuri) return;
+
+    tbodySuely.innerHTML  = "";
+    tbodySayuri.innerHTML = "";
+
+    // Helper: filtra por pessoa de forma segura (case-insensitive, sem espaços)
+    const ehPessoa = (d, alvo) =>
+        d && typeof d.pessoa === "string" &&
+        d.pessoa.trim().toLowerCase() === alvo.toLowerCase();
+
+    // Ordena por data crescente para o saldo acumular corretamente
+    const ordenadas = [...distribuicoes].sort((a, b) => {
+        const da = a.data || "";
+        const db = b.data || "";
+        return da.localeCompare(db);
+    });
+
+    let saldoSuely  = 0;
+    let saldoSayuri = 0;
+
+    ordenadas.forEach(d => {
+        const valor = Number(d.valor) || 0;
+
+        if (ehPessoa(d, "Suely")) {
+            saldoSuely += valor;
+            tbodySuely.appendChild(montarLinhaExtrato(d, valor, saldoSuely));
+        } else if (ehPessoa(d, "Sayuri")) {
+            saldoSayuri += valor;
+            tbodySayuri.appendChild(montarLinhaExtrato(d, valor, saldoSayuri));
+        }
+    });
+
+    document.getElementById("totalSuely").innerText  = formatarMoeda(saldoSuely);
+    document.getElementById("totalSayuri").innerText = formatarMoeda(saldoSayuri);
+}
+
+function montarLinhaExtrato(d, valor, saldo) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+        <td>${formatarData(d.data)}</td>
+        <td>${d.observacao || "-"}</td>
+        <td class="${valor >= 0 ? "valorPositivo" : "valorNegativo"}">
+            ${formatarMoeda(valor)}
+        </td>
+        <td class="saldoExtrato">
+            ${formatarMoeda(saldo)}
+        </td>
+    `;
+    return tr;
+}
+
+// =========================
+// FORMATAR DATA
+// =========================
+function formatarData(data) {
+    if (!data) return "-";
+    const [ano, mes, dia] = data.split("-");
+    return `${dia}/${mes}/${ano}`;
+}
+
+
+function atualizarLancamentos50() {
+    const tbodySuelySeiti = document.getElementById("tbodyLancamentosSuelySeiti");
+    const tbodySayuri = document.getElementById("tbodyLancamentosSayuri");
+
+    const totalSuelySeiti = document.getElementById("totalLancamentosSuelySeiti");
+    const totalSayuri = document.getElementById("totalLancamentosSayuri");
+
+    if (!tbodySuelySeiti || !tbodySayuri || !totalSuelySeiti || !totalSayuri) {
+        return;
+    }
+
+    tbodySuelySeiti.innerHTML = "";
+    tbodySayuri.innerHTML = "";
+
+    let saldoSuelySeiti = 0;
+    let saldoSayuri = 0;
+
+    const lancamentos = dados
+        .filter(item => item && item.data && item.valor !== undefined && item.valor !== "")
+        .map(item => {
+            let valor = Number(
+                String(item.valor)
+                    .replace("R$", "")
+                    .replace(/\./g, "")
+                    .replace(",", ".")
+                    .trim()
+            );
+
+            if (isNaN(valor)) valor = 0;
+
+           const tipo = String(item.lancamento || item.tipo || "").toLowerCase();
+
+            if (
+                tipo.includes("saída") ||
+                tipo.includes("saida") ||
+                tipo.includes("despesa")
+            ) {
+                valor = -Math.abs(valor);
+            } else {
+                valor = Math.abs(valor);
+            }
+
+            return {
+                data: item.data,
+                lancamento: item.lancamento || item.descricao || item.categoria || "-",
+                valor50: valor / 2
+            };
+        });
+
+    lancamentos.forEach(item => {
+        saldoSuelySeiti += item.valor50;
+        saldoSayuri += item.valor50;
+
+        const trSuelySeiti = document.createElement("tr");
+        trSuelySeiti.innerHTML = `
+            <td>${item.data}</td>
+            <td>${item.lancamento}</td>
+            <td>${formatarMoeda(item.valor50)}</td>
+            <td>${formatarMoeda(saldoSuelySeiti)}</td>
+        `;
+        tbodySuelySeiti.appendChild(trSuelySeiti);
+
+        const trSayuri = document.createElement("tr");
+        trSayuri.innerHTML = `
+            <td>${item.data}</td>
+            <td>${item.lancamento}</td>
+            <td>${formatarMoeda(item.valor50)}</td>
+            <td>${formatarMoeda(saldoSayuri)}</td>
+        `;
+                tbodySayuri.appendChild(trSayuri);
+    });
+
+    // ====== Aplica os saques/depósitos da Distribuição de Lucros ======
+    const distribOrdenadas = [...distribuicoes].sort((a, b) =>
+        (a.data || "").localeCompare(b.data || "")
+    );
+
+    distribOrdenadas.forEach(d => {
+        const valor = Number(d.valor) || 0;       // já vem negativo se for saque
+        const pessoa = (d.pessoa || "").trim().toLowerCase();
+        const tipoLabel = d.tipo === "saida" ? "Saque" : "Depósito";
+        const descricao = `${tipoLabel} - ${d.observacao || d.pessoa || "-"}`;
+
+        if (pessoa === "suely") {
+            saldoSuelySeiti += valor;
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${formatarData(d.data)}</td>
+                <td>${descricao}</td>
+                <td>${formatarMoeda(valor)}</td>
+                <td>${formatarMoeda(saldoSuelySeiti)}</td>
+            `;
+            tbodySuelySeiti.appendChild(tr);
+        } else if (pessoa === "sayuri" || pessoa === "sandra") {
+            saldoSayuri += valor;
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${formatarData(d.data)}</td>
+                <td>${descricao}</td>
+                <td>${formatarMoeda(valor)}</td>
+                <td>${formatarMoeda(saldoSayuri)}</td>
+            `;
+            tbodySayuri.appendChild(tr);
+        }
+    });
+
+    totalSuelySeiti.textContent = formatarMoeda(saldoSuelySeiti);
+    totalSayuri.textContent = formatarMoeda(saldoSayuri);
+
+}
