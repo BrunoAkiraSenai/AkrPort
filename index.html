@@ -18,12 +18,12 @@
         <thead>
             <tr>
                 <th>Data</th>
-<th>Loja</th>
-<th>Lançamento</th>
-<th>Valor (R$)</th>
-<th>Saldo (R$)</th>
-<th>Observação</th>
-<th>Ação</th>
+                <th>Loja</th>
+                <th>Lançamento</th>
+                <th>Valor (R$)</th>
+                <th>Saldo (R$)</th>
+                <th>Observação</th>
+                <th>Ação</th>
             </tr>
         </thead>
         <tbody id="corpoTabela"></tbody>
@@ -198,45 +198,49 @@
 <div class="dashboard" id="painelLojas">
   
 </div>
-
-
 <section>
-  <h2>📘 Lançamentos 50% Suely/Seiti</h2>
-  <h3 id="totalLancamentosSuelySeiti">R$ 0,00</h3>
+  <h2>📋 Extratos Individuais</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Data</th>
-        <th>Lançamento</th>
-        <th>Valor (R$)</th>
-        <th>Saldo (R$)</th>
-      </tr>
-    </thead>
-    <tbody id="tbodyLancamentosSuelySeiti"></tbody>
-  </table>
+  <div class="secaoExtratos">
+    <div class="cardExtrato azul">
+      <div class="topoExtrato">
+        <span>👤 Suely</span>
+        <span>Total: <strong id="totalSuely">R$ 0,00</strong></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Lançamento</th>
+            <th>Valor (R$)</th>
+            <th>Saldo (R$)</th>
+          </tr>
+        </thead>
+        <tbody id="extratoSuely"></tbody>
+      </table>
+    </div>
+
+    <div class="cardExtrato rosa">
+      <div class="topoExtrato">
+        <span>👤 Sayuri</span>
+        <span>Total: <strong id="totalSayuri">R$ 0,00</strong></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Lançamento</th>
+            <th>Valor (R$)</th>
+            <th>Saldo (R$)</th>
+          </tr>
+        </thead>
+        <tbody id="extratoSayuri"></tbody>
+      </table>
+    </div>
+  </div>
 </section>
-
-<section>
-  <h2>💖 Lançamentos 50% Sayuri</h2>
-  <h3 id="totalLancamentosSayuri">R$ 0,00</h3>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Data</th>
-        <th>Lançamento</th>
-        <th>Valor (R$)</th>
-        <th>Saldo (R$)</th>
-      </tr>
-    </thead>
-    <tbody id="tbodyLancamentosSayuri"></tbody>
-  </table>
-</section>
-
 
 </div>
-
 
 </body>
 </html>

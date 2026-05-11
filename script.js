@@ -73,6 +73,9 @@ function atualizarSistema() {
         const valorBase = parseFloat(tr.children[3].querySelector("input").value) || 0;
         const obs = tr.children[5].querySelector("input").value;
 
+        const invalido = !data || !loja || !tipo;
+        tr.style.background = invalido ? "rgba(239,68,68,0.1)" : "";
+
         const valor = tipo === "saida" ? -valorBase : valorBase;
         saldo += valor;
 
@@ -85,9 +88,7 @@ function atualizarSistema() {
     atualizarDashboard();
     atualizarDashboardDistribuicao();
     atualizarPainelLojas();
-        atualizarExtratos();
-         atualizarLancamentos50();
-
+    atualizarExtratos();
 }
 
 // =========================
@@ -140,8 +141,7 @@ function criarLinhaDistribuicao(item = {}) {
         <td>
             <select>
                 <option value="Sandra" ${item.pessoa === "Sandra" ? "selected" : ""}>Sandra</option>
-
-<option value="Suely" ${item.pessoa === "Suely" ? "selected" : ""}>Suely</option>
+                <option value="Suely" ${item.pessoa === "Suely" ? "selected" : ""}>Suely</option>
             </select>
         </td>
         <td>
@@ -180,6 +180,9 @@ function atualizarDistribuicao() {
         const valorBase = parseFloat(tr.children[4].querySelector("input").value) || 0;
         const obs = tr.children[6].querySelector("input").value;
 
+        const invalido = !data || !pessoa || !tipo;
+        tr.style.background = invalido ? "rgba(239,68,68,0.1)" : "";
+
         const valor = tipo === "saida" ? -valorBase : valorBase;
         acumulado += valor;
 
@@ -212,13 +215,12 @@ function atualizarDashboardDistribuicao() {
 
         if (d.data) {
             const [ano, mes, dia] = d.data.split("-");
-const dataObj = new Date(ano, mes - 1, dia);
+            const dataObj = new Date(ano, mes - 1, dia);
             if (!ultimaData || dataObj > ultimaData) {
                 ultimaData = dataObj;
             }
         }
 
-        
         if (d.mes) {
             const mesObj = new Date(d.mes + "-01");
             if (!ultimoMes || mesObj > ultimoMes) {
@@ -284,9 +286,14 @@ function atualizarDashboardMensal() {
         }
     });
 
-    document.getElementById("dashMesEntradas").innerText = `R$ ${entradas.toFixed(2)}`;
-    document.getElementById("dashMesSaidas").innerText = `R$ ${Math.abs(saidas).toFixed(2)}`;
-    document.getElementById("dashMesResultado").innerText = `R$ ${(entradas + saidas).toFixed(2)}`;
+    const resultado = entradas + saidas;
+    const metade = resultado > 0 ? resultado / 2 : 0;
+
+    document.getElementById("dashMesEntradas").innerText = formatarMoeda(entradas);
+    document.getElementById("dashMesSaidas").innerText = formatarMoeda(Math.abs(saidas));
+    document.getElementById("dashMesSandra").innerText = formatarMoeda(metade);
+    document.getElementById("dashMesSuely").innerText = formatarMoeda(metade);
+    document.getElementById("dashMesResultado").innerText = formatarMoeda(resultado);
 }
 
 function atualizarPainelLojas() {
@@ -350,8 +357,6 @@ dados.forEach(criarLinha);
 distribuicoes.forEach(criarLinhaDistribuicao);
 atualizarSistema();
 atualizarDistribuicao();
-atualizarExtratos(); // garante render inicial mesmo sem interação
-atualizarLancamentos50();
 
 // =========================
 // BACKUP
@@ -362,8 +367,14 @@ btnImportar.onclick = () => inputBackup.click();
 function salvarManual() {
     atualizarSistema();
     atualizarDistribuicao();
-    atualizarLancamentos50();
 
+    const temInvalido = [...document.querySelectorAll("#corpoTabela tr, #corpoDistribuicao tr")]
+        .some(tr => tr.style.background.includes("68,68,68"));
+
+    if (temInvalido) {
+        const confirmou = confirm("Há linhas com dados incompletos (destacadas em vermelho). Deseja salvar mesmo assim?");
+        if (!confirmou) return;
+    }
 
     const backup = {
         data: new Date().toISOString(),
@@ -384,7 +395,10 @@ function salvarManual() {
     a.click();
 
     URL.revokeObjectURL(url);
-    atualizarLancamentos50();
+
+    const msg = document.getElementById("msgSalvo");
+    msg.style.display = "block";
+    setTimeout(() => { msg.style.display = "none"; }, 2500);
 }
 
 // =========================
@@ -397,25 +411,39 @@ inputBackup.addEventListener("change", () => {
     const reader = new FileReader();
 
     reader.onload = e => {
-        const backup = JSON.parse(e.target.result);
+        try {
+            const backup = JSON.parse(e.target.result);
 
-        dados = backup.locacoes || [];
-        distribuicoes = backup.distribuicoes || [];
+            if (!backup || typeof backup !== "object") {
+                throw new Error("Arquivo inválido");
+            }
 
-        corpoTabela.innerHTML = "";
-        corpoDistribuicao.innerHTML = "";
+            dados = backup.locacoes || [];
+            distribuicoes = backup.distribuicoes || [];
 
-        dados.forEach(criarLinha);
-        distribuicoes.forEach(criarLinhaDistribuicao);
+            corpoTabela.innerHTML = "";
+            corpoDistribuicao.innerHTML = "";
 
-        salvarStorage();
-        atualizarSistema();
-        atualizarDistribuicao();
-        atualizarExtratos();
-          atualizarLancamentos50(); 
+            dados.forEach(criarLinha);
+            distribuicoes.forEach(criarLinhaDistribuicao);
+
+            salvarStorage();
+            atualizarSistema();
+            atualizarDistribuicao();
+
+            alert("Backup importado com sucesso!");
+        } catch (erro) {
+            alert("Erro ao importar backup: " + erro.message);
+        }
+    };
+
+    reader.onerror = () => {
+        alert("Erro ao ler o arquivo.");
     };
 
     reader.readAsText(file);
+
+    inputBackup.value = "";
 });
 
 
@@ -423,54 +451,65 @@ inputBackup.addEventListener("change", () => {
 // =========================
 // EXTRATOS INDIVIDUAIS
 // =========================
-
-// =========================
-// EXTRATOS INDIVIDUAIS
-// =========================
 function atualizarExtratos() {
-    const tbodySuely  = document.getElementById("extratoSuely");
+    const tbodySuely = document.getElementById("extratoSuely");
     const tbodySayuri = document.getElementById("extratoSayuri");
-    if (!tbodySuely || !tbodySayuri) return;
+    const totalSuely = document.getElementById("totalSuely");
+    const totalSayuri = document.getElementById("totalSayuri");
+    if (!tbodySuely || !tbodySayuri || !totalSuely || !totalSayuri) return;
 
-    tbodySuely.innerHTML  = "";
+    tbodySuely.innerHTML = "";
     tbodySayuri.innerHTML = "";
 
-    // Helper: filtra por pessoa de forma segura (case-insensitive, sem espaços)
-    const ehPessoa = (d, alvo) =>
-        d && typeof d.pessoa === "string" &&
-        d.pessoa.trim().toLowerCase() === alvo.toLowerCase();
-
-    // Ordena por data crescente para o saldo acumular corretamente
-    const ordenadas = [...distribuicoes].sort((a, b) => {
-        const da = a.data || "";
-        const db = b.data || "";
-        return da.localeCompare(db);
-    });
-
-    let saldoSuely  = 0;
+    let saldoSuely = 0;
     let saldoSayuri = 0;
 
-    ordenadas.forEach(d => {
-        const valor = Number(d.valor) || 0;
+    const todos = [];
 
-        if (ehPessoa(d, "Suely")) {
+    dados
+        .filter(item => item && item.data && item.valor !== undefined && item.valor !== "")
+        .forEach(item => {
+            const valor = Number(item.valor) / 2;
+            const descricao = item.lancamento || item.descricao || item.categoria || "-";
+            todos.push({ data: item.data, descricao, valor, pessoa: "suely" });
+            todos.push({ data: item.data, descricao, valor, pessoa: "sayuri" });
+        });
+
+    distribuicoes.forEach(d => {
+        const valor = Number(d.valor) || 0;
+        const pessoa = (d.pessoa || "").trim().toLowerCase();
+        const tipoLabel = d.tipo === "saida" ? "Saque" : "Depósito";
+        const descricao = `${tipoLabel} - ${d.observacao || d.pessoa || "-"}`;
+        todos.push({ data: d.data, descricao, valor, pessoa });
+    });
+
+    todos.sort((a, b) => (a.data || "").localeCompare(b.data || ""));
+
+    todos.forEach(item => {
+        const pessoa = item.pessoa;
+        const descricao = item.descricao;
+        const valor = item.valor;
+
+        if (pessoa === "suely") {
             saldoSuely += valor;
-            tbodySuely.appendChild(montarLinhaExtrato(d, valor, saldoSuely));
-        } else if (ehPessoa(d, "Sayuri")) {
+            tbodySuely.appendChild(criarLinhaExtrato(item.data, descricao, valor, saldoSuely));
+        }
+
+        if (pessoa === "sayuri" || pessoa === "sandra") {
             saldoSayuri += valor;
-            tbodySayuri.appendChild(montarLinhaExtrato(d, valor, saldoSayuri));
+            tbodySayuri.appendChild(criarLinhaExtrato(item.data, descricao, valor, saldoSayuri));
         }
     });
 
-    document.getElementById("totalSuely").innerText  = formatarMoeda(saldoSuely);
-    document.getElementById("totalSayuri").innerText = formatarMoeda(saldoSayuri);
+    totalSuely.textContent = formatarMoeda(saldoSuely);
+    totalSayuri.textContent = formatarMoeda(saldoSayuri);
 }
 
-function montarLinhaExtrato(d, valor, saldo) {
+function criarLinhaExtrato(data, descricao, valor, saldo) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-        <td>${formatarData(d.data)}</td>
-        <td>${d.observacao || "-"}</td>
+        <td>${formatarData(data)}</td>
+        <td>${descricao}</td>
         <td class="${valor >= 0 ? "valorPositivo" : "valorNegativo"}">
             ${formatarMoeda(valor)}
         </td>
@@ -491,113 +530,4 @@ function formatarData(data) {
 }
 
 
-function atualizarLancamentos50() {
-    const tbodySuelySeiti = document.getElementById("tbodyLancamentosSuelySeiti");
-    const tbodySayuri = document.getElementById("tbodyLancamentosSayuri");
 
-    const totalSuelySeiti = document.getElementById("totalLancamentosSuelySeiti");
-    const totalSayuri = document.getElementById("totalLancamentosSayuri");
-
-    if (!tbodySuelySeiti || !tbodySayuri || !totalSuelySeiti || !totalSayuri) {
-        return;
-    }
-
-    tbodySuelySeiti.innerHTML = "";
-    tbodySayuri.innerHTML = "";
-
-    let saldoSuelySeiti = 0;
-    let saldoSayuri = 0;
-
-    const lancamentos = dados
-        .filter(item => item && item.data && item.valor !== undefined && item.valor !== "")
-        .map(item => {
-            let valor = Number(
-                String(item.valor)
-                    .replace("R$", "")
-                    .replace(/\./g, "")
-                    .replace(",", ".")
-                    .trim()
-            );
-
-            if (isNaN(valor)) valor = 0;
-
-           const tipo = String(item.lancamento || item.tipo || "").toLowerCase();
-
-            if (
-                tipo.includes("saída") ||
-                tipo.includes("saida") ||
-                tipo.includes("despesa")
-            ) {
-                valor = -Math.abs(valor);
-            } else {
-                valor = Math.abs(valor);
-            }
-
-            return {
-                data: item.data,
-                lancamento: item.lancamento || item.descricao || item.categoria || "-",
-                valor50: valor / 2
-            };
-        });
-
-    lancamentos.forEach(item => {
-        saldoSuelySeiti += item.valor50;
-        saldoSayuri += item.valor50;
-
-        const trSuelySeiti = document.createElement("tr");
-        trSuelySeiti.innerHTML = `
-            <td>${item.data}</td>
-            <td>${item.lancamento}</td>
-            <td>${formatarMoeda(item.valor50)}</td>
-            <td>${formatarMoeda(saldoSuelySeiti)}</td>
-        `;
-        tbodySuelySeiti.appendChild(trSuelySeiti);
-
-        const trSayuri = document.createElement("tr");
-        trSayuri.innerHTML = `
-            <td>${item.data}</td>
-            <td>${item.lancamento}</td>
-            <td>${formatarMoeda(item.valor50)}</td>
-            <td>${formatarMoeda(saldoSayuri)}</td>
-        `;
-                tbodySayuri.appendChild(trSayuri);
-    });
-
-    // ====== Aplica os saques/depósitos da Distribuição de Lucros ======
-    const distribOrdenadas = [...distribuicoes].sort((a, b) =>
-        (a.data || "").localeCompare(b.data || "")
-    );
-
-    distribOrdenadas.forEach(d => {
-        const valor = Number(d.valor) || 0;       // já vem negativo se for saque
-        const pessoa = (d.pessoa || "").trim().toLowerCase();
-        const tipoLabel = d.tipo === "saida" ? "Saque" : "Depósito";
-        const descricao = `${tipoLabel} - ${d.observacao || d.pessoa || "-"}`;
-
-        if (pessoa === "suely") {
-            saldoSuelySeiti += valor;
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${formatarData(d.data)}</td>
-                <td>${descricao}</td>
-                <td>${formatarMoeda(valor)}</td>
-                <td>${formatarMoeda(saldoSuelySeiti)}</td>
-            `;
-            tbodySuelySeiti.appendChild(tr);
-        } else if (pessoa === "sayuri" || pessoa === "sandra") {
-            saldoSayuri += valor;
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${formatarData(d.data)}</td>
-                <td>${descricao}</td>
-                <td>${formatarMoeda(valor)}</td>
-                <td>${formatarMoeda(saldoSayuri)}</td>
-            `;
-            tbodySayuri.appendChild(tr);
-        }
-    });
-
-    totalSuelySeiti.textContent = formatarMoeda(saldoSuelySeiti);
-    totalSayuri.textContent = formatarMoeda(saldoSayuri);
-
-}

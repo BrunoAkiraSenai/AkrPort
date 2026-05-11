@@ -200,11 +200,11 @@ td.acao {
 }
 
 .cardExtrato {
-    background: #fff;
+    background: #020617;
     border-radius: 12px;
     overflow: hidden;
-    border: 3px solid #ccc;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    border: 1px solid #1e293b;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
 
 .cardExtrato.azul {
@@ -221,15 +221,15 @@ td.acao {
     align-items: center;
     padding: 12px 15px;
     font-weight: bold;
-    color: #111;
+    color: #e5e7eb;
 }
 
 .cardExtrato.azul .topoExtrato {
-    background: rgba(29,161,242,.12);
+    background: rgba(29,161,242,.15);
 }
 
 .cardExtrato.rosa .topoExtrato {
-    background: rgba(255,63,210,.12);
+    background: rgba(255,63,210,.15);
 }
 
 .cardExtrato table {
@@ -239,30 +239,32 @@ td.acao {
 }
 
 .cardExtrato th {
-    background: #f4f4f4;
+    background: #0f172a;
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #1e293b;
+    color: #38bdf8;
 }
 
 .cardExtrato td {
     padding: 8px 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #1e293b;
+    color: #cbd5e1;
 }
 
 .valorPositivo {
-    color: #0a9f32;
+    color: #22c55e;
     font-weight: bold;
 }
 
 .valorNegativo {
-    color: #d60000;
+    color: #ef4444;
     font-weight: bold;
 }
 
 .saldoExtrato {
     font-weight: bold;
-    color: #008000;
+    color: #38bdf8;
 }
 
 @media(max-width: 1000px) {
