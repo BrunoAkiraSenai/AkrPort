@@ -2,245 +2,319 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Controle de Locações - Família</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Locações</title>
     <link rel="stylesheet" href="style.css">
-     
 </head>
 <body>
-   <script src="script.js" defer></script>
 
-<div class="container">
-    <h1>📊 Controle de Entradas e Saídas</h1>
-    <p class="subtitle">Sistema de locações da família Tamura</p>
-
-    <!--  TABELA PRINCIPAL  -->
-    <table id="tabela">
-        <thead>
-            <tr>
-                <th>Data</th>
-                <th>Loja</th>
-                <th>Lançamento</th>
-                <th>Valor (R$)</th>
-                <th>Saldo (R$)</th>
-                <th>Observação</th>
-                <th>Ação</th>
-            </tr>
-        </thead>
-        <tbody id="corpoTabela"></tbody>
-    </table>
-
-    <button id="btnNovaLinha" type="button">➕ Nova Linha</button>
-
-
-    <p id="msgSalvo" class="msg-salvo">Dados salvos com sucesso ✔</p>
-
-    <!--  DASHBOARD PRINCIPAL  -->
-    <div class="dashboard">
-        <div class="card saldo">
-            <h3>💰 Saldo Atual</h3>
-            <span id="dashSaldo">R$ 0,00</span>
-        </div>
-
-        <div class="card entrada">
-            <h3>📥 Total Entradas</h3>
-            <span id="dashEntradas">R$ 0,00</span>
-        </div>
-
-        <div class="card saida">
-            <h3>📤 Total Saídas</h3>
-            <span id="dashSaidas">R$ 0,00</span>
-        </div>
-
-        <div class="card">
-            <h3>🧾 Lançamentos</h3>
-            <span id="dashQtd">0</span>
-        </div>
-
-        <div class="card entrada">
-            <h3>⬆️ Maior Entrada</h3>
-            <span id="dashMaiorEntrada">R$ 0,00</span>
-        </div>
-
-        <div class="card saida">
-            <h3>⬇️ Maior Saída</h3>
-            <span id="dashMaiorSaida">R$ 0,00</span>
-        </div>
-
-        <!-- Lucro teórico (50/50) -->
-        <div class="card lucro">
-            <h3>💼 Lucro Teórico – Sandra</h3>
-            <span id="dashLucroSandra">R$ 0,00</span>
-        </div>
-
-        <div class="card lucro">
-            <h3>💼 Lucro Teórico – Suely</h3>
-            <span id="dashLucroSuely">R$ 0,00</span>
+    <div id="telaLogin">
+        <div class="login-card">
+            <div class="login-icon">🏠</div>
+            <h1>Controle de Locações</h1>
+            <p class="login-subtitle">Sistema financeiro — Família Tamura</p>
+            <button id="btnLoginGoogle" class="btn-google">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Entrar com Google
+            </button>
+            <p class="login-info">Apenas usuários autorizados</p>
         </div>
     </div>
 
-    <!--  DISTRIBUIÇÃO  -->
-    <h2>📤 Distribuição de Lucros</h2>
-
-    <table class="tabela">
-        <thead>
-            <tr>
-                <th>Mês</th>
-                <th>Data</th>
-                <th>Pessoa</th>
-                <th>Tipo</th>
-                <th>Valor (R$)</th>
-                <th>Saldo Distribuição</th>
-                <th>Observação</th>
-                <th>Ação</th>
-            </tr>
-        </thead>
-        <tbody id="corpoDistribuicao"></tbody>
-    </table>
-
-    <button id="btnNovaDistribuicao" type="button">➕ Nova Distribuição</button>
-
-    
-    <div class="acoes">
-        <button id="btnSalvar" type="button">💾 Salvar</button>
-        <button id="btnImportar" type="button">📂 Importar Backup</button>
-        <input type="file" id="inputBackup" accept=".json" hidden>
-    </div>
-
-    <!--  DASHBOARD DISTRIBUIÇÃO  -->
-    <h3>Resumo da Distribuição</h3>
-
-    <!-- BLOCO 1 -->
-    <div class="dashboard">
-        <div class="card destaque">
-            <small>Lucro Disponível</small>
-            <strong id="dashLucroTotal">R$ 0,00</strong>
+    <div id="app" style="display:none">
+        <div class="user-bar">
+            <span id="userEmail" class="user-email"></span>
+            <button id="btnLogout" class="btn-logout">Sair</button>
         </div>
 
-        <div class="card">
-            <small>Total Distribuído</small>
-            <strong id="dashDistribuido">R$ 0,00</strong>
+        <div class="container">
+            <div class="header">
+                <h1>Controle de Locações</h1>
+                <p class="subtitle">Sistema financeiro — Família Tamura</p>
+            </div>
+
+        <section class="section">
+            <h2>Lançamentos</h2>
+            <div class="filter-row">
+                <label for="filtroMesLanc">Filtrar mês:</label>
+                <input type="month" id="filtroMesLanc">
+                <button id="btnLimparFiltroLanc" class="btn-secondary" style="margin:0">Limpar</button>
+                <span id="contadorLanc" style="font-size:0.75rem;color:var(--text3);margin-left:auto"></span>
+            </div>
+            <div class="tabela-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Loja</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Saldo</th>
+                            <th>Observação</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabela"></tbody>
+                </table>
+            </div>
+            <div id="novaLinhaArea"></div>
+            <button id="btnNovaLinha" class="btn-outline">+ Nova Linha</button>
+            <p id="msgSalvo" class="msg-salvo"></p>
+        </section>
+
+        <section class="section">
+            <h2>Indicadores</h2>
+            <div class="grid-4">
+                <div class="card">
+                    <span class="label">Saldo Atual</span>
+                    <strong class="value blue" id="dashSaldo">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Total Entradas</span>
+                    <strong class="value green" id="dashEntradas">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Total Saídas</span>
+                    <strong class="value red" id="dashSaidas">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Lançamentos</span>
+                    <strong class="value" id="dashQtd">0</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Maior Entrada</span>
+                    <strong class="value green" id="dashMaiorEntrada">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Maior Saída</span>
+                    <strong class="value red" id="dashMaiorSaida">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Lucro — Sandra</span>
+                    <strong class="value yellow" id="dashLucroSandra">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Lucro — Suely</span>
+                    <strong class="value yellow" id="dashLucroSuely">R$ 0,00</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Distribuição de Lucros</h2>
+            <div class="filter-row">
+                <label for="filtroMesDist">Filtrar mês:</label>
+                <input type="month" id="filtroMesDist">
+                <button id="btnLimparFiltroDist" class="btn-secondary" style="margin:0">Limpar</button>
+                <span id="contadorDist" style="font-size:0.75rem;color:var(--text3);margin-left:auto"></span>
+            </div>
+            <div class="tabela-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mês</th>
+                            <th>Data</th>
+                            <th>Pessoa</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Saldo</th>
+                            <th>Observação</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoDistribuicao"></tbody>
+                </table>
+            </div>
+            <div id="novaDistribuicaoArea"></div>
+            <button id="btnNovaDistribuicao" class="btn-outline">+ Nova Distribuição</button>
+
+            <div class="grid-4" style="margin-top:20px">
+                <div class="card-sm">
+                    <span class="label">Lucro Operacional (Total)</span>
+                    <strong class="value purple" id="dashLucroTotal">R$ 0,00</strong>
+                </div>
+                <div class="card-sm">
+                    <span class="label">Total Distribuído</span>
+                    <strong class="value" id="dashDistribuido">R$ 0,00</strong>
+                </div>
+                <div class="card-sm">
+                    <span class="label">Saldo Real (Disponível)</span>
+                    <strong class="value red" id="dashPendente">R$ 0,00</strong>
+                </div>
+                <div class="card-sm">
+                    <span class="label">Distribuído p/ Sandra</span>
+                    <strong class="value" id="dashDistribuidoSandra">R$ 0,00</strong>
+                </div>
+                <div class="card-sm">
+                    <span class="label">Distribuído p/ Suely</span>
+                    <strong class="value" id="dashDistribuidoSuely">R$ 0,00</strong>
+                </div>
+                <div class="card-sm">
+                    <span class="label">Quantidade de Envios</span>
+                    <strong class="value" id="dashQtdEnvios">0</strong>
+                </div>
+                <div class="card-sm">
+                    <span class="label">Última Data de Envio</span>
+                    <strong class="value" id="dashUltimaData">—</strong>
+                </div>
+                <div class="card-sm">
+                    <span class="label">Último Mês Distribuído</span>
+                    <strong class="value" id="dashUltimoMes">—</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Análise Mensal</h2>
+            <div class="filter-row">
+                <label for="filtroMes">Mês:</label>
+                <input type="month" id="filtroMes">
+            </div>
+            <div class="grid-5">
+                <div class="card">
+                    <span class="label">Entradas</span>
+                    <strong class="value green" id="dashMesEntradas">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Saídas</span>
+                    <strong class="value red" id="dashMesSaidas">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Resultado</span>
+                    <strong class="value blue" id="dashMesResultado">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Distribuições no Mês</span>
+                    <strong class="value" id="dashMesDistribuicoes">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Sandra (50%)</span>
+                    <strong class="value yellow" id="dashMesSandra">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Suely (50%)</span>
+                    <strong class="value yellow" id="dashMesSuely">R$ 0,00</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Imposto de Renda Estimado (Carnê-Leão)</h2>
+            <div class="filter-row">
+                <label for="filtroMesIR">Mês:</label>
+                <input type="month" id="filtroMesIR">
+                <label for="filtroAnoIR">Ano:</label>
+                <input type="number" id="filtroAnoIR" min="2024" max="2099" style="max-width:100px">
+                <button id="btnConfigIR" class="btn-secondary" style="margin:0">Configurar Tabela</button>
+            </div>
+            <div class="grid-5" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr))">
+                <div class="card">
+                    <span class="label">Lucro Líquido do Mês</span>
+                    <strong class="value blue" id="dashIRLucroMes">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">IR Estimado do Mês</span>
+                    <strong class="value red" id="dashIRMes">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">IR — Sandra</span>
+                    <strong class="value yellow" id="dashIRSandra">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">IR — Suely</span>
+                    <strong class="value yellow" id="dashIRSuely">R$ 0,00</strong>
+                </div>
+                <div class="card">
+                    <span class="label">Lucro Líquido Após IR</span>
+                    <strong class="value green" id="dashIRLucroLiquido">R$ 0,00</strong>
+                </div>
+            </div>
+
+            <div class="filter-row" style="margin-top:16px">
+                <span id="statusIRPago" style="font-size:0.85rem;color:var(--text2)"></span>
+                <button id="btnPagarIR" class="btn-secondary" style="margin:0 0 0 auto">Pagar IR do Mês</button>
+            </div>
+
+            <div id="modalConfigIR" style="display:none; margin-top: 16px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <strong style="color:var(--text)">Tabela de Faixas do IR</strong>
+                    <button id="btnFecharConfigIR" class="btn-secondary" style="margin:0">Fechar</button>
+                </div>
+                <div style="overflow-x:auto">
+                    <table id="tabelaConfigIR">
+                        <thead>
+                            <tr>
+                                <th>Até (R$)</th>
+                                <th>Alíquota (%)</th>
+                                <th>Dedução (R$)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpoConfigIR"></tbody>
+                    </table>
+                </div>
+                <button id="btnAddFaixaIR" class="btn-outline" style="margin-top:10px">+ Adicionar Faixa</button>
+                <button id="btnSalvarConfigIR" style="margin-top:10px;margin-left:8px">Salvar Tabela</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Controle por Loja</h2>
+            <div class="grid-4" id="painelLojas"></div>
+        </section>
+
+        <section class="section">
+            <h2>Extratos Individuais</h2>
+            <div class="extratos-grid">
+                <div class="extrato-card">
+                    <div class="extrato-header azul">
+                        <span>Suely</span>
+                        <span>Total: <strong id="totalSuely">R$ 0,00</strong></span>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Lançamento</th>
+                                <th>Valor</th>
+                                <th>Saldo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="extratoSuely"></tbody>
+                    </table>
+                </div>
+                <div class="extrato-card">
+                    <div class="extrato-header rosa">
+                        <span>Sayuri</span>
+                        <span>Total: <strong id="totalSayuri">R$ 0,00</strong></span>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Lançamento</th>
+                                <th>Valor</th>
+                                <th>Saldo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="extratoSayuri"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <div class="actions">
+            <button id="btnSalvar">Salvar Backup</button>
+            <button id="btnImportar" class="btn-secondary">Importar Backup</button>
+            <input type="file" id="inputBackup" accept=".json" hidden>
         </div>
-
-        <div class="card alerta">
-            <small>Saldo Pendente</small>
-            <strong id="dashPendente">R$ 0,00</strong>
         </div>
     </div>
-
-    <!-- BLOCO 2 -->
-    <div class="dashboard">
-        <div class="card">
-            <small>Distribuído para Sandra</small>
-            <strong id="dashDistribuidoSandra">R$ 0,00</strong>
-        </div>
-
-        <div class="card">
-            <small>Distribuído para Suely</small>
-            <strong id="dashDistribuidoSuely">R$ 0,00</strong>
-        </div>
-    </div>
-
-    <!-- BLOCO 3 -->
-    <div class="dashboard">
-        <div class="card">
-            <small>Quantidade de Envios</small>
-            <strong id="dashQtdEnvios">0</strong>
-        </div>
-
-        <div class="card">
-            <small>Última Data de Envio</small>
-            <strong id="dashUltimaData">—</strong>
-        </div>
-
-        <div class="card">
-            <small>Último Mês Distribuído</small>
-            <strong id="dashUltimoMes">—</strong>
-        </div>
-    </div>
-
-
-    <h3>📅 Análise Mensal</h3>
-
-<div class="filtro-mes">
-    <label for="filtroMes">Selecionar mês:</label>
-    <input type="month" id="filtroMes">
-</div>
-
-<div class="dashboard">
-    <div class="card entrada">
-        <h3>📥 Entradas no Mês</h3>
-        <span id="dashMesEntradas">R$ 0,00</span>
-    </div>
-
-    <div class="card saida">
-        <h3>📤 Saídas no Mês</h3>
-        <span id="dashMesSaidas">R$ 0,00</span>
-    </div>
-
-    <div class="card lucro">
-        <h3>💼 Sandra (Mês)</h3>
-        <span id="dashMesSandra">R$ 0,00</span>
-    </div>
-
-    <div class="card lucro">
-        <h3>💼 Suely (Mês)</h3>
-        <span id="dashMesSuely">R$ 0,00</span>
-    </div>
-
-    <div class="card saldo">
-        <h3>📊 Resultado do Mês</h3>
-        <span id="dashMesResultado">R$ 0,00</span>
-    </div>
-</div>  
-
-<h2>📋 Controle de Pagamentos por Loja</h2>
-
-<div class="dashboard" id="painelLojas">
-  
-</div>
-<section>
-  <h2>📋 Extratos Individuais</h2>
-
-  <div class="secaoExtratos">
-    <div class="cardExtrato azul">
-      <div class="topoExtrato">
-        <span>👤 Suely</span>
-        <span>Total: <strong id="totalSuely">R$ 0,00</strong></span>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Data</th>
-            <th>Lançamento</th>
-            <th>Valor (R$)</th>
-            <th>Saldo (R$)</th>
-          </tr>
-        </thead>
-        <tbody id="extratoSuely"></tbody>
-      </table>
-    </div>
-
-    <div class="cardExtrato rosa">
-      <div class="topoExtrato">
-        <span>👤 Sayuri</span>
-        <span>Total: <strong id="totalSayuri">R$ 0,00</strong></span>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Data</th>
-            <th>Lançamento</th>
-            <th>Valor (R$)</th>
-            <th>Saldo (R$)</th>
-          </tr>
-        </thead>
-        <tbody id="extratoSayuri"></tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-</div>
-
+    <script type="module" src="script.js"></script>
 </body>
 </html>

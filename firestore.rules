@@ -1,0 +1,67 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuth() {
+      return request.auth != null
+          && request.auth.token.email_verified == true;
+    }
+
+    function isValidLancamento(data) {
+      return data is map
+        && data.keys().hasAll(['data', 'loja', 'lancamento', 'valor', 'userId', 'ordem'])
+        && data.data is string
+        && data.loja in ['Eletronica', 'Casa do Norte', 'Bar', 'Hotel', 'IR']
+        && data.lancamento in ['entrada', 'saida']
+        && data.valor is number
+        && data.valor != 0
+        && data.ordem is number
+        && data.userId == request.auth.uid;
+    }
+
+    function isValidDistribuicao(data) {
+      return data is map
+        && data.keys().hasAll(['mes', 'data', 'pessoa', 'tipo', 'valor', 'userId', 'ordem'])
+        && data.mes is string
+        && data.mes.matches('^[0-9]{4}-[0-9]{2}$')
+        && data.data is string
+        && data.pessoa in ['Sandra', 'Suely']
+        && data.tipo in ['entrada', 'saida']
+        && data.valor is number
+        && data.valor != 0
+        && data.ordem is number
+        && data.userId == request.auth.uid;
+    }
+
+    match /lancamentos/{document} {
+      allow read: if isAuth();
+      allow create: if isAuth() && isValidLancamento(request.resource.data);
+      allow update: if isAuth() && isValidLancamento(request.resource.data);
+      allow delete: if isAuth() && resource.data.userId == request.auth.uid;
+    }
+
+    match /distribuicoes/{document} {
+      allow read: if isAuth();
+      allow create: if isAuth() && isValidDistribuicao(request.resource.data);
+      allow update: if isAuth() && isValidDistribuicao(request.resource.data);
+      allow delete: if isAuth() && resource.data.userId == request.auth.uid;
+    }
+
+    match /config/{document} {
+      allow read: if isAuth();
+      allow create: if isAuth()
+        && request.resource.data.keys().hasAll(['id', 'faixas'])
+        && request.resource.data.id is string
+        && request.resource.data.faixas is list;
+      allow update: if isAuth()
+        && request.resource.data.keys().hasAll(['id', 'faixas'])
+        && request.resource.data.id is string
+        && request.resource.data.faixas is list;
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
