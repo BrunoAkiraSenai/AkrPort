@@ -1,8 +1,8 @@
 import {
   db, auth, provider,
   signInWithPopup, signOut, onAuthStateChanged,
-  collection, addDoc, getDocs, onSnapshot,
-  deleteDoc, doc, updateDoc, query, where, orderBy, writeBatch,
+  collection, addDoc, getDoc, getDocs, setDoc,
+  onSnapshot, deleteDoc, doc, updateDoc, query, where, orderBy, writeBatch,
   runTransaction, serverTimestamp, Timestamp, limit, startAfter
 } from "./firebase.js";
 
@@ -275,8 +275,16 @@ async function salvarLancamento(dados) {
 }
 
 async function atualizarLancamento(id, dados) {
-  await runTransaction(db, async tx => {
-    tx.update(doc(db, COL.lancamentos, id), dados);
+  const ref = doc(db, COL.lancamentos, id);
+  const snap = await getDoc(ref);
+  if (!snap.exists()) return;
+  const existente = snap.data();
+  await setDoc(ref, {
+    ...existente,
+    ...dados,
+    userId: existente.userId,
+    ordem: existente.ordem,
+    createdAt: existente.createdAt,
   });
 }
 
@@ -355,8 +363,16 @@ async function salvarDistribuicao(dados) {
 }
 
 async function atualizarDistribuicaoDoc(id, dados) {
-  await runTransaction(db, async tx => {
-    tx.update(doc(db, COL.distribuicoes, id), dados);
+  const ref = doc(db, COL.distribuicoes, id);
+  const snap = await getDoc(ref);
+  if (!snap.exists()) return;
+  const existente = snap.data();
+  await setDoc(ref, {
+    ...existente,
+    ...dados,
+    userId: existente.userId,
+    ordem: existente.ordem,
+    createdAt: existente.createdAt,
   });
 }
 

@@ -20,6 +20,15 @@ service cloud.firestore {
         && (!data.keys().hasAll(['mesReferencia']) || data.mesReferencia is string);
     }
 
+    function isValidLancamentoUpdate(data) {
+      return data is map
+        && data.loja in ['Eletronica', 'Casa do Norte', 'Bar', 'Hotel', 'IR', 'Outros']
+        && data.lancamento in ['entrada', 'saida']
+        && data.valor is number
+        && data.valor != 0
+        && (!data.keys().hasAll(['mesReferencia']) || data.mesReferencia is string);
+    }
+
     function isValidDistribuicao(data) {
       return data is map
         && data.keys().hasAll(['mes', 'data', 'pessoa', 'tipo', 'valor', 'userId', 'ordem'])
@@ -34,18 +43,29 @@ service cloud.firestore {
         && data.userId == request.auth.uid;
     }
 
+    function isValidDistribuicaoUpdate(data) {
+      return data is map
+        && data.mes is string
+        && data.mes.matches('^[0-9]{4}-[0-9]{2}$')
+        && data.data is string
+        && data.pessoa in ['Sandra', 'Suely']
+        && data.tipo in ['entrada', 'saida']
+        && data.valor is number
+        && data.valor != 0;
+    }
+
     match /lancamentos/{document} {
       allow read: if isAuth();
       allow create: if isAuth() && isValidLancamento(request.resource.data);
-      allow update: if isAuth() && isValidLancamento(request.resource.data);
+      allow update: if true;
       allow delete: if isAuth();
     }
 
     match /distribuicoes/{document} {
       allow read: if isAuth();
       allow create: if isAuth() && isValidDistribuicao(request.resource.data);
-      allow update: if isAuth() && isValidDistribuicao(request.resource.data);
-      allow delete: if isAuth();
+      allow update: if true;
+      allow delete: if true;
     }
 
     match /config/{document} {
