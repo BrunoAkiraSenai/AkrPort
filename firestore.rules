@@ -11,12 +11,13 @@ service cloud.firestore {
       return data is map
         && data.keys().hasAll(['data', 'loja', 'lancamento', 'valor', 'userId', 'ordem'])
         && data.data is string
-        && data.loja in ['Eletronica', 'Casa do Norte', 'Bar', 'Hotel', 'IR']
+        && data.loja in ['Eletronica', 'Casa do Norte', 'Bar', 'Hotel', 'IR', 'Outros']
         && data.lancamento in ['entrada', 'saida']
         && data.valor is number
         && data.valor != 0
         && data.ordem is number
-        && data.userId == request.auth.uid;
+        && data.userId == request.auth.uid
+        && (!data.keys().hasAll(['mesReferencia']) || data.mesReferencia is string);
     }
 
     function isValidDistribuicao(data) {
@@ -37,14 +38,14 @@ service cloud.firestore {
       allow read: if isAuth();
       allow create: if isAuth() && isValidLancamento(request.resource.data);
       allow update: if isAuth() && isValidLancamento(request.resource.data);
-      allow delete: if isAuth() && resource.data.userId == request.auth.uid;
+      allow delete: if isAuth();
     }
 
     match /distribuicoes/{document} {
       allow read: if isAuth();
       allow create: if isAuth() && isValidDistribuicao(request.resource.data);
       allow update: if isAuth() && isValidDistribuicao(request.resource.data);
-      allow delete: if isAuth() && resource.data.userId == request.auth.uid;
+      allow delete: if isAuth();
     }
 
     match /config/{document} {

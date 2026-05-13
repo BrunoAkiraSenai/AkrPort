@@ -65,11 +65,11 @@ let unsubscribeLancamentos = null;
 let unsubscribeDistribuicoes = null;
 
 const TabelaIRPadrao = [
-  { ate: 2259.20, aliquota: 0,    deducao: 0 },
-  { ate: 2826.65, aliquota: 7.5,  deducao: 169.44 },
-  { ate: 3751.05, aliquota: 15,   deducao: 381.44 },
-  { ate: 4664.68, aliquota: 22.5, deducao: 662.77 },
-  { acima: true,  aliquota: 27.5, deducao: 896.00 }
+  { ate: 2428.80, aliquota: 0,    deducao: 0 },
+  { ate: 2826.65, aliquota: 7.5,  deducao: 182.16 },
+  { ate: 3751.05, aliquota: 15,   deducao: 394.16 },
+  { ate: 4664.68, aliquota: 22.5, deducao: 675.49 },
+  { acima: true,  aliquota: 27.5, deducao: 908.73 }
 ];
 
 const Util = {
@@ -106,6 +106,35 @@ const Util = {
     });
     input.addEventListener("input", () => {
       input.value = input.value.replace(",", ".");
+    });
+  },
+  parseValor(str) {
+    if (!str) return 0;
+    if (typeof str === "number") return str;
+    let s = str.trim();
+    if (s.includes(",")) {
+      s = s.replace(/\./g, "").replace(",", ".");
+    }
+    return parseFloat(s) || 0;
+  },
+  configurarInputValor(input) {
+    input.addEventListener("beforeinput", function(e) {
+      if (e.data === ",") {
+        e.preventDefault();
+        const start = this.selectionStart;
+        const end = this.selectionEnd;
+        this.value = this.value.substring(0, start) + "," + this.value.substring(end);
+        this.setSelectionRange(start + 1, start + 1);
+      }
+    });
+    input.addEventListener("blur", function() {
+      let val = this.value.replace(/[^\d,]/g, "");
+      val = val.replace(",", ".");
+      const partes = val.split(".");
+      if (partes.length > 1 && partes[1].length > 2) {
+        val = partes[0] + "." + partes[1].slice(0, 2);
+      }
+      this.value = val;
     });
   }
 };
@@ -255,7 +284,7 @@ async function criarLancamentoPeloTR(tr) {
   const data = tr.querySelector("[data-campo='data'] input").value;
   const loja = tr.querySelector("[data-campo='loja'] select").value;
   const tipo = tr.querySelector("[data-campo='tipo'] select").value;
-  const valorBase = parseFloat(tr.querySelector("[data-campo='valor'] input").value) || 0;
+  const valorBase = Util.parseValor(tr.querySelector("[data-campo='valor'] input").value);
   const obs = (tr.querySelector("[data-campo='obs'] input").value || "").trim();
   if (!data || !loja || !tipo || valorBase <= 0) {
     Util.notificar("Preencha data, loja, tipo e valor positivo.", "erro");
@@ -279,7 +308,7 @@ async function atualizarLancamentoPeloTR(tr) {
   const data = tr.querySelector("[data-campo='data'] input").value;
   const loja = tr.querySelector("[data-campo='loja'] select").value;
   const tipo = tr.querySelector("[data-campo='tipo'] select").value;
-  const valorBase = parseFloat(tr.querySelector("[data-campo='valor'] input").value) || 0;
+  const valorBase = Util.parseValor(tr.querySelector("[data-campo='valor'] input").value);
   const obs = (tr.querySelector("[data-campo='obs'] input").value || "").trim();
   if (!tr.dataset.id) return;
   if (!data || !loja || !tipo) {
@@ -336,7 +365,7 @@ async function criarDistribuicaoPeloTR(tr) {
   const data = tr.querySelector("[data-campo='data'] input").value;
   const pessoa = tr.querySelector("[data-campo='pessoa'] select").value;
   const tipo = tr.querySelector("[data-campo='tipo'] select").value;
-  const valorBase = parseFloat(tr.querySelector("[data-campo='valor'] input").value) || 0;
+  const valorBase = Util.parseValor(tr.querySelector("[data-campo='valor'] input").value);
   const obs = (tr.querySelector("[data-campo='obs'] input").value || "").trim();
   if (!data || !pessoa || !tipo || valorBase <= 0) {
     Util.notificar("Preencha data, pessoa, tipo e valor positivo.", "erro");
@@ -362,7 +391,7 @@ async function atualizarDistribuicaoPeloTR(tr) {
   const data = tr.querySelector("[data-campo='data'] input").value;
   const pessoa = tr.querySelector("[data-campo='pessoa'] select").value;
   const tipo = tr.querySelector("[data-campo='tipo'] select").value;
-  const valorBase = parseFloat(tr.querySelector("[data-campo='valor'] input").value) || 0;
+  const valorBase = Util.parseValor(tr.querySelector("[data-campo='valor'] input").value);
   const obs = (tr.querySelector("[data-campo='obs'] input").value || "").trim();
   if (!tr.dataset.id) return;
   if (!data || !pessoa || !tipo) {
@@ -397,13 +426,14 @@ function criarLinha(item = {}, container) {
       <option value="Bar" ${item.loja === "Bar" ? "selected" : ""}>Bar</option>
       <option value="Hotel" ${item.loja === "Hotel" ? "selected" : ""}>Hotel</option>
       <option value="IR" ${item.loja === "IR" ? "selected" : ""}>IR</option>
+      <option value="Outros" ${item.loja === "Outros" ? "selected" : ""}>Outros</option>
     </select></td>
     <td data-campo="tipo"><select>
       <option value="">Selecione</option>
       <option value="entrada" ${item.lancamento === "entrada" ? "selected" : ""}>Entrada</option>
       <option value="saida" ${item.lancamento === "saida" ? "selected" : ""}>Saída</option>
     </select></td>
-    <td data-campo="valor"><input type="number" step="0.01" value="${valor}"></td>
+    <td data-campo="valor"><input type="text" inputmode="decimal" value="${valor}"></td>
     <td data-campo="saldo" class="saldo">0,00</td>
     <td data-campo="obs"><input type="text" value="${item.observacao || ""}"></td>
     <td data-campo="acoes">
@@ -411,7 +441,7 @@ function criarLinha(item = {}, container) {
       <button class="btn-delete">🗑️</button>
     </td>`;
 
-  tr.querySelectorAll("input[type='number']").forEach(Util.validarStep);
+  Util.configurarInputValor(tr.querySelector("[data-campo='valor'] input"));
 
   const isNew = !item.id;
 
@@ -478,7 +508,7 @@ function criarLinhaDistribuicao(item = {}, container) {
       <option value="saida" ${item.tipo === "saida" ? "selected" : ""}>Saque</option>
       <option value="entrada" ${item.tipo === "entrada" ? "selected" : ""}>Depósito</option>
     </select></td>
-    <td data-campo="valor"><input type="number" step="0.01" value="${valor}"></td>
+    <td data-campo="valor"><input type="text" inputmode="decimal" value="${valor}"></td>
     <td data-campo="saldo" class="saldo">0,00</td>
     <td data-campo="obs"><input type="text" value="${item.observacao || ""}"></td>
     <td data-campo="acoes">
@@ -486,7 +516,7 @@ function criarLinhaDistribuicao(item = {}, container) {
       <button class="btn-delete">🗑️</button>
     </td>`;
 
-  tr.querySelectorAll("input[type='number']").forEach(Util.validarStep);
+  Util.configurarInputValor(tr.querySelector("[data-campo='valor'] input"));
 
   const isNew = !item.id;
 
@@ -578,6 +608,7 @@ function rateio(valor, partes) {
 function calcularLucroPorMes(mes) {
   let entradas = 0, saidas = 0;
   Store.lancamentos.forEach(d => {
+    if (d.loja === "IR") return;
     if (d.data && d.data.startsWith(mes)) {
       if (d.valor > 0) entradas += d.valor;
       else saidas += d.valor;
@@ -597,9 +628,23 @@ function calcularIR(valor) {
   return Math.max(0, arredondar(valor * (faixa.aliquota / 100) - faixa.deducao));
 }
 
+function irPagoMes(mes) {
+  if (!mes || !Store.lancamentos) return 0;
+  return Store.lancamentos.reduce((sum, d) => {
+    if (d.loja !== "IR") return sum;
+    const pertence = d.mesReferencia
+      ? d.mesReferencia === mes
+      : d.data && d.data.startsWith(mes);
+    if (pertence) sum += Math.abs(Number(d.valor) || 0);
+    return sum;
+  }, 0);
+}
+
 function calcularIRMes(mes) {
   const lucro = calcularLucroPorMes(mes);
-  return { lucro, ir: calcularIR(lucro) };
+  const ir = calcularIR(lucro / 2) * 2;
+  const pago = irPagoMes(mes);
+  return { lucro, ir, pago };
 }
 
 function atualizarDashboard() {
@@ -685,6 +730,7 @@ function atualizarDashboardMensal() {
 
   let entradas = 0, saidas = 0;
   Store.lancamentos.forEach(d => {
+    if (d.loja === "IR") return;
     if (d.data && d.data.startsWith(mesSel)) {
       const v = Number(d.valor) || 0;
       if (v > 0) entradas += v;
@@ -738,29 +784,30 @@ function atualizarDashboardIR() {
   atualizarStatusIR();
 }
 
-function verificarIRPago(mes) {
-  if (!mes || !Store.lancamentos) return false;
-  return Store.lancamentos.some(d => d.loja === "IR" && d.data && d.data.startsWith(mes));
-}
-
 function atualizarStatusIR() {
   const mes = $("filtroMesIR").value;
   const el = $("statusIRPago");
   const btn = $("btnPagarIR");
   if (!mes) { el.textContent = ""; btn.style.display = "none"; return; }
   btn.style.display = "";
-  const { ir } = calcularIRMes(mes);
-  const pago = verificarIRPago(mes);
-  const [irSandra, irSuely] = rateio(ir, 2);
+  const { ir, pago } = calcularIRMes(mes);
+  const restante = Math.max(0, ir - pago);
+  const [irSandra, irSuely] = rateio(restante, 2);
   if (ir <= 0) {
     el.textContent = "Nenhum IR a pagar neste mês.";
     btn.style.display = "none";
-  } else if (pago) {
+  } else if (pago >= ir) {
     el.innerHTML = `<span style="color:var(--green)">✔ IR de <strong>${Util.moeda(ir)}</strong> já pago neste mês.</span>`;
     btn.textContent = "Pagar IR do Mês";
     btn.disabled = true;
     btn.style.opacity = "0.4";
     btn.style.cursor = "not-allowed";
+  } else if (pago > 0) {
+    el.innerHTML = `IR de <strong>${Util.moeda(ir)}</strong> — já pago <strong>${Util.moeda(pago)}</strong>, restante <strong>${Util.moeda(restante)}</strong> — ${Util.moeda(irSandra)} para Sandra, ${Util.moeda(irSuely)} para Suely.`;
+    btn.textContent = `Pagar restante de ${Util.moeda(restante)}`;
+    btn.disabled = false;
+    btn.style.opacity = "";
+    btn.style.cursor = "";
   } else {
     el.innerHTML = `IR de <strong>${Util.moeda(ir)}</strong> pendente — ${Util.moeda(irSandra)} para Sandra, ${Util.moeda(irSuely)} para Suely.`;
     btn.textContent = `Pagar IR de ${Util.moeda(ir)}`;
@@ -773,15 +820,18 @@ function atualizarStatusIR() {
 $("btnPagarIR").onclick = async () => {
   const mes = $("filtroMesIR").value;
   if (!mes) return Util.notificar("Selecione um mês primeiro.", "erro");
-  const { ir } = calcularIRMes(mes);
+  const { ir, pago } = calcularIRMes(mes);
+  const restante = Math.max(0, ir - pago);
   if (ir <= 0) return Util.notificar("Nenhum IR a pagar neste mês.", "erro");
-  if (verificarIRPago(mes)) return Util.notificar("IR deste mês já foi pago.", "erro");
-  if (!confirm(`Confirmar pagamento do IR de ${Util.moeda(ir)} referente a ${mes}?`)) return;
+  if (restante <= 0) return Util.notificar("IR deste mês já foi totalmente pago.", "erro");
+  if (!confirm(`Confirmar pagamento de ${Util.moeda(restante)} de IR referente a ${mes}?`)) return;
 
   const ano = parseInt(mes.split("-")[0]);
   const mesNum = parseInt(mes.split("-")[1]);
-  const ultimoDia = new Date(ano, mesNum, 0).getDate();
-  const data = `${mes}-${String(ultimoDia).padStart(2, "0")}`;
+  const proxAno = mesNum === 12 ? ano + 1 : ano;
+  const proxMes = mesNum === 12 ? 1 : mesNum + 1;
+  const ultimoDiaProx = new Date(proxAno, proxMes, 0).getDate();
+  const data = `${proxAno}-${String(proxMes).padStart(2, "0")}-${String(ultimoDiaProx).padStart(2, "0")}`;
   const nomeMes = new Date(ano, mesNum - 1).toLocaleDateString("pt-BR", { month: "long" });
 
   await Util.capturarErro(async () => {
@@ -791,7 +841,8 @@ $("btnPagarIR").onclick = async () => {
         data,
         loja: "IR",
         lancamento: "saida",
-        valor: -ir,
+        valor: -restante,
+        mesReferencia: mes,
         observacao: `IR Carnê-Leão ${nomeMes}/${ano}`,
         userId: Store.usuario.uid,
         createdAt: serverTimestamp(),
@@ -800,7 +851,7 @@ $("btnPagarIR").onclick = async () => {
     });
   }, "Erro ao registrar pagamento de IR");
 
-  Util.notificar(`IR de ${Util.moeda(ir)} registrado como saída!`);
+  Util.notificar(`IR de ${Util.moeda(restante)} registrado como saída!`);
   atualizarStatusIR();
 };
 
@@ -1023,13 +1074,13 @@ function renderizarConfigIR() {
     const tr = document.createElement("tr");
     const ate = faixa.acima ? "" : faixa.ate.toFixed(2);
     tr.innerHTML = `
-      <td><input type="number" step="0.01" value="${ate}" class="ir-ate" style="text-align:right" ${faixa.acima ? "disabled" : ""}></td>
-      <td><input type="number" step="0.1" value="${faixa.aliquota}" class="ir-aliquota" style="text-align:right"></td>
-      <td><input type="number" step="0.01" value="${faixa.deducao.toFixed(2)}" class="ir-deducao" style="text-align:right"></td>
+      <td><input type="text" inputmode="decimal" value="${ate}" class="ir-ate" style="text-align:right" ${faixa.acima ? "disabled" : ""}></td>
+      <td><input type="text" inputmode="decimal" value="${faixa.aliquota}" class="ir-aliquota" style="text-align:right"></td>
+      <td><input type="text" inputmode="decimal" value="${faixa.deducao.toFixed(2)}" class="ir-deducao" style="text-align:right"></td>
       <td>${i === tab.length - 1 ? "acima" : `<button class="btn-delete" data-idx="${i}">✕</button>`}</td>`;
     tbody.appendChild(tr);
   });
-  tbody.querySelectorAll("input[type='number']").forEach(Util.validarStep);
+  tbody.querySelectorAll("input[inputmode='decimal']").forEach(Util.configurarInputValor);
 }
 
 $("btnConfigIR").onclick = () => {
@@ -1054,12 +1105,12 @@ $("btnSalvarConfigIR").onclick = async () => {
   linhas.forEach(tr => {
     const inputs = tr.querySelectorAll("input");
     const ateInput = inputs[0];
-    const aliq = parseFloat(inputs[1].value) || 0;
-    const ded = parseFloat(inputs[2].value) || 0;
+    const aliq = Util.parseValor(inputs[1].value) || 0;
+    const ded = Util.parseValor(inputs[2].value) || 0;
     if (ateInput.disabled) {
       novaTabela.push({ acima: true, aliquota: aliq, deducao: ded });
     } else {
-      const ate = parseFloat(ateInput.value);
+      const ate = Util.parseValor(ateInput.value);
       if (ate > 0) novaTabela.push({ ate, aliquota: aliq, deducao: ded });
     }
   });
