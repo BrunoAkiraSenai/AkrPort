@@ -175,5 +175,5 @@ rateio(100.01, 2) // → [50.01, 50.00]
 - [ ] Modo escuro adicional
 ---
 ## 👤 Autor
-**Família Tamura**
+**Bruno Akira Furumori**
 Sistema desenvolvido para gestão financeira familiar de locações comerciais.
