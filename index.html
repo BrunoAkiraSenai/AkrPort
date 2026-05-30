@@ -97,11 +97,11 @@
   <div class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
     <a href="#" class="text-lg font-display font-bold tracking-tight glow-text" style="color:#e8e8ed">&lt; <span style="color:#00f0ff">AKR</span> /&gt;</a>
     <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400/80">
-      <li><a href="#hero" class="nav-link">Início</a></li>
-      <li><a href="#experience" class="nav-link">Experiências</a></li>
-      <li><a href="#skills" class="nav-link">Habilidades</a></li>
-      <li><a href="#projects" class="nav-link">Projetos</a></li>
-      <li><a href="#certificates" class="nav-link">Certificados</a></li>
+      <li><a href="#hero" class="nav-link" data-i18n="nav.inicio">Início</a></li>
+      <li><a href="#experience" class="nav-link" data-i18n="nav.experiencias">Experiências</a></li>
+      <li><a href="#skills" class="nav-link" data-i18n="nav.habilidades">Habilidades</a></li>
+      <li><a href="#projects" class="nav-link" data-i18n="nav.projetos">Projetos</a></li>
+      <li><a href="#certificates" class="nav-link" data-i18n="nav.certificados">Certificados</a></li>
     </ul>
     <div class="flex items-center gap-3">
       <button id="langToggle" class="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-cyberCyan transition-colors border border-glassBorder hover:border-cyberCyan/30 rounded-full px-3 py-1">EN</button>
@@ -114,11 +114,11 @@
   </div>
   <div id="mobile-menu" class="md:hidden px-5 sm:px-8 pb-4">
     <ul class="flex flex-col gap-4 text-sm font-medium text-gray-400 pt-3 border-t border-glassBorder">
-      <li><a href="#hero" class="nav-link block">Início</a></li>
-      <li><a href="#experience" class="nav-link block">Experiências</a></li>
-      <li><a href="#skills" class="nav-link block">Habilidades</a></li>
-      <li><a href="#projects" class="nav-link block">Projetos</a></li>
-      <li><a href="#certificates" class="nav-link block">Certificados</a></li>
+      <li><a href="#hero" class="nav-link block" data-i18n="nav.inicio">Início</a></li>
+      <li><a href="#experience" class="nav-link block" data-i18n="nav.experiencias">Experiências</a></li>
+      <li><a href="#skills" class="nav-link block" data-i18n="nav.habilidades">Habilidades</a></li>
+      <li><a href="#projects" class="nav-link block" data-i18n="nav.projetos">Projetos</a></li>
+      <li><a href="#certificates" class="nav-link block" data-i18n="nav.certificados">Certificados</a></li>
     </ul>
   </div>
 </nav>
@@ -130,22 +130,22 @@
   <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-medium text-cyberCyan/80 mb-6">
       <span class="w-2 h-2 rounded-full bg-cyberCyan/60" style="animation:pulseGlow 2s infinite"></span>
-      <span id="visitDisplay">carregando...</span>
+      <span id="visitDisplay" data-i18n="visits">carregando...</span>
     </div>
-    <p class="text-cyberCyan/80 font-medium text-sm tracking-[.3em] uppercase mb-4 font-display reveal">Olá, eu sou</p>
+    <p class="text-cyberCyan/80 font-medium text-sm tracking-[.3em] uppercase mb-4 font-display reveal" data-i18n="hero.greeting">Olá, eu sou</p>
     <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] text-white glow-text reveal">
       Bruno Akira<br>
       <span class="bg-gradient-to-r from-cyberCyan to-cyberMagenta bg-clip-text text-transparent">Furumori</span>
     </h1>
-    <p class="mt-3 text-lg sm:text-xl font-medium text-cyberCyan/60 font-display reveal">Back-end &amp; Data</p>
-    <p class="mt-5 text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto reveal">
+    <p class="mt-3 text-lg sm:text-xl font-medium text-cyberCyan/60 font-display reveal" data-i18n="hero.sub">Back-end &amp; Data</p>
+    <p class="mt-5 text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto reveal" data-i18n="hero.bio">
       Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.
     </p>
     <div class="flex items-center justify-center gap-4 mt-8 reveal">
       <a href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
       <a href="https://www.linkedin.com/in/bruno-furumori-6585ba371/" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
       <a href="https://www.instagram.com/akiravsk/" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
-      <a href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full glass-card text-gray-300 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300 ml-2"><i class="fa-solid fa-download"></i> Currículo</a>
+      <a href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full glass-card text-gray-300 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300 ml-2"><i class="fa-solid fa-download"></i> <span data-i18n="curriculo">Currículo</span></a>
     </div>
     <div class="flex flex-wrap justify-center gap-3 mt-8 reveal">
       <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">Java</span>
@@ -159,8 +159,8 @@
 <section id="experience" class="py-24 sm:py-32 relative">
   <div class="max-w-5xl mx-auto px-5 sm:px-8">
     <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display">Trajetória</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text">Experiências</h2>
+      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="exp.section">Trajetória</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="exp.title">Experiências</h2>
       <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
     </div>
     <div class="relative flex flex-col items-center gap-0">
@@ -175,15 +175,15 @@
           </div>
           <div class="glass-card rounded-2xl p-5 sm:p-6 flex-1 glow-border">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 class="font-display text-lg font-semibold text-white">Ciência da Computação</h3>
+              <h3 class="font-display text-lg font-semibold text-white" data-i18n="exp.1.title">Ciência da Computação</h3>
               <span class="text-xs text-gray-500 font-mono">Jan 2026 — Dez 2029</span>
             </div>
-            <p class="text-sm text-cyberCyan/60 mt-1">Anhembi Morumbi — Graduação</p>
+            <p class="text-sm text-cyberCyan/60 mt-1" data-i18n="exp.1.company">Anhembi Morumbi — Graduação</p>
           </div>
         </div>
         <div id="exp1" class="node-content ml-12 md:ml-14">
           <div class="glass-card rounded-2xl p-5 sm:p-6 mt-3 glow-border">
-            <p class="text-sm text-gray-400 leading-relaxed">Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.</p>
+            <p class="text-sm text-gray-400 leading-relaxed" data-i18n="exp.1.desc">Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Java</span>
               <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Python</span>
@@ -201,15 +201,15 @@
           </div>
           <div class="glass-card rounded-2xl p-5 sm:p-6 flex-1 glow-border">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 class="font-display text-lg font-semibold text-white">Desenvolvimento de Sistemas</h3>
+              <h3 class="font-display text-lg font-semibold text-white" data-i18n="exp.2.title">Desenvolvimento de Sistemas</h3>
               <span class="text-xs text-gray-500 font-mono">Jan 2024 — Dez 2025</span>
             </div>
-            <p class="text-sm text-cyberMagenta/60 mt-1">SENAI — Curso Técnico</p>
+            <p class="text-sm text-cyberMagenta/60 mt-1" data-i18n="exp.2.company">SENAI — Curso Técnico</p>
           </div>
         </div>
         <div id="exp2" class="node-content ml-12 md:ml-14">
           <div class="glass-card rounded-2xl p-5 sm:p-6 mt-3 glow-border">
-            <p class="text-sm text-gray-400 leading-relaxed">Formação técnica em Desenvolvimento de Sistemas com ênfase em lógica de programação, banco de dados, versionamento com Git e desenvolvimento web.</p>
+            <p class="text-sm text-gray-400 leading-relaxed" data-i18n="exp.2.desc">Formação técnica em Desenvolvimento de Sistemas com ênfase em lógica de programação, banco de dados, versionamento com Git e desenvolvimento web.</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">JavaScript</span>
               <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">React</span>
@@ -228,15 +228,15 @@
 <section id="skills" class="py-24 sm:py-32 relative">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display">Expertise</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text">Habilidades</h2>
+      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="skills.section">Expertise</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="skills.title">Habilidades</h2>
       <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 
       <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
         <div class="w-11 h-11 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4"><i class="fa-solid fa-code"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4">Front-end</h3>
+        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.frontend">Front-end</h3>
         <div class="flex flex-wrap gap-2">
           <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">React</span>
           <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">React Native</span>
@@ -249,7 +249,7 @@
 
       <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
         <div class="w-11 h-11 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4"><i class="fa-solid fa-server"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4">Back-end</h3>
+        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.backend">Back-end</h3>
         <div class="flex flex-wrap gap-2">
           <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Java</span>
           <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Python</span>
@@ -262,7 +262,7 @@
 
       <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
         <div class="w-11 h-11 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4">Ferramentas &amp; Dados</h3>
+        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.tools">Ferramentas &amp; Dados</h3>
         <div class="flex flex-wrap gap-2">
           <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Git</span>
           <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Firebase</span>
@@ -280,8 +280,8 @@
 <section id="projects" class="py-24 sm:py-32 relative">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display">Portfólio</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text">Projetos</h2>
+      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="projects.section">Portfólio</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="projects.title">Projetos</h2>
       <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
     </div>
     <div id="projectsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
@@ -355,8 +355,8 @@
 <section id="certificates" class="py-24 sm:py-32 relative">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display">Certificações</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text">Certificados</h2>
+      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="certs.section">Certificações</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="certs.title">Certificados</h2>
       <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
@@ -417,12 +417,12 @@
 
 <footer class="relative z-10 border-t border-glassBorder py-10">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-gray-500">&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.</p>
+    <p class="text-sm text-gray-500" data-i18n="footer">&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.</p>
     <div class="flex items-center gap-6 text-sm text-gray-500">
-      <a href="#hero" class="hover:text-cyberCyan transition-colors">Início</a>
-      <a href="#experience" class="hover:text-cyberCyan transition-colors">Experiências</a>
-      <a href="#projects" class="hover:text-cyberCyan transition-colors">Projetos</a>
-      <a href="#certificates" class="hover:text-cyberCyan transition-colors">Certificados</a>
+      <a href="#hero" class="hover:text-cyberCyan transition-colors" data-i18n="nav.inicio">Início</a>
+      <a href="#experience" class="hover:text-cyberCyan transition-colors" data-i18n="nav.experiencias">Experiências</a>
+      <a href="#projects" class="hover:text-cyberCyan transition-colors" data-i18n="nav.projetos">Projetos</a>
+      <a href="#certificates" class="hover:text-cyberCyan transition-colors" data-i18n="nav.certificados">Certificados</a>
     </div>
   </div>
 </footer>
@@ -504,33 +504,54 @@ function updateActive(){
 }
 window.addEventListener('scroll',updateActive);window.addEventListener('load',updateActive);
 
-// ===== LANGUAGE TOGGLE (simple) =====
+// ===== LANGUAGE TOGGLE =====
 const langToggle=document.getElementById('langToggle');
 let currentLang='pt';
+const i18n={
+  pt:{
+    'nav.inicio':'Início','nav.experiencias':'Experiências','nav.habilidades':'Habilidades','nav.projetos':'Projetos','nav.certificados':'Certificados',
+    'hero.greeting':'Olá, eu sou','hero.sub':'Back-end &amp; Data',
+    'hero.bio':'Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.',
+    'exp.section':'Trajetória','exp.title':'Experiências',
+    'exp.1.title':'Ciência da Computação','exp.1.company':'Anhembi Morumbi — Graduação',
+    'exp.1.desc':'Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.',
+    'exp.2.title':'Desenvolvimento de Sistemas','exp.2.company':'SENAI — Curso Técnico',
+    'exp.2.desc':'Formação técnica em Desenvolvimento de Sistemas com ênfase em lógica de programação, banco de dados, versionamento com Git e desenvolvimento web.',
+    'skills.section':'Expertise','skills.title':'Habilidades',
+    'skills.frontend':'Front-end','skills.backend':'Back-end','skills.tools':'Ferramentas &amp; Dados',
+    'projects.section':'Portfólio','projects.title':'Projetos',
+    'certs.section':'Certificações','certs.title':'Certificados',
+    'curriculo':'Currículo','visits':'carregando...',
+    'footer':'&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.',
+  },
+  en:{
+    'nav.inicio':'Home','nav.experiencias':'Experience','nav.habilidades':'Skills','nav.projetos':'Projects','nav.certificados':'Certificates',
+    'hero.greeting':'Hello, I\'m','hero.sub':'Back-end &amp; Data',
+    'hero.bio':'Computer Science student. I build backend solutions with Java and Python, explore AI and systems & data analysis, and turn ideas into functional projects.',
+    'exp.section':'Career','exp.title':'Experience',
+    'exp.1.title':'Computer Science','exp.1.company':'Anhembi Morumbi — Bachelor\'s Degree',
+    'exp.1.desc':'Studying Computer Science focusing on data structures, algorithms, databases and software engineering. Developing practical projects with Java, Python and backend.',
+    'exp.2.title':'Systems Development','exp.2.company':'SENAI — Technical Course',
+    'exp.2.desc':'Technical training in Systems Development with emphasis on programming logic, databases, Git versioning and web development.',
+    'skills.section':'Expertise','skills.title':'Skills',
+    'skills.frontend':'Front-end','skills.backend':'Back-end','skills.tools':'Tools &amp; Data',
+    'projects.section':'Portfolio','projects.title':'Projects',
+    'certs.section':'Certifications','certs.title':'Certificates',
+    'curriculo':'Resume','visits':'loading...',
+    'footer':'&copy; 2026 Bruno Akira Furumori. All rights reserved.',
+  },
+};
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.dataset.i18n;
+    if(i18n[lang]&&i18n[lang][key])el.innerHTML=i18n[lang][key];
+  });
+}
 if(langToggle){
   langToggle.addEventListener('click',function(){
     currentLang=currentLang==='pt'?'en':'pt';
     this.textContent=currentLang==='pt'?'EN':'PT';
-    const texts=currentLang==='pt'?{
-      'heroTitle':'Bruno Akira<br><span style="background:linear-gradient(90deg,#00f0ff,#ff00e5);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Furumori</span>',
-      'heroSub':'Back-end &amp; Data',
-      'heroBio':'Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.',
-      'expSection':'Trajetória','expTitle':'Experiências',
-      'skillsSection':'Expertise','skillsTitle':'Habilidades',
-      'projectsSection':'Portfólio','projectsTitle':'Projetos',
-      'curriculo':'Currículo','visitPrefix':'carregando...',
-      'footerText':'&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.'
-    }:{
-      'heroTitle':'Bruno Akira<br><span style="background:linear-gradient(90deg,#00f0ff,#ff00e5);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Furumori</span>',
-      'heroSub':'Back-end &amp; Data',
-      'heroBio':'Computer Science student. I build backend solutions with Java and Python, explore AI and systems & data analysis, and turn ideas into functional projects.',
-      'expSection':'Career','expTitle':'Experience',
-      'skillsSection':'Expertise','skillsTitle':'Skills',
-      'projectsSection':'Portfolio','projectsTitle':'Projects',
-      'curriculo':'Resume','visitPrefix':'loading...',
-      'footerText':'&copy; 2026 Bruno Akira Furumori. All rights reserved.'
-    };
-    document.querySelector('footer p').innerHTML=texts.footerText;
+    applyLang(currentLang);
   });
 }
 
