@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio | Bruno Akira Furumori</title>
+  <meta property="og:title" content="Bruno Akira Furumori — Desenvolvedor Back-end">
+  <meta property="og:description" content="Portfólio pessoal com projetos, certificados e experiências em Java, Python, React e muito mais.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/163860585?v=4">
+  <meta property="og:url" content="https://portifolio-5c039.web.app">
+  <meta property="og:type" content="website">
+  <meta name="description" content="Portfólio de Bruno Akira Furumori — Desenvolvedor Back-end. Conheça meus projetos, certificados e habilidades.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -72,9 +78,9 @@
     <div class="flex items-center gap-4">
       <button id="langToggle" class="text-xs font-semibold uppercase tracking-widest text-mutedText hover:text-lightText transition-colors border border-transparent hover:border-purpleAccent rounded-full px-3 py-1">EN</button>
       <button id="hamburgerBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
-        <span class="hamburger-line block w-5 h-0.5 bg-darkText rounded"></span>
-        <span class="hamburger-line block w-5 h-0.5 bg-darkText rounded"></span>
-        <span class="hamburger-line block w-5 h-0.5 bg-darkText rounded"></span>
+        <span class="hamburger-line block w-5 h-0.5 bg-lightText rounded"></span>
+        <span class="hamburger-line block w-5 h-0.5 bg-lightText rounded"></span>
+        <span class="hamburger-line block w-5 h-0.5 bg-lightText rounded"></span>
       </button>
     </div>
   </div>
@@ -106,7 +112,7 @@
           <span class="text-purpleAccent" data-i18n="hero.role">Desenvolvedor Back-end</span>
         </h1>
         <p class="mt-5 text-mutedText text-base sm:text-lg leading-relaxed max-w-lg" data-i18n="hero.bio">
-          Estudante de Ciência da Computação apaixonado por tecnologia. Crio soluções backend com Java e Python, exploro IA e análise de dados, e transformo ideias em projetos funcionais.
+          Estudante de Ciência da Computação apaixonado por tecnologia. Crio soluções backend com Java e Python, exploro IA e análise de sistema e dados, e transformo ideias em projetos funcionais.
         </p>
         <div class="flex items-center gap-4 mt-8">
           <a href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full border border-purpleAccent/40 text-mutedText hover:bg-purpleAccent hover:text-white hover:border-purpleAccent transition-all duration-200" aria-label="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
@@ -115,10 +121,10 @@
           <a href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-full border border-purpleAccent/30 text-lightText hover:bg-purpleAccent hover:text-white hover:border-purpleAccent transition-all duration-200 ml-2"><i class="fa-solid fa-download"></i> <span data-i18n="curriculo">Currículo</span></a>
         </div>
         <div class="mt-8 flex flex-wrap gap-3">
-          <span class="px-4 py-1.5 rounded-full bg-pastelLavender/50 text-sm font-medium text-lightText">Java</span>
-          <span class="px-4 py-1.5 rounded-full bg-pastelPeach/50 text-sm font-medium text-lightText">Python</span>
-          <span class="px-4 py-1.5 rounded-full bg-pastelMint/50 text-sm font-medium text-lightText">JavaScript</span>
-          <span class="px-4 py-1.5 rounded-full bg-pastelRose/50 text-sm font-medium text-lightText">React</span>
+          <span class="px-4 py-1.5 rounded-full bg-purpleAccent/15 text-sm font-medium text-purpleAccent">Java</span>
+          <span class="px-4 py-1.5 rounded-full bg-purpleAccent/15 text-sm font-medium text-purpleAccent">Python</span>
+          <span class="px-4 py-1.5 rounded-full bg-purpleAccent/15 text-sm font-medium text-purpleAccent">JavaScript</span>
+          <span class="px-4 py-1.5 rounded-full bg-purpleAccent/15 text-sm font-medium text-purpleAccent">React</span>
         </div>
       </div>
       <div class="order-1 md:order-2 flex justify-center md:justify-end">
@@ -371,7 +377,7 @@
 
 <footer class="bg-cardBg border-t border-purpleAccent/10 py-10">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-mutedText">&copy; <span id="year"></span> Bruno Akira Furumori. <span data-i18n="footer.rights">Todos os direitos reservados.</span></span></p>
+    <p class="text-sm text-mutedText">&copy; <span id="year"></span> Bruno Akira Furumori. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
     <div class="flex items-center gap-6 text-sm text-mutedText">
       <a href="#hero" class="hover:text-lightText transition-colors" data-i18n="footer.inicio">Início</a>
       <a href="#experience" class="hover:text-lightText transition-colors" data-i18n="footer.experiencias">Experiências</a>
@@ -441,7 +447,7 @@ const i18n = {
     'hero.greeting': 'Olá, eu sou',
     'hero.name': 'Bruno Akira',
     'hero.role': 'Desenvolvedor Back-end',
-    'hero.bio': 'Estudante de Ciência da Computação apaixonado por tecnologia. Crio soluções backend com Java e Python, exploro IA e análise de dados, e transformo ideias em projetos funcionais.',
+    'hero.bio': 'Estudante de Ciência da Computação apaixonado por tecnologia. Crio soluções backend com Java e Python, exploro IA e análise de sistema e dados, e transformo ideias em projetos funcionais.',
     'exp.section': 'Trajetória',
     'exp.title': 'Experiências',
     'exp.1.title': 'Ciência da Computação',
@@ -476,7 +482,7 @@ const i18n = {
     'hero.greeting': 'Hello, I\'m',
     'hero.name': 'Bruno Akira',
     'hero.role': 'Back-end Developer',
-    'hero.bio': 'Computer Science student passionate about technology. I build backend solutions with Java and Python, explore AI and data analysis, and turn ideas into functional projects.',
+    'hero.bio': 'Computer Science student passionate about technology. I build backend solutions with Java and Python, explore AI and systems & data analysis, and turn ideas into functional projects.',
     'exp.section': 'Career',
     'exp.title': 'Experience',
     'exp.1.title': 'Computer Science',
@@ -535,14 +541,22 @@ const firebaseConfig = {
     const app = firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore(app);
     const ref = db.collection('visitas').doc('contador');
-    await db.runTransaction(async (t) => {
-      const doc = await t.get(ref);
-      if (!doc.exists) {
-        t.set(ref, { total: 1 });
-      } else {
-        t.update(ref, { total: firebase.firestore.FieldValue.increment(1) });
-      }
-    });
+
+    const last = localStorage.getItem('lastVisit');
+    const now = Date.now();
+    const thirtyMin = 30 * 60 * 1000;
+    if (!last || now - Number(last) >= thirtyMin) {
+      localStorage.setItem('lastVisit', now.toString());
+      await db.runTransaction(async (t) => {
+        const doc = await t.get(ref);
+        if (!doc.exists) {
+          t.set(ref, { total: 1 });
+        } else {
+          t.update(ref, { total: firebase.firestore.FieldValue.increment(1) });
+        }
+      });
+    }
+
     const snap = await ref.get();
     const total = snap.data()?.total || 0;
     const el = document.getElementById('visitCount');
