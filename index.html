@@ -39,26 +39,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    @keyframes grain { 0%,100% { transform:translate(0,0) } 10% { transform:translate(-5%,-5%) } 20% { transform:translate(-10%,5%) } 30% { transform:translate(5%,-10%) } 40% { transform:translate(-5%,15%) } 50% { transform:translate(-10%,10%) } 60% { transform:translate(15%,0) } 70% { transform:translate(0,10%) } 80% { transform:translate(-15%,0) } 90% { transform:translate(10%,5%) } }
-    @keyframes float { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-12px) } }
-    @keyframes pulseGlow { 0%,100% { opacity:.3 } 50% { opacity:.7 } }
-    @keyframes aurora { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
-    @keyframes nodePulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,240,255,.4)} 50%{box-shadow:0 0 0 12px rgba(0,240,255,0)} }
-    @keyframes lineAnim { to { stroke-dashoffset: -100 } }
-    @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
-    @keyframes fadeScale { 0%{opacity:0;transform:scale(.92)} 100%{opacity:1;transform:scale(1)} }
-
-    * { scroll-behavior:smooth; }
+    html { scroll-behavior:smooth; }
     body { font-family:'Inter',system-ui,sans-serif; background-color:#05050a; color:#e8e8ed; overflow-x:hidden; }
     ::selection { background:#00f0ff; color:#05050a; }
     ::-webkit-scrollbar { width:6px; }
     ::-webkit-scrollbar-track { background:#0a0a14; }
     ::-webkit-scrollbar-thumb { background:rgba(0,240,255,.3); border-radius:3px; }
-
-    #grain-overlay { position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px;animation:grain .5s steps(4) infinite; }
-    #aurora-bg { position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden; }
-    #aurora-bg::before { content:'';position:absolute;top:-40%;left:-20%;width:140%;height:80%;background:radial-gradient(ellipse at 30% 50%,rgba(0,240,255,.06) 0%,transparent 60%);animation:aurora 12s linear infinite; }
-    #aurora-bg::after { content:'';position:absolute;bottom:-30%;right:-20%;width:140%;height:70%;background:radial-gradient(ellipse at 70% 50%,rgba(255,0,229,.05) 0%,transparent 60%);animation:aurora 15s linear infinite reverse; }
+    @keyframes pulseGlow { 0%,100% { opacity:.3 } 50% { opacity:.7 } }
+    @keyframes nodePulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,240,255,.4)} 50%{box-shadow:0 0 0 12px rgba(0,240,255,0)} }
 
     .glass-card { background:rgba(255,255,255,.04); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.06); }
     .glass-card:hover { border-color:rgba(0,240,255,.15); }
@@ -69,9 +57,6 @@
 
     .project-card { transform-origin:center bottom; transition:transform .45s cubic-bezier(.34,1.56,.64,1),opacity .4s ease,box-shadow .4s ease; }
     .project-card:hover { transform:translateY(-8px) scale(1.01); box-shadow:0 24px 60px -12px rgba(0,240,255,.12); }
-    .filter-btn { transition:all .35s cubic-bezier(.34,1.56,.64,1); }
-    .filter-btn.active { background:linear-gradient(135deg,rgba(0,240,255,.15),rgba(255,0,229,.1)); border-color:rgba(0,240,255,.3); color:#00f0ff; }
-    .filter-btn:hover { border-color:rgba(0,240,255,.2); color:#e8e8ed; }
 
     #particles-canvas { position:fixed;inset:0;z-index:0;pointer-events:none; }
 
@@ -106,8 +91,6 @@
 </head>
 <body>
 
-<div id="grain-overlay"></div>
-<div id="aurora-bg"></div>
 <canvas id="particles-canvas"></canvas>
 
 <nav class="glass-card fixed top-0 left-0 right-0 z-50 border-t-0 border-x-0 transition-all duration-300" style="background:rgba(5,5,10,.72);">
@@ -118,7 +101,7 @@
       <li><a href="#experience" class="nav-link">Experiências</a></li>
       <li><a href="#skills" class="nav-link">Habilidades</a></li>
       <li><a href="#projects" class="nav-link">Projetos</a></li>
-      <li><a href="#contact" class="nav-link">Contato</a></li>
+      <li><a href="#certificates" class="nav-link">Certificados</a></li>
     </ul>
     <div class="flex items-center gap-3">
       <button id="langToggle" class="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-cyberCyan transition-colors border border-glassBorder hover:border-cyberCyan/30 rounded-full px-3 py-1">EN</button>
@@ -135,7 +118,7 @@
       <li><a href="#experience" class="nav-link block">Experiências</a></li>
       <li><a href="#skills" class="nav-link block">Habilidades</a></li>
       <li><a href="#projects" class="nav-link block">Projetos</a></li>
-      <li><a href="#contact" class="nav-link block">Contato</a></li>
+      <li><a href="#certificates" class="nav-link block">Certificados</a></li>
     </ul>
   </div>
 </nav>
@@ -301,14 +284,9 @@
       <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text">Projetos</h2>
       <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
     </div>
-    <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
-      <button class="filter-btn active px-5 py-2 rounded-full text-sm font-medium border border-glassBorder bg-transparent text-gray-400" data-filter="all">Todos</button>
-      <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-glassBorder bg-transparent text-gray-400" data-filter="web">Web</button>
-      <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-glassBorder bg-transparent text-gray-400" data-filter="backend">Back-end</button>
-    </div>
     <div id="projectsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border" data-category="web">
+      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
         <div class="h-44 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop&auto=format" alt="AkrScout" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
         </div>
@@ -328,7 +306,7 @@
         </div>
       </div>
 
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border" data-category="web">
+      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
         <div class="h-44 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=340&fit=crop&auto=format" alt="Controle de Locações" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
         </div>
@@ -348,7 +326,7 @@
         </div>
       </div>
 
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border" data-category="web">
+      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
         <div class="h-44 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=340&fit=crop&auto=format" alt="EstacaoAkira" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
         </div>
@@ -372,29 +350,65 @@
   </div>
 </section>
 
-<section id="contact" class="py-24 sm:py-32 relative">
+
+
+<section id="certificates" class="py-24 sm:py-32 relative">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display">Contato</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text">Vamos conversar</h2>
+      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display">Certificações</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text">Certificados</h2>
       <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
-      <p class="text-gray-500 mt-4 max-w-md mx-auto text-sm reveal">Tem um projeto ou ideia? Mande uma mensagem.</p>
     </div>
-    <div class="max-w-lg mx-auto reveal">
-      <form id="contactForm" class="glass-card rounded-2xl p-6 sm:p-8 glow-border space-y-5">
-        <div>
-          <label for="email" class="block text-xs font-medium text-gray-400 mb-1.5 tracking-wide">E-mail</label>
-          <input type="email" id="email" name="email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-glassBorder text-white placeholder-gray-600 text-sm focus:outline-none focus:border-cyberCyan/40 focus:ring-1 focus:ring-cyberCyan/20 transition-all">
-        </div>
-        <div>
-          <label for="message" class="block text-xs font-medium text-gray-400 mb-1.5 tracking-wide">Mensagem</label>
-          <textarea id="message" name="message" required rows="4" placeholder="Sua mensagem..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-glassBorder text-white placeholder-gray-600 text-sm focus:outline-none focus:border-cyberCyan/40 focus:ring-1 focus:ring-cyberCyan/20 transition-all resize-none"></textarea>
-        </div>
-        <button type="submit" id="submitBtn" class="w-full py-3 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2" style="background:linear-gradient(135deg,rgba(0,240,255,.12),rgba(255,0,229,.08));border:1px solid rgba(0,240,255,.15);color:#00f0ff;hover:background:linear-gradient(135deg,rgba(0,240,255,.2),rgba(255,0,229,.15));">
-          <i class="fa-solid fa-paper-plane"></i>
-          <span>Enviar Mensagem</span>
-        </button>
-      </form>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+
+      <a href="PDFs/Certificados/FLUÊNCIA___FUNDAMENTOS_DA_INTELIGÊNCIA_ARTIFICIAL-Certificado_2711422 (3).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Senai.png" alt="Senai" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">Fundamentos da Inteligência Artificial</h3>
+        <p class="text-xs text-gray-500">Senai — Jun 2025</p>
+      </a>
+
+      <a href="PDFs/Certificados/Certificado_Inteligências Artificiais Generativas Aplicada a Programação - ChatGPT (3).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Senai.png" alt="Senai" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">IA Generativa Aplicada à Programação</h3>
+        <p class="text-xs text-gray-500">ChatGPT & Senai — Jul 2025</p>
+      </a>
+
+      <a href="PDFs/Certificados/KodeKloud_Course Completion.pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_KODEKLOUD.png" alt="KodeKloud" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">KodeKloud AWS</h3>
+        <p class="text-xs text-gray-500">KodeKloud — Mai 2026</p>
+      </a>
+
+      <a href="PDFs/Certificados/Bruno (2).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">Inteligência Artificial e Computacional</h3>
+        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
+      </a>
+
+      <a href="PDFs/Certificados/doc (2) (1).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">Chatbots</h3>
+        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
+      </a>
+
+      <a href="PDFs/Certificados/0f30b0868e6f68c8fad73ba88e8bd705 (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">Python Development</h3>
+        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
+      </a>
+
+      <a href="PDFs/Certificados/31ea89d1e6c24ccba581ad506960b3d7 (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">Python</h3>
+        <p class="text-xs text-gray-500">FIAP — Ago 2025</p>
+      </a>
+
+      <a href="PDFs/Certificados/90dd24886be4993d4769d5673a309a3f (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
+        <h3 class="text-sm font-semibold text-white mb-1">Big Data & Analytics</h3>
+        <p class="text-xs text-gray-500">FIAP — Mai 2026</p>
+      </a>
+
     </div>
   </div>
 </section>
@@ -408,7 +422,7 @@
       <a href="#hero" class="hover:text-cyberCyan transition-colors">Início</a>
       <a href="#experience" class="hover:text-cyberCyan transition-colors">Experiências</a>
       <a href="#projects" class="hover:text-cyberCyan transition-colors">Projetos</a>
-      <a href="#contact" class="hover:text-cyberCyan transition-colors">Contato</a>
+      <a href="#certificates" class="hover:text-cyberCyan transition-colors">Certificados</a>
     </div>
   </div>
 </footer>
@@ -466,25 +480,6 @@ document.querySelectorAll('.node-dot').forEach(dot=>{
   });
 });
 
-// ===== PROJECT FILTER =====
-const filterBtns=document.querySelectorAll('.filter-btn');
-const projectCards=document.querySelectorAll('.project-card');
-filterBtns.forEach(btn=>{
-  btn.addEventListener('click',function(){
-    filterBtns.forEach(b=>b.classList.remove('active'));
-    this.classList.add('active');
-    const filter=this.dataset.filter;
-    projectCards.forEach((card,i)=>{
-      if(filter==='all'||card.dataset.category===filter){
-        card.style.display='block';
-        card.style.animation=`fadeScale .45s ${i*.06}s cubic-bezier(.34,1.56,.64,1) both`;
-      }else{
-        card.style.display='none';
-      }
-    });
-  });
-});
-
 // ===== HAMBURGER =====
 const hamburgerBtn=document.getElementById('hamburgerBtn');
 const mobileMenu=document.getElementById('mobile-menu');
@@ -523,9 +518,7 @@ if(langToggle){
       'expSection':'Trajetória','expTitle':'Experiências',
       'skillsSection':'Expertise','skillsTitle':'Habilidades',
       'projectsSection':'Portfólio','projectsTitle':'Projetos',
-      'contactSection':'Contato','contactTitle':'Vamos conversar','contactSub':'Tem um projeto ou ideia? Mande uma mensagem.',
-      'filterAll':'Todos','filterWeb':'Web','filterBackend':'Back-end',
-      'submitBtn':'Enviar Mensagem','curriculo':'Currículo','visitPrefix':'carregando...',
+      'curriculo':'Currículo','visitPrefix':'carregando...',
       'footerText':'&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.'
     }:{
       'heroTitle':'Bruno Akira<br><span style="background:linear-gradient(90deg,#00f0ff,#ff00e5);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Furumori</span>',
@@ -534,9 +527,7 @@ if(langToggle){
       'expSection':'Career','expTitle':'Experience',
       'skillsSection':'Expertise','skillsTitle':'Skills',
       'projectsSection':'Portfolio','projectsTitle':'Projects',
-      'contactSection':'Contact','contactTitle':'Let\'s talk','contactSub':'Have a project or idea? Send me a message.',
-      'filterAll':'All','filterWeb':'Web','filterBackend':'Back-end',
-      'submitBtn':'Send Message','curriculo':'Resume','visitPrefix':'loading...',
+      'curriculo':'Resume','visitPrefix':'loading...',
       'footerText':'&copy; 2026 Bruno Akira Furumori. All rights reserved.'
     };
     document.querySelector('footer p').innerHTML=texts.footerText;
@@ -547,23 +538,6 @@ if(langToggle){
 const firebaseConfig={apiKey:'',authDomain:'',projectId:'',storageBucket:'',messagingSenderId:'',appId:''};
 let db;
 try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initializeApp(firebaseConfig);db=firebase.firestore(app)}}catch(e){console.warn('Firebase não configurado.')}
-
-// CONTACT FORM
-const contactForm=document.getElementById('contactForm');
-if(contactForm){
-  contactForm.addEventListener('submit',async function(e){
-    e.preventDefault();
-    const email=document.getElementById('email').value.trim();
-    const message=document.getElementById('message').value.trim();
-    if(!email||!message)return;
-    const btn=document.getElementById('submitBtn');
-    const orig=btn.innerHTML;
-    btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-    if(db){try{await db.collection('contatos').add({email,message,createdAt:new Date().toISOString()});alert('Mensagem enviada com sucesso!');contactForm.reset()}catch(err){alert('Erro ao enviar.');console.error(err)}}
-    else{await new Promise(r=>setTimeout(r,800));alert('Mensagem enviada com sucesso!');contactForm.reset()}
-    btn.disabled=false;btn.innerHTML=orig;
-  });
-}
 
 // VISIT COUNTER
 if(db){
