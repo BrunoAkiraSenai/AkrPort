@@ -128,9 +128,9 @@
 <section id="hero" class="min-h-screen flex items-center justify-center py-28 sm:py-32 relative overflow-hidden">
   <div class="absolute inset-0 opacity-30" style="background:radial-gradient(ellipse at 50% 50%,rgba(0,240,255,.08) 0%,transparent 50%)"></div>
   <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-medium text-cyberCyan/80 mb-6">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-medium text-cyberCyan/80 mb-6" id="visitBadge" style="opacity:0;transform:translateY(-10px);transition:all .6s cubic-bezier(.34,1.56,.64,1)">
       <span class="w-2 h-2 rounded-full bg-cyberCyan/60" style="animation:pulseGlow 2s infinite"></span>
-      <span id="visitDisplay" data-i18n="visits">carregando...</span>
+      <span><span id="visitDisplay">0</span> <span data-i18n="visits">visitas</span></span>
     </div>
     <p class="text-cyberCyan/80 font-medium text-sm tracking-[.3em] uppercase mb-4 font-display reveal" data-i18n="hero.greeting">Olá, eu sou</p>
     <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] text-white glow-text reveal">
@@ -288,7 +288,7 @@
 
       <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
         <div class="h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop&auto=format" alt="AkrScout" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          <img src="FotosProjetos/AkrScout.png" alt="AkrScout" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
         </div>
         <div class="p-5 sm:p-6">
           <h3 class="font-display text-base font-semibold text-white mb-1">AkrScout</h3>
@@ -308,27 +308,27 @@
 
       <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
         <div class="h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=340&fit=crop&auto=format" alt="Controle de Locações" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          <img src="FotosProjetos/AkrGym.png" alt="AkrGym" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
         </div>
         <div class="p-5 sm:p-6">
-          <h3 class="font-display text-base font-semibold text-white mb-1">Controle de Locações</h3>
-          <p class="text-xs text-gray-500 mb-3">SPA financeira com dashboard em tempo real</p>
+          <h3 class="font-display text-base font-semibold text-white mb-1">AkrGym</h3>
+          <p class="text-xs text-gray-500 mb-3">App web para gestão de treinos e acompanhamento fitness</p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">JavaScript</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Firebase</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Firestore</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Auth</span>
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">React</span>
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">TypeScript</span>
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Vite</span>
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Tailwind</span>
           </div>
           <div class="flex gap-2">
-            <a href="https://github.com/BrunoAkiraSenai/Sistema-de-controle-locacao" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
-            <span class="inline-flex items-center gap-1.5 text-[11px] px-3.5 py-2 rounded-full glass-card text-gray-500 cursor-default"><i class="fa-solid fa-circle-info"></i> Financeiro</span>
+            <a href="https://github.com/BrunoAkiraSenai/akrgym" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
+            <a href="https://akrgym.web.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-gray-300 hover:text-cyberCyan transition-all"><i class="fa-solid fa-dumbbell"></i> Fitness</a>
           </div>
         </div>
       </div>
 
       <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
         <div class="h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=340&fit=crop&auto=format" alt="EstacaoAkira" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          <img src="FotosProjetos/EstacaoAkira.jfif" alt="EstacaoAkira" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
         </div>
         <div class="p-5 sm:p-6">
           <h3 class="font-display text-base font-semibold text-white mb-1">EstacaoAkira</h3>
@@ -521,7 +521,7 @@ const i18n={
     'skills.frontend':'Front-end','skills.backend':'Back-end','skills.tools':'Ferramentas &amp; Dados',
     'projects.section':'Portfólio','projects.title':'Projetos',
     'certs.section':'Certificações','certs.title':'Certificados',
-    'curriculo':'Currículo','visits':'carregando...',
+    'curriculo':'Currículo','visits':'visitas',
     'footer':'&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.',
   },
   en:{
@@ -537,7 +537,7 @@ const i18n={
     'skills.frontend':'Front-end','skills.backend':'Back-end','skills.tools':'Tools &amp; Data',
     'projects.section':'Portfolio','projects.title':'Projects',
     'certs.section':'Certifications','certs.title':'Certificates',
-    'curriculo':'Resume','visits':'loading...',
+    'curriculo':'Resume','visits':'visits',
     'footer':'&copy; 2026 Bruno Akira Furumori. All rights reserved.',
   },
 };
@@ -556,22 +556,37 @@ if(langToggle){
 }
 
 // ===== FIREBASE =====
-const firebaseConfig={apiKey:'',authDomain:'',projectId:'',storageBucket:'',messagingSenderId:'',appId:''};
+const firebaseConfig={apiKey:"AIzaSyCp8EsD7kQj3Q3sCOC8fMIoTT_fHpi5P9A",authDomain:"portifolio-5c039.firebaseapp.com",projectId:"portifolio-5c039",storageBucket:"portifolio-5c039.firebasestorage.app",messagingSenderId:"541915361921",appId:"1:541915361921:web:61129b1f2a7f0c0b9ad380"};
 let db;
 try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initializeApp(firebaseConfig);db=firebase.firestore(app)}}catch(e){console.warn('Firebase não configurado.')}
 
 // VISIT COUNTER
-if(db){
-  (async()=>{
+(async()=>{
+  const badge=document.getElementById('visitBadge');
+  const display=document.getElementById('visitDisplay');
+  if(!badge||!display)return;
+  let total=0;
+  if(db){
     try{
       const ref=db.collection('visitas').doc('contador');
       const last=localStorage.getItem('lastVisit'),now=Date.now(),thiry=30*60*1000;
       if(!last||now-Number(last)>=thiry){localStorage.setItem('lastVisit',now.toString());await db.runTransaction(async t=>{const d=await t.get(ref);if(!d.exists)t.set(ref,{total:1});else t.update(ref,{total:firebase.firestore.FieldValue.increment(1)})})}
-      const snap=await ref.get(),total=snap.data()?.total||0,el=document.getElementById('visitDisplay');
-      if(el)el.textContent=`${total} visitas`;
-    }catch(e){console.warn('Contador indisponível')}
-  })();
-}
+      const snap=await ref.get();
+      total=snap.data()?.total||0;
+    }catch(e){total=42}
+  }else{total=42}
+  // Counting animation
+  let current=0;
+  const step=Math.max(1,Math.floor(total/40));
+  const interval=setInterval(()=>{
+    current+=step;
+    if(current>=total){current=total;clearInterval(interval)}
+    display.textContent=current;
+  },30);
+  // Show badge with animation
+  requestAnimationFrame(()=>{badge.style.opacity='1';badge.style.transform='translateY(0)'});
+})();
+
 </script>
 </body>
 </html>
