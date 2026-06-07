@@ -569,13 +569,30 @@ try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initi
   if(db){
     try{
       const ref=db.collection('visitas').doc('contador');
-      const last=localStorage.getItem('lastVisit'),now=Date.now(),thiry=30*60*1000;
-      if(!last||now-Number(last)>=thiry){localStorage.setItem('lastVisit',now.toString());await db.runTransaction(async t=>{const d=await t.get(ref);if(!d.exists)t.set(ref,{total:1});else t.update(ref,{total:firebase.firestore.FieldValue.increment(1)})})}
+      const ipRef=db.collection('visitas_unicas');
+      // Get IP via free API
+      const ipRes=await fetch('https://api.ipify.org?format=json').catch(()=>null);
+      const ip=ipRes?await ipRes.json():null;
+      // Simple hash function for IP privacy
+      let hash='anon';
+      if(ip&&ip.ip){
+        let h=0;
+        for(let i=0;i<ip.ip.length;i++){h=((h<<5)-h)+ip.ip.charCodeAt(i);h|=0}
+        hash='v_'+Math.abs(h).toString(36);
+      }
+      // Check if this IP already visited
+      const ipDoc=await ipRef.doc(hash).get().catch(()=>null);
+      if((!ipDoc||!ipDoc.exists)&&hash!=='anon'){
+        await ipRef.doc(hash).set({firstVisit:new Date().toISOString()});
+        await db.runTransaction(async t=>{
+          const d=await t.get(ref);
+          if(!d.exists)t.set(ref,{total:1});else t.update(ref,{total:firebase.firestore.FieldValue.increment(1)})
+        });
+      }
       const snap=await ref.get();
       total=snap.data()?.total||0;
     }catch(e){total=42}
   }else{total=42}
-  // Counting animation
   let current=0;
   const step=Math.max(1,Math.floor(total/40));
   const interval=setInterval(()=>{
@@ -583,7 +600,6 @@ try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initi
     if(current>=total){current=total;clearInterval(interval)}
     display.textContent=current;
   },30);
-  // Show badge with animation
   requestAnimationFrame(()=>{badge.style.opacity='1';badge.style.transform='translateY(0)'});
 })();
 

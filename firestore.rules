@@ -4,5 +4,8 @@ service cloud.firestore {
     match /visitas/{document} {
       allow read, write: if true;
     }
+    match /visitas_unicas/{document} {
+      allow read, write: if true;
+    }
   }
 }
