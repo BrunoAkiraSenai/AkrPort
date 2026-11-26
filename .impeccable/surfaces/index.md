@@ -13,7 +13,7 @@ STORY: O visitante entende em segundos que ele faz back-end e dados e mantém si
 
 FIRST VIEWPORT: O nome em condensada enorme, à esquerda; um bloco de título com foto, cargo, local, formação, foco e "leituras" (o contador), à direita. Abaixo, ocupando toda a largura, o diagrama de fluxo origem → processamento → dados → interface, com uma linha por projeto; cada linha leva à folha do projeto. A ação principal, "Ver projetos", fica junto do resumo, com o e-mail ao lado.
 
-FORM: datasheet / desenho técnico, que foi a primeira opção da lista. seed: none (unavailable). O launcher do Impeccable não foi executado; a direção foi escolhida pelo Akira entre três opções apresentadas.
+FORM: datasheet / desenho técnico, que foi a primeira opção da lista. seed: none (pinned). O concept-seed não rodou porque o launcher binário do Impeccable não foi executado. A direção foi escolhida pelo Akira em 2026-11-25 entre três opções apresentadas, com a resposta "a parte tecnica".
 
 Assinatura: passar o mouse ou o foco numa linha do diagrama acende o fluxo daquele projeto (o tracejado percorre os conectores). Movimento: um único momento, em que os conectores se desenham da esquerda para a direita na primeira vez que entram na tela; com reduced-motion, ficam estáticos.
 

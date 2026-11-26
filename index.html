@@ -89,12 +89,13 @@
     ::-webkit-scrollbar-thumb{ background:#9aa3ad; border:2px solid var(--desk); }
     ::-webkit-scrollbar-thumb:hover{ background:var(--ink); }
     :focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
+    [hidden]{ display:none!important; }
     .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
     .icon{ width:1.1em; height:1.1em; flex:none; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
     .data{ font-family:var(--f-data); font-size:.8125rem; letter-spacing:0; font-variant-numeric:tabular-nums; }
 
     /* ===== Barra superior ===== */
-    .bar{ position:sticky; top:0; z-index:20; background:rgba(246,247,244,.96); border-bottom:1px solid var(--ink); }
+    .bar{ position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--ink); }
     .bar-in{ position:relative; max-width:1240px; margin:0 auto; padding:0 var(--pad); height:3.75rem; display:flex; align-items:center; gap:1.5rem; }
     .mark{ display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:var(--f-display); font-weight:600; font-size:1.125rem; letter-spacing:.02em; text-transform:uppercase; white-space:nowrap; }
     .mark-box{ width:2rem; height:2rem; display:grid; place-items:center; background:var(--signal); border:1px solid var(--ink); font-weight:700; font-size:1rem; }
@@ -106,7 +107,7 @@
     .menu-btn{ display:none; margin-left:auto; background:transparent; border:1px solid var(--ink); color:var(--ink); padding:.45rem .6rem; font:600 .875rem var(--f-body); cursor:pointer; align-items:center; gap:.4rem; }
 
     /* ===== Folhas ===== */
-    main{ max-width:1240px; margin:0 auto; padding:clamp(1rem,2.5vw,2rem) var(--pad) 0; display:grid; grid-template-columns:minmax(0,1fr); gap:clamp(1.25rem,2.5vw,2rem); }
+    main{ max-width:1240px; margin:0 auto; padding:clamp(.75rem,1.6vw,1.25rem) var(--pad) 0; display:grid; grid-template-columns:minmax(0,1fr); gap:clamp(1.25rem,2.5vw,2rem); }
     .sheet{
       position:relative; background-color:var(--paper); border:1px solid var(--ink);
       background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
@@ -122,13 +123,14 @@
 
     /* ===== Capa ===== */
     .cover-grid{ display:grid; grid-template-columns:minmax(0,1fr) 22rem; gap:clamp(1.5rem,4vw,3.5rem); align-items:start; }
-    h1{ font-size:clamp(3.25rem,9.2vw,6rem); line-height:.86; letter-spacing:-.01em; }
+    #topo > .sheet-body{ padding-top:clamp(1.25rem,2.4vw,2rem); padding-bottom:clamp(1rem,2vw,1.5rem); }
+    h1{ font-size:clamp(3.25rem,8.4vw,5.25rem); line-height:.86; letter-spacing:-.01em; }
     h1 span{ display:block; }
-    .role{ margin:1.25rem 0 0; font-family:var(--f-display); font-weight:600; font-size:clamp(1.5rem,3vw,2.1rem); text-transform:uppercase; line-height:1; }
+    .role{ margin:1rem 0 0; font-family:var(--f-display); font-weight:600; font-size:clamp(1.5rem,3vw,2.1rem); text-transform:uppercase; line-height:1; }
     .role mark{ background:var(--signal); color:var(--ink); padding:.12em .3em .04em; border:1px solid var(--ink); }
-    .lede{ margin:1.5rem 0 0; font-size:clamp(1.125rem,1.6vw,1.3rem); line-height:1.55; color:var(--ink-2); max-width:58ch; }
+    .lede{ margin:1.1rem 0 0; font-size:clamp(1.125rem,1.5vw,1.2rem); line-height:1.55; color:var(--ink-2); max-width:58ch; }
     .lede strong{ color:var(--ink); font-weight:600; }
-    .actions{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top:2rem; }
+    .actions{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1.5rem; }
     .btn{ display:inline-flex; align-items:center; gap:.55rem; text-decoration:none; font:600 .9375rem var(--f-body); letter-spacing:.01em; padding:.8rem 1.15rem; border:1px solid var(--ink); background:var(--paper); color:var(--ink); transition:background-color .18s var(--ease-out),color .18s var(--ease-out),transform .18s var(--ease-out); }
     .btn:hover{ background:var(--signal); }
     .actions .btn{ max-width:100%; overflow-wrap:anywhere; }
@@ -146,30 +148,30 @@
     .tb dl{ margin:0; }
     .tb-row{ display:grid; grid-template-columns:6.5rem 1fr; border-bottom:1px solid var(--line); }
     .tb-row:last-child{ border-bottom:0; }
-    .tb dt{ padding:.6rem .9rem; font-family:var(--f-data); font-size:.6875rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3); border-right:1px solid var(--line); }
+    .tb dt{ padding:.6rem .9rem; font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); border-right:1px solid var(--line); }
     .tb dd{ margin:0; padding:.55rem .9rem; font-size:.9375rem; line-height:1.4; }
     .live{ display:inline-flex; align-items:center; gap:.45rem; }
     .live::before{ content:''; width:.5rem; height:.5rem; border-radius:50%; background:var(--ok); box-shadow:0 0 0 3px rgba(23,128,74,.15); }
 
     /* Diagrama de fluxo */
-    .flow{ margin-top:clamp(2rem,4vw,3rem); border-top:1px solid var(--ink); padding-top:1.25rem; }
-    .flow-cap{ display:flex; justify-content:space-between; align-items:baseline; gap:.5rem 1.5rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .flow{ margin-top:clamp(1.25rem,2vw,1.5rem); border-top:1px solid var(--ink); padding-top:1rem; }
+    .flow-cap{ display:flex; justify-content:space-between; align-items:baseline; gap:.5rem 1.5rem; flex-wrap:wrap; margin-bottom:.6rem; }
     .flow-cap h2{ font-size:1.625rem; }
     .flow-cap p{ margin:0; color:var(--ink-3); font-size:.9375rem; }
     .flow{ --cols:8.5rem minmax(0,1fr) 2.25rem minmax(0,1fr) 2.25rem minmax(0,1fr) 2.25rem minmax(0,1fr); }
     .flow-head,.flow-row{ display:grid; grid-template-columns:var(--cols); align-items:center; }
-    .flow-head{ font-family:var(--f-data); font-size:.6875rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); padding:0 .75rem .5rem; }
+    .flow-head{ font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); padding:0 .75rem .5rem; }
     .flow-head span:nth-child(1){ grid-column:2; }
     .flow-head span:nth-child(2){ grid-column:4; }
     .flow-head span:nth-child(3){ grid-column:6; }
     .flow-head span:nth-child(4){ grid-column:8; }
-    .flow-row{ text-decoration:none; padding:.75rem; border:1px solid transparent; border-top-color:var(--line); transition:background-color .2s var(--ease-out),border-color .2s var(--ease-out); }
+    .flow-row{ text-decoration:none; padding:.5rem .75rem; border:1px solid transparent; border-top-color:var(--line); transition:background-color .2s var(--ease-out),border-color .2s var(--ease-out); }
     .flow-row:hover,.flow-row:focus-visible{ background:rgba(255,211,26,.24); border-color:var(--ink); }
     .flow-name{ font-family:var(--f-display); font-weight:700; font-size:1.25rem; text-transform:uppercase; display:flex; align-items:center; gap:.35rem; }
     .flow-name .icon{ width:.9em; height:.9em; color:var(--blue); transition:transform .2s var(--ease-out); }
     .flow-row:hover .flow-name .icon{ transform:translateX(3px); }
-    .node{ background:var(--paper); border:1px solid var(--ink); padding:.55rem .7rem; font-size:.875rem; line-height:1.3; min-height:3.4rem; display:flex; flex-direction:column; justify-content:center; transition:border-color .2s var(--ease-out); }
-    .node small{ display:none; font-family:var(--f-data); font-size:.625rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); }
+    .node{ background:var(--paper); border:1px solid var(--ink); padding:.55rem .7rem; font-size:.875rem; line-height:1.3; min-height:3rem; display:flex; flex-direction:column; justify-content:center; transition:border-color .2s var(--ease-out); }
+    .node small{ display:none; font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); }
     .node b{ font-weight:600; }
     .flow-row:hover .node,.flow-row:focus-visible .node{ border-color:var(--blue); }
     .wire{ position:relative; height:2px; margin:0 .45rem 0 .15rem; background:var(--ink); transform-origin:left center; }
@@ -193,7 +195,7 @@
     .spec{ margin:1.5rem 0 0; border:1px solid var(--ink); background:var(--paper); }
     .spec div{ display:grid; grid-template-columns:7.5rem 1fr; border-bottom:1px solid var(--line); }
     .spec div:last-child{ border-bottom:0; }
-    .spec dt{ padding:.55rem .8rem; font-family:var(--f-data); font-size:.6875rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3); border-right:1px solid var(--line); }
+    .spec dt{ padding:.55rem .8rem; font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); border-right:1px solid var(--line); }
     .spec dd{ margin:0; padding:.5rem .8rem; font-size:.9375rem; line-height:1.4; }
     .links{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.5rem; }
     .fig{ margin:0; border:1px solid var(--ink); background:var(--paper); }
@@ -203,7 +205,7 @@
 
     /* ===== Trajetória ===== */
     .log{ width:100%; border-collapse:collapse; border:1px solid var(--ink); background:var(--paper); }
-    .log th{ text-align:left; font:500 .6875rem var(--f-data); text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); padding:.65rem 1rem; border-bottom:1px solid var(--ink); }
+    .log th{ text-align:left; font:500 .75rem var(--f-data); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); padding:.65rem 1rem; border-bottom:1px solid var(--ink); }
     .log td{ vertical-align:top; padding:1.1rem 1rem; border-bottom:1px solid var(--line); }
     .log tr:last-child td{ border-bottom:0; }
     .log .when{ white-space:nowrap; width:12rem; }
@@ -226,7 +228,7 @@
 
     /* ===== Certificados ===== */
     .certs{ width:100%; border-collapse:collapse; border:1px solid var(--ink); background:var(--paper); }
-    .certs th{ text-align:left; font:500 .6875rem var(--f-data); text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); padding:.65rem 1rem; border-bottom:1px solid var(--ink); }
+    .certs th{ text-align:left; font:500 .75rem var(--f-data); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); padding:.65rem 1rem; border-bottom:1px solid var(--ink); }
     .certs td{ padding:.8rem 1rem; border-bottom:1px solid var(--line); }
     .certs tr:last-child td{ border-bottom:0; }
     .certs tbody tr{ transition:background-color .15s var(--ease-out); }
@@ -262,9 +264,13 @@
     }
     @media (max-width:900px){
       .flow-head{ display:none; }
-      .flow-row{ grid-template-columns:1fr 1fr; gap:.5rem; padding:1rem .75rem; }
-      .flow-name{ grid-column:1 / -1; }
-      .wire{ display:none; }
+      .flow-row{ grid-template-columns:1fr; gap:0; padding:1rem .75rem; }
+      .flow-name{ margin-bottom:.5rem; }
+      .wire{ width:2px; height:1.1rem; margin:0 0 0 1.25rem; transform-origin:top center; }
+      .wire::after{ right:auto; left:50%; top:auto; bottom:-.1rem; transform:translateX(-50%) rotate(135deg); }
+      html.js .flow .wire{ transform:scaleY(0); }
+      html.js .flow.is-drawn .wire{ transform:scaleY(1); }
+      .flow-row:hover .wire,.flow-row:focus-visible .wire{ background:repeating-linear-gradient(180deg,var(--blue) 0 6px,transparent 6px 10px); background-size:2px 20px; animation:flow-v .6s linear infinite; }
       .node small{ display:block; }
       .project,.project.is-portrait{ grid-template-columns:1fr; }
       .project .fig{ order:-1; }
@@ -294,8 +300,8 @@
       .skills{ grid-template-columns:1fr; }
       .strip span:last-child{ display:none; }
     }
+    @keyframes flow-v{ to{ background-position:0 20px; } }
     @media (max-width:420px){
-      .flow-row{ grid-template-columns:1fr; }
       .tb-row,.spec div{ grid-template-columns:6rem 1fr; }
       .tb-photo{ grid-template-columns:5.5rem 1fr; }
       .tb-photo img{ width:5.5rem; height:5.5rem; }
@@ -398,7 +404,7 @@
       </a>
     </div>
   </div>
-  <div class="strip"><span data-i18n="strip.cover">Folha de dados · Bruno Akira Furumori</span><span>FL. 1 / 6</span></div>
+  <div class="strip"><span class="data" data-i18n="strip.rev">Revisão nov/2026</span></div>
 </section>
 
 <!-- ===== PROJETOS ===== -->
@@ -427,8 +433,8 @@
         </div>
       </div>
       <figure class="fig">
-        <img src="FotosProjetos/AkrScout.png" alt="Página inicial do AkrScout" data-i18n-alt="alt.scout" width="1919" height="889" loading="lazy" decoding="async">
-        <figcaption><span data-i18n="fig.scout">Página inicial do AkrScout</span><span class="data">FIG. 1</span></figcaption>
+        <img src="FotosProjetos/AkrScout-analises.png" alt="Painel de análises do AkrScout com vagas por modalidade, salário por senioridade e principais habilidades" data-i18n-alt="alt.scout" width="1919" height="919" loading="lazy" decoding="async">
+        <figcaption><span data-i18n="fig.scout">Painel de análises do AkrScout</span><span class="data">FIG. 1</span></figcaption>
       </figure>
     </article>
 
@@ -449,8 +455,8 @@
         </div>
       </div>
       <figure class="fig">
-        <img src="FotosProjetos/AkrGym.png" alt="Tela do AkrGym" data-i18n-alt="alt.gym" width="1916" height="921" loading="lazy" decoding="async">
-        <figcaption><span data-i18n="fig.gym">Tela do AkrGym</span><span class="data">FIG. 2</span></figcaption>
+        <img src="FotosProjetos/AkrGym-dieta.png" alt="Diário alimentar do AkrGym com progresso de calorias e macros e as refeições do dia" data-i18n-alt="alt.gym" width="870" height="480" loading="lazy" decoding="async">
+        <figcaption><span data-i18n="fig.gym">Diário alimentar do AkrGym</span><span class="data">FIG. 2</span></figcaption>
       </figure>
     </article>
 
@@ -475,7 +481,7 @@
       </figure>
     </article>
   </div>
-  <div class="strip"><span data-i18n="proj.title">Projetos</span><span>FL. 2 / 6</span></div>
+  <div class="strip"><span data-i18n="strip.proj">Fonte: READMEs dos repositórios no GitHub</span></div>
 </section>
 
 <!-- ===== TRAJETÓRIA ===== -->
@@ -509,7 +515,7 @@
       </tbody>
     </table>
   </div>
-  <div class="strip"><span data-i18n="exp.title">Trajetória</span><span>FL. 3 / 6</span></div>
+  <div class="strip"><span data-i18n="strip.exp">Fonte: perfil no LinkedIn, nov/2026</span></div>
 </section>
 
 <!-- ===== COMPETÊNCIAS ===== -->
@@ -528,7 +534,6 @@
       <div><dt data-i18n="sk.tools">Ferramentas</dt><dd>Git / GitHub · Postman · IntelliJ</dd></div>
     </dl>
   </div>
-  <div class="strip"><span data-i18n="skills.title">Competências</span><span>FL. 4 / 6</span></div>
 </section>
 
 <!-- ===== CERTIFICADOS ===== -->
@@ -552,7 +557,7 @@
       </tbody>
     </table>
   </div>
-  <div class="strip"><span data-i18n="certs.title">Certificados</span><span>FL. 5 / 6</span></div>
+  <div class="strip"><span data-i18n="strip.certs">Cada link abre o certificado original (PDF ou imagem)</span></div>
 </section>
 
 <!-- ===== CONTATO ===== -->
@@ -570,7 +575,6 @@
       <a class="btn" href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><span data-i18n="contact.cv">Currículo (PDF)</span></a>
     </div>
   </div>
-  <div class="strip"><span data-i18n="contact.title">Vamos conversar</span><span>FL. 6 / 6</span></div>
 </section>
 
 </main>
@@ -597,18 +601,18 @@ const I18N_EN={
   'flow.s1':'Tech jobs · Programathor','flow.s2':'Python scraper · daily Actions',
   'flow.g1':'Workouts and meals','flow.g2':'Gemini AI · macros',
   'flow.e1':'Weather REST APIs','flow.e3':'AsyncStorage (local)',
-  'strip.cover':'Data sheet · Bruno Akira Furumori',
+  'strip.rev':'Revised Nov 2026','strip.proj':'Source: repository READMEs on GitHub','strip.exp':'Source: LinkedIn profile, Nov 2026','strip.certs':'Each link opens the original certificate (PDF or image)',
   'proj.title':'Projects','proj.sub':'Three complete systems, each with its source code open on GitHub.',
   'scout.one':'Collects tech job listings every day and turns them into market data.',
   'scout.desc':'A daily GitHub Actions cron triggers a Python scraper (httpx and BeautifulSoup) that fetches the listings, extracts skills, normalizes the posts and drops duplicates by content hash before upserting into Supabase. The React front end reads aggregate PostgreSQL views, protected by RLS, to show trending skills, salaries by seniority and saved jobs.',
   'spec.collect':'Collection','spec.data':'Data','spec.auto':'Automation','spec.ui':'Interface','spec.ai':'AI','spec.charts':'Charts',
   'scout.data':'PostgreSQL on Supabase · 6 tables, 6 views, RLS','scout.auto':'GitHub Actions · daily cron',
   'link.open':'Open the app','link.code':'Code',
-  'alt.scout':'AkrScout home page','fig.scout':'AkrScout home page',
+  'alt.scout':'AkrScout analytics dashboard with jobs by work mode, salary by seniority and top skills','fig.scout':'AkrScout analytics dashboard',
   'gym.one':'Mobile-first workout and diet web app with AI meal analysis.',
   'gym.desc':'Logs workouts with the Top Set / Back-Off protocol and an automatic reference to the last session, a food diary with a monthly calorie heatmap, and body measurements with a trend chart. Describe a dish and Gemini AI fills in the macros, with rate limiting and caching. Data lives in Firestore under <code>users/{uid}</code>, with rules restricting each user\'s access and an offline cache.',
   'gym.ai':'Gemini · macro calculation','gym.deploy':'Firebase Hosting · preview channels',
-  'alt.gym':'AkrGym screen','fig.gym':'AkrGym screen',
+  'alt.gym':'AkrGym food diary with calorie and macro progress and the day\'s meals','fig.gym':'AkrGym food diary',
   'est.one':'Mobile weather monitoring app with dashboards and a weather calendar.',
   'est.desc':'Fetches weather and forecasts from REST APIs with Axios, organizes them into dashboards and a weather calendar, and stores data on the device with AsyncStorage. Charts use Victory Charts and Recharts, and screen navigation uses React Navigation.',
   'est.data':'Weather REST APIs (Axios) · AsyncStorage','est.status':'Study project',
