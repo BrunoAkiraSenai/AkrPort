@@ -16,9 +16,7 @@
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://akirafurumori.com.br/">
-  <link rel="icon" type="image/png" href="FotosProjetos/IconeAkr2.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="FotosProjetos/IconeAkr2.png">
 
   <!-- Open Graph expandido -->
   <meta property="og:site_name" content="Bruno Akira Furumori">
@@ -376,6 +374,7 @@
           <a href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener" class="btn" aria-label="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
           <a href="https://www.linkedin.com/in/bruno-furumori-6585ba371/" target="_blank" rel="noopener" class="btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
           <a href="https://www.instagram.com/akiravsk/" target="_blank" rel="noopener" class="btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener" class="btn btn-solid"><i class="fa-solid fa-download"></i> <span data-i18n="curriculo">Currículo</span></a>
         </div>
       </div>
 
@@ -440,7 +439,7 @@
                   <span class="mono-sm" style="color:var(--muted)" data-i18n="exp.0.date">Jun 2026 — Presente</span>
                 </div>
                 <p class="text-sm mt-1" style="color:var(--ember2)" data-i18n="exp.0.company">Digiage · Meio período · Híbrido</p>
-                <p class="text-xs mt-0.5" style="color:var(--muted)" data-i18n="exp.0.location">Campinas, São Paulo, Brasil · 2 meses</p>
+                <p class="text-xs mt-0.5" style="color:var(--muted)"><span data-i18n="exp.0.location">Campinas, São Paulo, Brasil</span> · <span data-desde="2026-06"></span></p>
               </div>
             </div>
           </div>
@@ -471,7 +470,7 @@
               <div class="flex-1 min-w-0">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <h3 class="font-display text-lg font-semibold text-paper" data-i18n="exp.1.title">Ciência da Computação</h3>
-                  <span class="mono-sm" style="color:var(--muted)">Jan 2026 — Dez 2029</span>
+                  <span class="mono-sm" style="color:var(--muted)" data-i18n="exp.1.date">Jan 2026 — Dez 2029</span>
                 </div>
                 <p class="text-sm mt-1" style="color:rgba(245,245,247,.7)" data-i18n="exp.1.company">Anhembi Morumbi — Graduação</p>
               </div>
@@ -504,7 +503,7 @@
               <div class="flex-1 min-w-0">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <h3 class="font-display text-lg font-semibold text-paper" data-i18n="exp.2.title">Desenvolvimento de Sistemas</h3>
-                  <span class="mono-sm" style="color:var(--muted)">Jan 2024 — Dez 2025</span>
+                  <span class="mono-sm" style="color:var(--muted)" data-i18n="exp.2.date">Jan 2024 — Dez 2025</span>
                 </div>
                 <p class="text-sm mt-1" style="color:var(--ember2)" data-i18n="exp.2.company">SENAI — Curso Técnico</p>
               </div>
@@ -604,20 +603,17 @@
     </div>
     <h2 class="display-lg outlined" data-i18n="projects.title">Projetos</h2>
     <span class="divider-bar mt-8"></span>
-    <p class="mt-6 mono-sm hidden md:block" style="color:var(--muted)">↓ ROLE PARA EXPLORAR OS PROJETOS HORIZONTALMENTE →</p>
+    <p class="mt-6 mono-sm hidden md:block" style="color:var(--muted)" data-i18n="proj.scrollHint">↓ ROLE PARA EXPLORAR OS PROJETOS HORIZONTALMENTE →</p>
   </div>
 
   <div id="projectsPin" class="h-track lead md:overflow-hidden">
     <article class="project-card group">
       <div class="h-56 sm:h-72 overflow-hidden relative">
         <img src="FotosProjetos/AkrScout.png" alt="AkrScout" class="project-img w-full h-full object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex items-end p-5">
-          <span class="mono-sm" style="color:var(--ember2)"><i class="fa-solid fa-eye mr-1"></i> ver preview</span>
-        </div>
       </div>
       <div class="p-5 sm:p-6">
         <h3 class="font-display text-lg font-semibold text-paper mb-1">AkrScout</h3>
-        <p class="text-xs mb-4" style="color:var(--muted)">Plataforma de busca inteligente de vagas tech</p>
+        <p class="text-xs mb-4" style="color:var(--muted)" data-i18n="proj.akrscout">Plataforma de busca inteligente de vagas tech</p>
         <div class="flex flex-wrap gap-1.5 mb-5">
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">React 19</span>
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Supabase</span>
@@ -625,8 +621,8 @@
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Tailwind</span>
         </div>
         <div class="flex gap-2">
-          <a href="https://github.com/BrunoAkiraSenai/akrscout" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> Código</a>
-          <a href="https://akrscout.vercel.app" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-solid fa-arrow-up-right-from-square"></i> Projeto</a>
+          <a href="https://github.com/BrunoAkiraSenai/akrscout" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> <span data-i18n="proj.code">Código</span></a>
+          <a href="https://akrscout.vercel.app" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="proj.site">Projeto</span></a>
         </div>
       </div>
     </article>
@@ -634,13 +630,10 @@
     <article class="project-card group">
       <div class="h-56 sm:h-72 overflow-hidden relative">
         <img src="FotosProjetos/AkrGym.png" alt="AkrGym" class="project-img w-full h-full object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex items-end p-5">
-          <span class="mono-sm" style="color:var(--ember2)"><i class="fa-solid fa-eye mr-1"></i> ver preview</span>
-        </div>
       </div>
       <div class="p-5 sm:p-6">
         <h3 class="font-display text-lg font-semibold text-paper mb-1">AkrGym</h3>
-        <p class="text-xs mb-4" style="color:var(--muted)">App web para gestão de treinos e acompanhamento fitness</p>
+        <p class="text-xs mb-4" style="color:var(--muted)" data-i18n="proj.akrgym">App web para gestão de treinos e acompanhamento fitness</p>
         <div class="flex flex-wrap gap-1.5 mb-5">
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">React</span>
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">TypeScript</span>
@@ -648,7 +641,7 @@
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Tailwind</span>
         </div>
         <div class="flex gap-2">
-          <a href="https://github.com/BrunoAkiraSenai/akrgym" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> Código</a>
+          <a href="https://github.com/BrunoAkiraSenai/akrgym" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> <span data-i18n="proj.code">Código</span></a>
           <a href="https://akrgym.web.app" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-solid fa-dumbbell"></i> Fitness</a>
         </div>
       </div>
@@ -657,13 +650,10 @@
     <article class="project-card group">
       <div class="h-56 sm:h-72 overflow-hidden relative">
         <img src="FotosProjetos/EstacaoAkira.jfif" alt="EstacaoAkira" class="project-img w-full h-full object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex items-end p-5">
-          <span class="mono-sm" style="color:var(--ember2)"><i class="fa-solid fa-eye mr-1"></i> ver preview</span>
-        </div>
       </div>
       <div class="p-5 sm:p-6">
         <h3 class="font-display text-lg font-semibold text-paper mb-1">EstacaoAkira</h3>
-        <p class="text-xs mb-4" style="color:var(--muted)">App mobile de monitoramento climático</p>
+        <p class="text-xs mb-4" style="color:var(--muted)" data-i18n="proj.estacao">App mobile de monitoramento climático</p>
         <div class="flex flex-wrap gap-1.5 mb-5">
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">React Native</span>
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Expo</span>
@@ -671,7 +661,7 @@
           <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Charts</span>
         </div>
         <div class="flex gap-2">
-          <a href="https://github.com/BrunoAkiraSenai/EstacaoAkira" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> Código</a>
+          <a href="https://github.com/BrunoAkiraSenai/EstacaoAkira" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> <span data-i18n="proj.code">Código</span></a>
           <span class="btn text-[10px] py-2 px-3 rounded-full cursor-default opacity-50"><i class="fa-solid fa-mobile"></i> Mobile</span>
         </div>
       </div>
@@ -679,7 +669,7 @@
   </div>
 
   <div class="max-w-7xl mx-auto px-5 sm:px-8 mt-10 md:hidden">
-    <p class="mono-sm" style="color:var(--muted)">← arraste para ver mais →</p>
+    <p class="mono-sm" style="color:var(--muted)" data-i18n="proj.dragHint">← arraste para ver mais →</p>
   </div>
 </section>
 
@@ -700,16 +690,16 @@
       <a href="PDFs/Certificados/FLUÊNCIA___FUNDAMENTOS_DA_INTELIGÊNCIA_ARTIFICIAL-Certificado_2711422 (3).pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/Senai.jpg" alt="Senai" class="w-full h-full object-cover"></div>
         <div>
-          <h3 class="text-sm font-semibold text-paper mb-1">Fundamentos da IA</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">Senai — Jun 2025</p>
+          <h3 class="text-sm font-semibold text-paper mb-1" data-i18n="cert.1.t">Fundamentos da IA</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.1.d">Senai — Jun 2025</p>
         </div>
       </a>
 
       <a href="PDFs/Certificados/Certificado_Inteligências Artificiais Generativas Aplicada a Programação - ChatGPT (3).pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/Senai.jpg" alt="Senai" class="w-full h-full object-cover"></div>
         <div>
-          <h3 class="text-sm font-semibold text-paper mb-1">IA Generativa Aplicada à Programação</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">ChatGPT &amp; Senai — Jul 2025</p>
+          <h3 class="text-sm font-semibold text-paper mb-1" data-i18n="cert.2.t">IA Generativa Aplicada à Programação</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.2.d">ChatGPT &amp; Senai — Jul 2025</p>
         </div>
       </a>
 
@@ -717,15 +707,15 @@
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/KODEc.jpg" alt="KodeKloud" class="w-full h-full object-cover"></div>
         <div>
           <h3 class="text-sm font-semibold text-paper mb-1">KodeKloud AWS</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">KodeKloud — Mai 2026</p>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.3.d">KodeKloud — Mai 2026</p>
         </div>
       </a>
 
       <a href="PDFs/Certificados/Bruno (2).pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
         <div>
-          <h3 class="text-sm font-semibold text-paper mb-1">IA e Computacional</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Jun 2025</p>
+          <h3 class="text-sm font-semibold text-paper mb-1" data-i18n="cert.4.t">IA e Computacional</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.fiapJun">FIAP — Jun 2025</p>
         </div>
       </a>
 
@@ -733,15 +723,15 @@
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
         <div>
           <h3 class="text-sm font-semibold text-paper mb-1">Chatbots</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Jun 2025</p>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.fiapJun">FIAP — Jun 2025</p>
         </div>
       </a>
 
       <a href="PDFs/Certificados/0f30b0868e6f68c8fad73ba88e8bd705 (2).png" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
         <div>
-          <h3 class="text-sm font-semibold text-paper mb-1">Python Development</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Jun 2025</p>
+          <h3 class="text-sm font-semibold text-paper mb-1" data-i18n="cert.6.t">Python Development</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.fiapJun">FIAP — Jun 2025</p>
         </div>
       </a>
 
@@ -749,15 +739,15 @@
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
         <div>
           <h3 class="text-sm font-semibold text-paper mb-1">Python</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Ago 2025</p>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.7.d">FIAP — Ago 2025</p>
         </div>
       </a>
 
       <a href="PDFs/Certificados/90dd24886be4993d4769d5673a309a3f (2).png" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
         <div>
-          <h3 class="text-sm font-semibold text-paper mb-1">Big Data &amp; Analytics</h3>
-          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Mai 2026</p>
+          <h3 class="text-sm font-semibold text-paper mb-1" data-i18n="cert.8.t">Big Data &amp; Analytics</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)" data-i18n="cert.8.d">FIAP — Mai 2026</p>
         </div>
       </a>
 
@@ -773,7 +763,7 @@
     <div class="flex flex-col gap-8">
       <div class="flex flex-col md:flex-row items-start justify-between gap-6">
         <div>
-          <p class="eyebrow mb-3">VAMOS CONSTRUIR</p>
+          <p class="eyebrow mb-3" data-i18n="footer.cta">VAMOS CONSTRUIR</p>
           <a href="mailto:akirafurumori@gmail.com" class="display-md ember-grad inline-block">akirafurumori@gmail.com</a>
         </div>
         <div class="flex items-center gap-3">
@@ -796,7 +786,7 @@
   </div>
 </footer>
 
-<button id="backToTop" class="back-to-top fixed bottom-6 right-6 w-11 h-11 rounded-full glass-card flex items-center justify-center opacity-0 invisible translate-y-4 scale-75 hover:border-ember/40 transition-all z-30" aria-label="Voltar ao topo" style="color:var(--ember)">
+<button id="backToTop" class="back-to-top fixed bottom-6 right-6 w-11 h-11 rounded-full glass-card flex items-center justify-center opacity-0 invisible translate-y-4 scale-75 hover:border-ember/40 transition-all z-30" aria-label="Voltar ao topo" data-i18n-aria="aria.top" style="color:var(--ember)">
   <i class="fa-solid fa-arrow-up"></i>
 </button>
 
@@ -894,6 +884,18 @@ const i18n={
     'certs.section':'Certificações','certs.title':'Certificados',
     'curriculo':'Currículo','visits':'visitas',
     'footer':'&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.',
+    'exp.1.date':'Jan 2026 — Dez 2029','exp.2.date':'Jan 2024 — Dez 2025',
+    'proj.code':'Código','proj.site':'Projeto',
+    'proj.akrscout':'Plataforma de busca inteligente de vagas tech',
+    'proj.akrgym':'App web para gestão de treinos e acompanhamento fitness',
+    'proj.estacao':'App mobile de monitoramento climático',
+    'proj.scrollHint':'↓ ROLE PARA EXPLORAR OS PROJETOS HORIZONTALMENTE →','proj.dragHint':'← arraste para ver mais →',
+    'cert.1.t':'Fundamentos da IA','cert.1.d':'Senai — Jun 2025',
+    'cert.2.t':'IA Generativa Aplicada à Programação','cert.2.d':'ChatGPT &amp; Senai — Jul 2025',
+    'cert.3.d':'KodeKloud — Mai 2026','cert.4.t':'IA e Computacional','cert.fiapJun':'FIAP — Jun 2025',
+    'cert.6.t':'Python Development','cert.7.d':'FIAP — Ago 2025',
+    'cert.8.t':'Big Data &amp; Analytics','cert.8.d':'FIAP — Mai 2026',
+    'footer.cta':'VAMOS CONSTRUIR','aria.top':'Voltar ao topo',
   },
   en:{
     'nav.inicio':'Home','nav.experiencias':'Experience','nav.habilidades':'Skills','nav.projetos':'Projects','nav.certificados':'Certificates',
@@ -912,21 +914,55 @@ const i18n={
     'certs.section':'Certifications','certs.title':'Certificates',
     'curriculo':'Resume','visits':'visits',
     'footer':'&copy; 2026 Bruno Akira Furumori. All rights reserved.',
+    'exp.1.date':'Jan 2026 — Dec 2029','exp.2.date':'Jan 2024 — Dec 2025',
+    'proj.code':'Code','proj.site':'Live',
+    'proj.akrscout':'Smart job search platform for tech roles',
+    'proj.akrgym':'Web app for workout management and fitness tracking',
+    'proj.estacao':'Mobile app for weather monitoring',
+    'proj.scrollHint':'↓ SCROLL TO EXPLORE THE PROJECTS HORIZONTALLY →','proj.dragHint':'← swipe to see more →',
+    'cert.1.t':'AI Fundamentals','cert.1.d':'Senai — Jun 2025',
+    'cert.2.t':'Generative AI Applied to Programming','cert.2.d':'ChatGPT &amp; Senai — Jul 2025',
+    'cert.3.d':'KodeKloud — May 2026','cert.4.t':'AI &amp; Computing','cert.fiapJun':'FIAP — Jun 2025',
+    'cert.6.t':'Python Development','cert.7.d':'FIAP — Aug 2025',
+    'cert.8.t':'Big Data &amp; Analytics','cert.8.d':'FIAP — May 2026',
+    'footer.cta':'LET\'S BUILD','aria.top':'Back to top',
   },
 };
+// Duração "desde AAAA-MM" contada como no LinkedIn (mês inicial e atual inclusos).
+function duracaoDesde(desde,lang){
+  const [a,m]=desde.split('-').map(Number), d=new Date();
+  const total=Math.max(1,(d.getFullYear()-a)*12+(d.getMonth()+1-m)+1);
+  const anos=Math.floor(total/12), meses=total%12;
+  const w=lang==='en'
+    ?{a:['yr','yrs'],m:['mo','mos'],e:' '}
+    :{a:['ano','anos'],m:['mês','meses'],e:' e '};
+  const partes=[];
+  if(anos)partes.push(anos+' '+w.a[anos>1?1:0]);
+  if(meses)partes.push(meses+' '+w.m[meses>1?1:0]);
+  return partes.join(w.e);
+}
 function applyLang(lang){
+  document.documentElement.lang=lang==='en'?'en':'pt-BR';
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key=el.dataset.i18n;
     if(i18n[lang]&&i18n[lang][key])el.innerHTML=i18n[lang][key];
   });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+    const v=i18n[lang]&&i18n[lang][el.dataset.i18nAria];
+    if(v)el.setAttribute('aria-label',v);
+  });
+  document.querySelectorAll('[data-desde]').forEach(el=>{el.textContent=duracaoDesde(el.dataset.desde,lang)});
+  if(langToggle)langToggle.textContent=lang==='pt'?'EN':'PT';
 }
 if(langToggle){
   langToggle.addEventListener('click',function(){
     currentLang=currentLang==='pt'?'en':'pt';
-    this.textContent=currentLang==='pt'?'EN':'PT';
+    try{localStorage.setItem('akr_lang',currentLang)}catch(e){}
     applyLang(currentLang);
   });
 }
+try{if(localStorage.getItem('akr_lang')==='en')currentLang='en'}catch(e){}
+applyLang(currentLang);
 
 // ===== FIREBASE =====
 const firebaseConfig={apiKey:"AIzaSyC6ReigJo_Dub5Q30ge0Ezunjz0KUJscMM",authDomain:"portfolio-akr-site.firebaseapp.com",projectId:"portfolio-akr-site",storageBucket:"portfolio-akr-site.firebasestorage.app",messagingSenderId:"994251192136",appId:"1:994251192136:web:b45f7f3db687d6cac8257d"};
@@ -934,6 +970,10 @@ let db;
 try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initializeApp(firebaseConfig);db=firebase.firestore(app)}}catch(e){console.warn('Firebase não configurado.')}
 
 // VISIT COUNTER
+async function sha256(txt){
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(txt));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
 (async()=>{
   const badge=document.getElementById('visitBadge');
   const display=document.getElementById('visitDisplay');
@@ -942,27 +982,30 @@ try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initi
   if(db){
     try{
       const ref=db.collection('visitas').doc('contador');
-      const ipRef=db.collection('visitas_unicas');
-      const ipRes=await fetch('https://api.ipify.org?format=json').catch(()=>null);
-      const ip=ipRes?await ipRes.json():null;
-      let hash='anon';
-      if(ip&&ip.ip){
-        let h=0;
-        for(let i=0;i<ip.ip.length;i++){h=((h<<5)-h)+ip.ip.charCodeAt(i);h|=0}
-        hash='v_'+Math.abs(h).toString(36);
-      }
-      const ipDoc=await ipRef.doc(hash).get().catch(()=>null);
-      if((!ipDoc||!ipDoc.exists)&&hash!=='anon'){
-        await ipRef.doc(hash).set({firstVisit:new Date().toISOString()});
-        await db.runTransaction(async t=>{
-          const d=await t.get(ref);
-          if(!d.exists)t.set(ref,{total:1});else t.update(ref,{total:firebase.firestore.FieldValue.increment(1)})
-        });
+      // Este navegador já foi contado: só lê o total, sem consultar o IP de novo.
+      if(localStorage.getItem('akr_visita')!=='1'){
+        const ipRes=await fetch('https://api.ipify.org?format=json').catch(()=>null);
+        const ip=ipRes&&ipRes.ok?await ipRes.json().catch(()=>null):null;
+        if(ip&&ip.ip&&window.crypto&&crypto.subtle){
+          const id='v_'+await sha256('akrport:'+ip.ip);
+          const visRef=db.collection('visitas_unicas').doc(id);
+          // Registro do visitante e +1 no total na MESMA transação (exigido pelas regras do Firestore).
+          await db.runTransaction(async t=>{
+            const v=await t.get(visRef);
+            const c=await t.get(ref);
+            if(v.exists)return;
+            t.set(visRef,{firstVisit:firebase.firestore.FieldValue.serverTimestamp()});
+            t.set(ref,{total:(c.exists&&c.data().total||0)+1,lastId:id});
+          });
+          localStorage.setItem('akr_visita','1');
+        }
       }
       const snap=await ref.get();
-      total=snap.data()?.total||0;
-    }catch(e){total=42}
-  }else{total=42}
+      total=snap.exists?snap.data().total:null;
+    }catch(e){console.warn('Contador de visitas indisponível:',e)}
+  }
+  // Sem número real, o selo não aparece (antes mostrava um 42 inventado).
+  if(typeof total!=='number'){badge.style.display='none';return}
   let current=0;
   const step=Math.max(1,Math.floor(total/40));
   const interval=setInterval(()=>{

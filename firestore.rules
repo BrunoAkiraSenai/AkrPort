@@ -1,11 +1,39 @@
 rules_version = '2';
+
+// Contador de visitas do portfólio.
+// O navegador do visitante só consegue: ler o total, conferir se o próprio
+// visitante já foi contado e, na mesma transação, registrar-se e somar +1.
+// Ninguém consegue zerar, apagar, escolher o valor ou listar os visitantes.
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /visitas/{document} {
-      allow read, write: if true;
+
+    function visitante(id) {
+      return /databases/$(database)/documents/visitas_unicas/$(id);
     }
-    match /visitas_unicas/{document} {
-      allow read, write: if true;
+
+    // Só vale se o visitante é novo agora e foi criado nesta mesma transação.
+    function visitanteNovo(id) {
+      return id is string
+        && !exists(visitante(id))
+        && existsAfter(visitante(id));
+    }
+
+    match /visitas/contador {
+      allow get: if true;
+      allow create: if request.resource.data.keys().hasOnly(['total', 'lastId'])
+        && request.resource.data.total == 1
+        && visitanteNovo(request.resource.data.lastId);
+      allow update: if request.resource.data.keys().hasOnly(['total', 'lastId'])
+        && request.resource.data.total == resource.data.total + 1
+        && visitanteNovo(request.resource.data.lastId);
+    }
+
+    match /visitas_unicas/{id} {
+      allow get: if true;
+      allow create: if id.matches('v_[0-9a-f]{64}')
+        && request.resource.data.keys().hasOnly(['firstVisit'])
+        && request.resource.data.firstVisit == request.time
+        && getAfter(/databases/$(database)/documents/visitas/contador).data.lastId == id;
     }
   }
 }
