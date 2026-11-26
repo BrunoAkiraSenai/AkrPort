@@ -210,6 +210,8 @@
     .marquee-item:hover{ color:var(--paper); }
     .marquee-item img{ width:clamp(1.3rem,2.6vw,2rem); height:auto; opacity:.4; transition:opacity .3s ease; }
     .marquee-item:hover img{ opacity:1; }
+    .marquee-item i{ font-size:clamp(1.1rem,2.2vw,1.7rem); opacity:.4; transition:opacity .3s ease, color .3s ease; }
+    .marquee-item:hover i{ opacity:1; color:var(--ember); }
 
     .status-pill{ display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .9rem; border-radius:2rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
     .status-pill .live{ width:6px; height:6px; border-radius:50%; background:#3df57a; box-shadow:0 0 8px #3df57a; animation:pulseGlow 2s infinite; }
@@ -347,15 +349,10 @@
 <div class="relative z-10 py-7 overflow-hidden border-y" style="border-color:rgba(255,255,255,.05); background:rgba(255,77,46,.02)" aria-label="Tecnologias">
   <div class="marquee" id="marquee">
     <span class="marquee-item" data-si="openjdk">Java</span>
-    <span class="marquee-item" data-si="python">Python</span>
-    <span class="marquee-item" data-si="postgresql">PostgreSQL</span>
-    <span class="marquee-item" data-si="react">React</span>
-    <span class="marquee-item" data-si="supabase">Supabase</span>
-    <span class="marquee-item" data-si="firebase">Firebase</span>
     <span class="marquee-item" data-si="kubernetes">Kubernetes</span>
-    <span class="marquee-item" data-si="linux">Linux</span>
-    <span class="marquee-item" data-si="githubactions">GitHub Actions</span>
-    <span class="marquee-item" data-si="git">Git</span>
+    <span class="marquee-item" data-si="docker">Docker</span>
+    <span class="marquee-item" data-fa="fa-solid fa-network-wired">WSO2</span>
+    <span class="marquee-item" data-fa="fa-solid fa-code" data-i18n="marquee.api">APIs REST</span>
   </div>
 </div>
 
@@ -758,9 +755,14 @@ document.querySelectorAll('[data-si],[data-fa]').forEach(el=>{
   }
   el.prepend(icon);
 });
-// Marquee: duplica os itens para o loop contínuo
+// Carrossel: repete o grupo até cobrir a tela e depois duplica, para o loop não ter buraco
 const mq=document.getElementById('marquee');
-if(mq){ mq.innerHTML+=mq.innerHTML; mq.querySelectorAll('.marquee-item:nth-child(n+11)').forEach(n=>n.setAttribute('aria-hidden','true')); }
+if(mq){
+  const base=[...mq.children];
+  let guard=0;
+  while(mq.scrollWidth<window.innerWidth*1.2&&guard++<10){ base.forEach(n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');mq.appendChild(c)}); }
+  [...mq.children].forEach(n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');mq.appendChild(c)});
+}
 
 // ===== PARTÍCULAS =====
 (()=>{
@@ -841,7 +843,7 @@ const I18N_EN={
   'aria.lang':'Ler em português','aria.top':'Back to top','aria.copy':'Copy email',
   'visits':'visits','hero.pill.job':'Intern · Digiage','hero.greeting':'Hello, I\'m',
   'hero.bio':'Computer Science student and support intern at <strong style="color:var(--paper);font-weight:600">Digiage</strong>. I keep critical middleware running and build projects with Java, Python, SQL and REST APIs, from data collection to the interface.',
-  'hero.cta':'See projects','curriculo':'Resume','curriculo.pdf':'Resume (PDF)','hero.scroll':'scroll to explore',
+  'hero.cta':'See projects','marquee.api':'REST APIs','curriculo':'Resume','curriculo.pdf':'Resume (PDF)','hero.scroll':'scroll to explore',
   'projects.section':'Portfolio','projects.title':'Projects','projects.sub':'Three complete systems, each with open source code on GitHub and an explanation of how it works inside.',
   'proj.scrollHint':'↓ SCROLL TO EXPLORE THE PROJECTS HORIZONTALLY →','proj.dragHint':'← swipe to see more →','proj.live':'live','proj.open':'Open','proj.code':'Code',
   'alt.scout':'AkrScout analytics dashboard','alt.gym':'AkrGym food diary','alt.est':'EstacaoAkira app screen',
