@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T00:00:00-03:00",
+  "title": "Design System: Bruno Akira Furumori — Portfólio",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Tinta" },
+      "signal": { "role": "accent", "displayName": "Amarelo de sinalização" },
+      "blueprint": { "role": "secondary", "displayName": "Azul de prancheta" },
+      "paper": { "role": "neutral", "displayName": "Papel" },
+      "desk": { "role": "neutral", "displayName": "Mesa" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Só o nome na capa." },
+      "headline": { "displayName": "Título de folha", "purpose": "Títulos de seção." },
+      "data": { "displayName": "Dados", "purpose": "Datas, números de folha e valores de tabela." },
+      "label": { "displayName": "Rótulo", "purpose": "Rótulos de tabela, sempre dentro de uma tabela." }
+    },
+    "shadows": [
+      { "name": "sheet", "value": "0 1px 2px rgba(14,26,43,.06), 0 12px 32px -18px rgba(14,26,43,.28)", "purpose": "Descola cada folha da mesa." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "Transições de estado e o desenho dos fios do diagrama." },
+      { "name": "flow-dash", "value": "0.6s linear infinite", "purpose": "Tracejado azul correndo nos fios em hover/foco." }
+    ],
+    "breakpoints": [
+      { "name": "cover-stack", "value": "1020px" },
+      { "name": "flow-vertical", "value": "900px" },
+      { "name": "mobile-nav", "value": "760px" },
+      { "name": "narrow", "value": "420px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal de cada folha (Ver projetos, Abrir o app).",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Ver projetos</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:.55rem;font:600 .9375rem 'Barlow',system-ui,sans-serif;padding:.8rem 1.15rem;border:1px solid #0e1a2b;background:#0e1a2b;color:#f6f7f4;text-decoration:none;transition:background-color .18s cubic-bezier(.16,1,.3,1)}.ds-btn-primary:hover{background:#1f4fd8;border-color:#1f4fd8;color:#fff}.ds-btn-primary:focus-visible{outline:2px solid #1f4fd8;outline-offset:3px}.ds-btn-primary:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ações secundárias (Código, e-mail, redes).",
+      "html": "<a class=\"ds-btn\" href=\"#\">Código</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:.55rem;font:600 .9375rem 'Barlow',system-ui,sans-serif;padding:.8rem 1.15rem;border:1px solid #0e1a2b;background:#f6f7f4;color:#0e1a2b;text-decoration:none;transition:background-color .18s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{background:#ffd31a}.ds-btn:focus-visible{outline:2px solid #1f4fd8;outline-offset:3px}"
+    },
+    {
+      "name": "Spec Table",
+      "kind": "custom",
+      "description": "Especificação de um projeto: rótulo mono e valor.",
+      "html": "<dl class=\"ds-spec\"><div><dt>Dados</dt><dd>PostgreSQL no Supabase</dd></div><div><dt>Deploy</dt><dd>Vercel</dd></div></dl>",
+      "css": ".ds-spec{margin:0;border:1px solid #0e1a2b;background:#f6f7f4;font-family:'Barlow',system-ui,sans-serif}.ds-spec div{display:grid;grid-template-columns:7.5rem 1fr;border-bottom:1px solid rgba(14,26,43,.16)}.ds-spec div:last-child{border-bottom:0}.ds-spec dt{padding:.55rem .8rem;font:400 .6875rem 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:#5b6674;border-right:1px solid rgba(14,26,43,.16)}.ds-spec dd{margin:0;padding:.5rem .8rem;font-size:.9375rem;color:#0e1a2b}"
+    },
+    {
+      "name": "Flow Row",
+      "kind": "custom",
+      "description": "Linha do diagrama de fluxo: nós ligados por fios; hover acende o fluxo.",
+      "html": "<a class=\"ds-flow\" href=\"#\"><span class=\"ds-node\">Origem</span><span class=\"ds-wire\"></span><span class=\"ds-node\">Dados</span></a>",
+      "css": ".ds-flow{display:grid;grid-template-columns:1fr 2.25rem 1fr;align-items:center;padding:.75rem;border:1px solid transparent;text-decoration:none;color:#0e1a2b;font-family:'Barlow',system-ui,sans-serif}.ds-flow:hover,.ds-flow:focus-visible{background:rgba(255,211,26,.24);border-color:#0e1a2b}.ds-node{background:#f6f7f4;border:1px solid #0e1a2b;padding:.55rem .7rem;font-size:.875rem;font-weight:600}.ds-flow:hover .ds-node{border-color:#1f4fd8}.ds-wire{height:2px;margin:0 .45rem 0 .15rem;background:#0e1a2b}.ds-flow:hover .ds-wire{background:repeating-linear-gradient(90deg,#1f4fd8 0 6px,transparent 6px 10px)}"
+    },
+    {
+      "name": "Role Mark",
+      "kind": "chip",
+      "refersTo": "role-mark",
+      "description": "Campo amarelo que marca o papel ou o estado atual.",
+      "html": "<mark class=\"ds-mark\">Back-end &amp; Dados</mark>",
+      "css": ".ds-mark{background:#ffd31a;color:#0e1a2b;border:1px solid #0e1a2b;padding:.12em .3em .04em;font:600 1.5rem 'Barlow Condensed',sans-serif;text-transform:uppercase}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A folha de dados do engenheiro",
+    "overview": "O portfólio é um datasheet técnico. As seções são folhas de papel sobre uma mesa cinza, com borda de tinta, uma grade milimetrada leve e, quando há o que dizer, uma faixa de rodapé com a fonte ou a data de revisão. Em vez de anunciar habilidades, a página mostra como cada sistema funciona: um diagrama de fluxo (origem → processamento → dados → interface) e tabelas de especificação com fatos tirados dos READMEs e do LinkedIn.",
+    "keyCharacteristics": [
+      "Papel frio sobre mesa cinza, bordas de 1px em tinta e cantos sem raio.",
+      "Títulos em condensada maiúscula, como em placas e title blocks de desenho técnico.",
+      "Mono só onde há dado: datas, números de folha, rótulos de tabela.",
+      "Tabelas de especificação no lugar de cards e badges.",
+      "Um único momento de movimento: os conectores do diagrama se desenham uma vez, e no hover o fluxo do projeto se acende."
+    ],
+    "rules": [
+      { "name": "The Signal Rule", "body": "O amarelo marca estado ou ação: cargo atual, emprego atual, contato. Nunca entra como decoração.", "section": "colors" },
+      { "name": "The Data-Only Mono Rule", "body": "Mono só para datas, números, rótulos de tabela e código. Nunca como fantasia de \"tech\".", "section": "typography" }
+    ],
+    "dos": [
+      "Do mostrar como um sistema funciona, com diagrama ou tabela de especificação, antes de listar tecnologias.",
+      "Do usar o amarelo em campos inteiros que marcam estado ou ação.",
+      "Do manter bordas de 1px em tinta e cantos retos.",
+      "Do traduzir todo o texto novo para EN, com o mesmo conteúdo do PT."
+    ],
+    "donts": [
+      "Don't usar gradiente em texto, glass decorativo, partículas ou brilho neon.",
+      "Don't colocar kicker ou eyebrow acima de um título.",
+      "Don't usar cards iguais de ícone + título + texto como estrutura da página.",
+      "Don't usar mono como fantasia de \"tech\".",
+      "Don't inventar métricas, clientes ou depoimentos."
+    ]
+  }
+}

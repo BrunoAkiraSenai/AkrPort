@@ -3,606 +3,728 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bruno Akira — Data & Back-end</title>
-  <meta property="og:title" content="Bruno Akira Furumori — Desenvolvedor Back-end">
-  <meta property="og:description" content="Portfólio imersivo com projetos, certificados e experiências em Java, Python, React e dados.">
+  <title>Bruno Akira Furumori — Desenvolvedor Back-end & Data</title>
+  <meta name="description" content="Bruno Akira Furumori — Back-end e dados. Estagiário de sustentação na Digiage (WSO2, ITIL, Kubernetes) e estudante de Ciência da Computação. Projetos com Python, SQL, APIs REST e React.">
+  <meta name="keywords" content="Bruno Akira Furumori, Bruno Akira, Akira Furumori, desenvolvedor back-end, Python, Java, SQL, APIs REST, WSO2, dados, Sumaré SP, portfólio">
+  <meta name="author" content="Bruno Akira Furumori">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#f6f7f4">
+  <link rel="canonical" href="https://akirafurumori.com.br/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <meta property="og:title" content="Bruno Akira Furumori — Desenvolvedor Back-end & Data">
+  <meta property="og:description" content="Back-end e dados. Sustentação de middleware na Digiage e projetos que vão da coleta de dados até a interface.">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/163860585?v=4">
-  <meta property="og:url" content="https://portifolio-5c039.web.app">
+  <meta property="og:url" content="https://akirafurumori.com.br">
   <meta property="og:type" content="website">
-  <meta name="description" content="Portfólio de Bruno Akira Furumori — Back-end & Data.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cyberCyan: '#00f0ff',
-            cyberMagenta: '#ff00e5',
-            deepBg: '#05050a',
-            cardGlass: 'rgba(255,255,255,0.04)',
-            glassBorder: 'rgba(255,255,255,0.06)',
-            glowCyan: 'rgba(0,240,255,0.15)',
-            glowMagenta: 'rgba(255,0,229,0.12)',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Space Grotesk', 'Inter', 'sans-serif'],
-          },
-        },
-      },
-    };
+  <meta property="og:site_name" content="Bruno Akira Furumori">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bruno Akira Furumori — Desenvolvedor Back-end & Data">
+  <meta name="twitter:description" content="Back-end e dados. Sustentação de middleware na Digiage e projetos que vão da coleta de dados até a interface.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/163860585?v=4">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bruno Akira Furumori",
+    "alternateName": ["Bruno Akira", "Akira Furumori", "AKR"],
+    "jobTitle": "Desenvolvedor Back-end & Data",
+    "description": "Estudante de Ciência da Computação e estagiário de sustentação na Digiage. Back-end, dados, APIs REST e integração.",
+    "url": "https://akirafurumori.com.br",
+    "image": "https://avatars.githubusercontent.com/u/163860585?v=4",
+    "email": "mailto:akirafurumori@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Sumaré", "addressRegion": "SP", "addressCountry": "BR" },
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "Anhembi Morumbi" },
+      { "@type": "EducationalOrganization", "name": "SENAI" }
+    ],
+    "worksFor": { "@type": "Organization", "name": "Digiage" },
+    "knowsAbout": ["Python", "Java", "SQL", "APIs REST", "WSO2 API Manager", "PostgreSQL", "Supabase", "Firebase", "React", "Linux", "Kubernetes", "ITIL"],
+    "sameAs": [
+      "https://github.com/BrunoAkiraSenai",
+      "https://www.linkedin.com/in/bruno-furumori-6585ba371/",
+      "https://www.instagram.com/akiravsk/"
+    ]
+  }
   </script>
+  <script>document.documentElement.classList.add('js');</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    html { scroll-behavior:smooth; }
-    body { font-family:'Inter',system-ui,sans-serif; background-color:#05050a; color:#e8e8ed; overflow-x:hidden; }
-    ::selection { background:#00f0ff; color:#05050a; }
-    ::-webkit-scrollbar { width:6px; }
-    ::-webkit-scrollbar-track { background:#0a0a14; }
-    ::-webkit-scrollbar-thumb { background:rgba(0,240,255,.3); border-radius:3px; }
-    @keyframes pulseGlow { 0%,100% { opacity:.3 } 50% { opacity:.7 } }
-    @keyframes nodePulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,240,255,.4)} 50%{box-shadow:0 0 0 12px rgba(0,240,255,0)} }
+    :root{
+      --desk:#e3e6e2;
+      --paper:#f6f7f4;
+      --ink:#0e1a2b;
+      --ink-2:#36424f;
+      --ink-3:#5b6674;
+      --line:rgba(14,26,43,.16);
+      --grid:rgba(14,26,43,.045);
+      --signal:#ffd31a;
+      --blue:#1f4fd8;
+      --ok:#17804a;
+      --f-display:'Barlow Condensed','Arial Narrow',sans-serif;
+      --f-body:'Barlow',system-ui,sans-serif;
+      --f-data:'JetBrains Mono',ui-monospace,monospace;
+      --ease-out:cubic-bezier(.16,1,.3,1);
+      --pad:clamp(1.25rem,3.2vw,2.75rem);
+    }
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; scroll-padding-top:5rem; -webkit-text-size-adjust:100%; scrollbar-color:#9aa3ad var(--desk); }
+    body{
+      margin:0; background:var(--desk); color:var(--ink);
+      font-family:var(--f-body); font-size:1.0625rem; line-height:1.6;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    img{ display:block; max-width:100%; height:auto; }
+    a{ color:inherit; }
+    ::selection{ background:var(--signal); color:var(--ink); }
+    ::-webkit-scrollbar{ width:10px; height:10px; }
+    ::-webkit-scrollbar-track{ background:var(--desk); }
+    ::-webkit-scrollbar-thumb{ background:#9aa3ad; border:2px solid var(--desk); }
+    ::-webkit-scrollbar-thumb:hover{ background:var(--ink); }
+    :focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
+    [hidden]{ display:none!important; }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .icon{ width:1.1em; height:1.1em; flex:none; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .data{ font-family:var(--f-data); font-size:.8125rem; letter-spacing:0; font-variant-numeric:tabular-nums; }
 
-    .glass-card { background:rgba(255,255,255,.04); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.06); }
-    .glass-card:hover { border-color:rgba(0,240,255,.15); }
-    .glow-text { text-shadow:0 0 40px rgba(0,240,255,.15); }
-    .glow-border { box-shadow:0 0 30px rgba(0,240,255,.06); }
-    .nav-link::after { content:'';display:block;width:0;height:1.5px;background:linear-gradient(90deg,#00f0ff,#ff00e5);transition:width .35s ease;margin-top:2px; }
-    .nav-link:hover::after, .nav-link.active::after { width:100%; }
+    /* ===== Barra superior ===== */
+    .bar{ position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--ink); }
+    .bar-in{ position:relative; max-width:1240px; margin:0 auto; padding:0 var(--pad); height:3.75rem; display:flex; align-items:center; gap:1.5rem; }
+    .mark{ display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:var(--f-display); font-weight:600; font-size:1.125rem; letter-spacing:.02em; text-transform:uppercase; white-space:nowrap; }
+    .mark-box{ width:2rem; height:2rem; display:grid; place-items:center; background:var(--signal); border:1px solid var(--ink); font-weight:700; font-size:1rem; }
+    .nav{ margin-left:auto; display:flex; align-items:center; gap:.25rem; }
+    .nav a{ text-decoration:none; font-weight:500; font-size:.9375rem; padding:.45rem .7rem; border:1px solid transparent; }
+    .nav a:hover{ border-color:var(--ink); }
+    .lang{ font:500 .8125rem var(--f-data); background:transparent; color:var(--ink); border:1px solid var(--ink); padding:.4rem .6rem; margin-left:.5rem; cursor:pointer; }
+    .lang:hover{ background:var(--signal); }
+    .menu-btn{ display:none; margin-left:auto; background:transparent; border:1px solid var(--ink); color:var(--ink); padding:.45rem .6rem; font:600 .875rem var(--f-body); cursor:pointer; align-items:center; gap:.4rem; }
 
-    .project-card { transform-origin:center bottom; transition:transform .45s cubic-bezier(.34,1.56,.64,1),opacity .4s ease,box-shadow .4s ease; }
-    .project-card:hover { transform:translateY(-8px) scale(1.01); box-shadow:0 24px 60px -12px rgba(0,240,255,.12); }
+    /* ===== Folhas ===== */
+    main{ max-width:1240px; margin:0 auto; padding:clamp(.75rem,1.6vw,1.25rem) var(--pad) 0; display:grid; grid-template-columns:minmax(0,1fr); gap:clamp(1.25rem,2.5vw,2rem); }
+    .sheet{
+      position:relative; background-color:var(--paper); border:1px solid var(--ink);
+      background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+      background-size:24px 24px; background-position:-1px -1px;
+      box-shadow:0 1px 2px rgba(14,26,43,.06),0 12px 32px -18px rgba(14,26,43,.28);
+    }
+    .sheet-body{ padding:var(--pad); }
+    .strip{ display:flex; justify-content:space-between; gap:1rem; border-top:1px solid var(--ink); padding:.55rem var(--pad); font-family:var(--f-data); font-size:.75rem; color:var(--ink-3); background:var(--paper); }
+    .sheet-head{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem 2rem; flex-wrap:wrap; padding-bottom:1.25rem; margin-bottom:clamp(1.5rem,3vw,2.5rem); border-bottom:1px solid var(--ink); }
+    h1,h2,h3{ font-family:var(--f-display); font-weight:700; text-transform:uppercase; margin:0; text-wrap:balance; }
+    h2{ font-size:clamp(2.25rem,5vw,3.5rem); line-height:.95; letter-spacing:-.005em; }
+    .sheet-head p{ margin:0; color:var(--ink-3); max-width:46ch; }
 
-    #particles-canvas { position:fixed;inset:0;z-index:0;pointer-events:none; }
+    /* ===== Capa ===== */
+    .cover-grid{ display:grid; grid-template-columns:minmax(0,1fr) 22rem; gap:clamp(1.5rem,4vw,3.5rem); align-items:start; }
+    #topo > .sheet-body{ padding-top:clamp(1.25rem,2.4vw,2rem); padding-bottom:clamp(1rem,2vw,1.5rem); }
+    h1{ font-size:clamp(3.25rem,8.4vw,5.25rem); line-height:.86; letter-spacing:-.01em; }
+    h1 span{ display:block; }
+    .role{ margin:1rem 0 0; font-family:var(--f-display); font-weight:600; font-size:clamp(1.5rem,3vw,2.1rem); text-transform:uppercase; line-height:1; }
+    .role mark{ background:var(--signal); color:var(--ink); padding:.12em .3em .04em; border:1px solid var(--ink); }
+    .lede{ margin:1.1rem 0 0; font-size:clamp(1.125rem,1.5vw,1.2rem); line-height:1.55; color:var(--ink-2); max-width:58ch; }
+    .lede strong{ color:var(--ink); font-weight:600; }
+    .actions{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1.5rem; }
+    .btn{ display:inline-flex; align-items:center; gap:.55rem; text-decoration:none; font:600 .9375rem var(--f-body); letter-spacing:.01em; padding:.8rem 1.15rem; border:1px solid var(--ink); background:var(--paper); color:var(--ink); transition:background-color .18s var(--ease-out),color .18s var(--ease-out),transform .18s var(--ease-out); }
+    .btn:hover{ background:var(--signal); }
+    .actions .btn{ max-width:100%; overflow-wrap:anywhere; }
+    .btn:active{ transform:translateY(1px); }
+    .btn-solid{ background:var(--ink); color:var(--paper); }
+    .btn-solid:hover{ background:var(--blue); border-color:var(--blue); color:#fff; }
 
-    .node-line { stroke:rgba(0,240,255,.12); stroke-width:1.5; stroke-dasharray:4 4; animation:lineAnim 30s linear infinite; }
+    /* Bloco de título (title block) */
+    .tb{ border:1px solid var(--ink); background:var(--paper); }
+    .tb-photo{ display:grid; grid-template-columns:6.5rem 1fr; border-bottom:1px solid var(--ink); }
+    .tb-photo img{ width:6.5rem; height:6.5rem; object-fit:cover; border-right:1px solid var(--ink); }
+    .tb-photo div{ padding:.75rem .9rem; display:flex; flex-direction:column; justify-content:center; gap:.2rem; }
+    .tb-photo b{ font-family:var(--f-display); font-weight:600; font-size:1.25rem; text-transform:uppercase; line-height:1.05; }
+    .tb-photo .data{ color:var(--ink-3); }
+    .tb dl{ margin:0; }
+    .tb-row{ display:grid; grid-template-columns:6.5rem 1fr; border-bottom:1px solid var(--line); }
+    .tb-row:last-child{ border-bottom:0; }
+    .tb dt{ padding:.6rem .9rem; font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); border-right:1px solid var(--line); }
+    .tb dd{ margin:0; padding:.55rem .9rem; font-size:.9375rem; line-height:1.4; }
+    .live{ display:inline-flex; align-items:center; gap:.45rem; }
+    .live::before{ content:''; width:.5rem; height:.5rem; border-radius:50%; background:var(--ok); box-shadow:0 0 0 3px rgba(23,128,74,.15); }
 
-    .reveal { opacity:0; transform:translateY(30px); transition:all .7s cubic-bezier(.2,.9,.3,1); }
-    .reveal.show { opacity:1; transform:translateY(0); }
+    /* Diagrama de fluxo */
+    .flow{ margin-top:clamp(1.25rem,2vw,1.5rem); border-top:1px solid var(--ink); padding-top:1rem; }
+    .flow-cap{ display:flex; justify-content:space-between; align-items:baseline; gap:.5rem 1.5rem; flex-wrap:wrap; margin-bottom:.6rem; }
+    .flow-cap h2{ font-size:1.625rem; }
+    .flow-cap p{ margin:0; color:var(--ink-3); font-size:.9375rem; }
+    .flow{ --cols:8.5rem minmax(0,1fr) 2.25rem minmax(0,1fr) 2.25rem minmax(0,1fr) 2.25rem minmax(0,1fr); }
+    .flow-head,.flow-row{ display:grid; grid-template-columns:var(--cols); align-items:center; }
+    .flow-head{ font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); padding:0 .75rem .5rem; }
+    .flow-head span:nth-child(1){ grid-column:2; }
+    .flow-head span:nth-child(2){ grid-column:4; }
+    .flow-head span:nth-child(3){ grid-column:6; }
+    .flow-head span:nth-child(4){ grid-column:8; }
+    .flow-row{ text-decoration:none; padding:.5rem .75rem; border:1px solid transparent; border-top-color:var(--line); transition:background-color .2s var(--ease-out),border-color .2s var(--ease-out); }
+    .flow-row:hover,.flow-row:focus-visible{ background:rgba(255,211,26,.24); border-color:var(--ink); }
+    .flow-name{ font-family:var(--f-display); font-weight:700; font-size:1.25rem; text-transform:uppercase; display:flex; align-items:center; gap:.35rem; }
+    .flow-name .icon{ width:.9em; height:.9em; color:var(--blue); transition:transform .2s var(--ease-out); }
+    .flow-row:hover .flow-name .icon{ transform:translateX(3px); }
+    .node{ background:var(--paper); border:1px solid var(--ink); padding:.55rem .7rem; font-size:.875rem; line-height:1.3; min-height:3rem; display:flex; flex-direction:column; justify-content:center; transition:border-color .2s var(--ease-out); }
+    .node small{ display:none; font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); }
+    .node b{ font-weight:600; }
+    .flow-row:hover .node,.flow-row:focus-visible .node{ border-color:var(--blue); }
+    .wire{ position:relative; height:2px; margin:0 .45rem 0 .15rem; background:var(--ink); transform-origin:left center; }
+    .wire::after{ content:''; position:absolute; right:-.1rem; top:50%; width:.5rem; height:.5rem; border-top:2px solid var(--ink); border-right:2px solid var(--ink); transform:translateY(-50%) rotate(45deg); }
+    .flow-row:hover .wire,.flow-row:focus-visible .wire{
+      background:repeating-linear-gradient(90deg,var(--blue) 0 6px,transparent 6px 10px); background-size:20px 2px; animation:flow .6s linear infinite;
+    }
+    .flow-row:hover .wire::after,.flow-row:focus-visible .wire::after{ border-color:var(--blue); }
+    @keyframes flow{ to{ background-position:20px 0; } }
+    html.js .flow .wire{ transform:scaleX(0); }
+    html.js .flow.is-drawn .wire{ transform:scaleX(1); transition:transform .55s var(--ease-out) var(--d,0s); }
 
-    .back-to-top { transition:opacity .4s ease,transform .4s cubic-bezier(.34,1.56,.64,1),visibility .4s ease; }
-    .back-to-top.show { opacity:1; visibility:visible; transform:scale(1); }
+    /* ===== Projetos ===== */
+    .project + .project{ margin-top:clamp(2.5rem,5vw,4rem); padding-top:clamp(2.5rem,5vw,4rem); border-top:1px solid var(--ink); }
+    .project{ display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:clamp(1.5rem,4vw,3.5rem); align-items:start; }
+    .project.is-portrait{ grid-template-columns:minmax(0,7fr) minmax(0,5fr); }
+    .project h3{ font-size:clamp(2.25rem,4.6vw,3.25rem); line-height:.9; }
+    .project .one{ margin:.75rem 0 0; font-size:1.1875rem; line-height:1.45; font-weight:500; }
+    .project .desc{ margin:1rem 0 0; color:var(--ink-2); max-width:62ch; }
+    .project .desc code{ font-family:var(--f-data); font-size:.85em; background:rgba(14,26,43,.06); padding:.05em .3em; }
+    .spec{ margin:1.5rem 0 0; border:1px solid var(--ink); background:var(--paper); }
+    .spec div{ display:grid; grid-template-columns:7.5rem 1fr; border-bottom:1px solid var(--line); }
+    .spec div:last-child{ border-bottom:0; }
+    .spec dt{ padding:.55rem .8rem; font-family:var(--f-data); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); border-right:1px solid var(--line); }
+    .spec dd{ margin:0; padding:.5rem .8rem; font-size:.9375rem; line-height:1.4; }
+    .links{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.5rem; }
+    .fig{ margin:0; border:1px solid var(--ink); background:var(--paper); }
+    .fig img{ width:100%; border-bottom:1px solid var(--ink); }
+    .fig figcaption{ display:flex; justify-content:space-between; gap:1rem; padding:.55rem .8rem; font-size:.8125rem; color:var(--ink-3); }
+    .is-portrait .fig{ max-width:19rem; justify-self:center; width:100%; }
 
-    #mobile-menu { transition:max-height .4s cubic-bezier(.34,1.56,.64,1),opacity .3s ease; max-height:0; opacity:0; overflow:hidden; }
-    #mobile-menu.open { max-height:500px; opacity:1; }
-    .hamburger-line { transition:transform .35s ease,opacity .35s ease; }
-    .hamburger-open .hamburger-line:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
-    .hamburger-open .hamburger-line:nth-child(2) { opacity:0; }
-    .hamburger-open .hamburger-line:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+    /* ===== Trajetória ===== */
+    .log{ width:100%; border-collapse:collapse; border:1px solid var(--ink); background:var(--paper); }
+    .log th{ text-align:left; font:500 .75rem var(--f-data); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); padding:.65rem 1rem; border-bottom:1px solid var(--ink); }
+    .log td{ vertical-align:top; padding:1.1rem 1rem; border-bottom:1px solid var(--line); }
+    .log tr:last-child td{ border-bottom:0; }
+    .log .when{ white-space:nowrap; width:12rem; }
+    .log .when span{ display:block; }
+    .log .when span + span{ color:var(--ink-3); margin-top:.2rem; }
+    .org{ display:flex; gap:.8rem; align-items:center; min-width:13rem; }
+    .org img{ width:2.5rem; height:2.5rem; object-fit:cover; border:1px solid var(--ink); background:#fff; }
+    .org b{ display:block; font-weight:600; line-height:1.25; }
+    .org span{ font-size:.875rem; color:var(--ink-3); }
+    .log p{ margin:0; color:var(--ink-2); max-width:62ch; }
+    .log p + p{ margin-top:.5rem; }
+    .log .now{ background:rgba(255,211,26,.16); }
+    .tag{ display:inline-block; font:500 .6875rem var(--f-data); text-transform:uppercase; letter-spacing:.06em; color:var(--ink); background:var(--signal); border:1px solid var(--ink); padding:.15rem .4rem; margin-left:.4rem; vertical-align:2px; }
 
-    .skill-cluster { transition:all .4s cubic-bezier(.34,1.56,.64,1); }
-    .skill-cluster:hover { transform:scale(1.03); }
-    .skill-tag { transition:all .3s ease; }
-    .skill-tag:hover { transform:scale(1.08); filter:brightness(1.2); }
+    /* ===== Competências ===== */
+    .skills{ margin:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--ink); border-left:1px solid var(--ink); background:var(--paper); }
+    .skills div{ border-right:1px solid var(--ink); border-bottom:1px solid var(--ink); padding:1rem 1.1rem 1.2rem; }
+    .skills dt{ font-family:var(--f-display); font-weight:700; font-size:1.25rem; text-transform:uppercase; }
+    .skills dd{ margin:.45rem 0 0; color:var(--ink-2); font-size:.96875rem; line-height:1.55; }
 
-    .node-dot { cursor:pointer; transition:all .4s cubic-bezier(.34,1.56,.64,1); }
-    .node-dot:hover { transform:scale(1.15); }
-    .node-content { max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.2,.9,.3,1),opacity .4s ease; opacity:0; }
-    .node-content.open { max-height:600px; opacity:1; }
+    /* ===== Certificados ===== */
+    .certs{ width:100%; border-collapse:collapse; border:1px solid var(--ink); background:var(--paper); }
+    .certs th{ text-align:left; font:500 .75rem var(--f-data); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); padding:.65rem 1rem; border-bottom:1px solid var(--ink); }
+    .certs td{ padding:.8rem 1rem; border-bottom:1px solid var(--line); }
+    .certs tr:last-child td{ border-bottom:0; }
+    .certs tbody tr{ transition:background-color .15s var(--ease-out); }
+    .certs tbody tr:hover{ background:rgba(255,211,26,.18); }
+    .certs .who{ display:flex; align-items:center; gap:.6rem; color:var(--ink-2); }
+    .certs .who img{ width:1.75rem; height:1.75rem; object-fit:cover; border:1px solid var(--line); }
+    .certs a{ color:var(--blue); text-underline-offset:3px; font-weight:500; display:inline-flex; align-items:center; gap:.3rem; }
+    .certs a:hover{ color:var(--ink); }
+    .certs .t{ font-weight:600; }
+    .certs td.data{ white-space:nowrap; }
 
-    .profile-ring { animation:nodePulse 3s ease-in-out infinite; }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+    /* ===== Contato ===== */
+    .contact{ background:var(--signal); background-image:none; }
+    .contact .sheet-body{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2rem 3rem; align-items:end; }
+    .contact h2{ font-size:clamp(2.75rem,7vw,5rem); }
+    .contact p{ margin:1rem 0 0; max-width:52ch; font-size:1.125rem; }
+    .mail{ display:inline-block; margin-top:1.75rem; font-family:var(--f-display); font-weight:600; font-size:clamp(1.5rem,4.2vw,2.75rem); line-height:1.05; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:.15em; overflow-wrap:anywhere; }
+    .mail:hover{ text-decoration-thickness:4px; }
+    .contact .btn{ background:transparent; }
+    .contact .btn:hover{ background:var(--ink); color:var(--signal); }
+    .contact .btn-solid{ background:var(--ink); color:var(--signal); }
+    .contact .btn-solid:hover{ background:var(--paper); color:var(--ink); border-color:var(--ink); }
+    .contact .strip{ background:var(--signal); color:var(--ink); }
+    .social{ display:flex; flex-direction:column; gap:.6rem; min-width:13rem; }
+
+    footer{ max-width:1240px; margin:0 auto; padding:1.5rem var(--pad) 2.5rem; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; font-size:.875rem; color:var(--ink-3); }
+
+    /* ===== Responsivo ===== */
+    @media (max-width:1020px){
+      .cover-grid{ grid-template-columns:1fr; }
+      .tb{ max-width:34rem; }
+      .skills{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width:900px){
+      .flow-head{ display:none; }
+      .flow-row{ grid-template-columns:1fr; gap:0; padding:1rem .75rem; }
+      .flow-name{ margin-bottom:.5rem; }
+      .wire{ width:2px; height:1.1rem; margin:0 0 0 1.25rem; transform-origin:top center; }
+      .wire::after{ right:auto; left:50%; top:auto; bottom:-.1rem; transform:translateX(-50%) rotate(135deg); }
+      html.js .flow .wire{ transform:scaleY(0); }
+      html.js .flow.is-drawn .wire{ transform:scaleY(1); }
+      .flow-row:hover .wire,.flow-row:focus-visible .wire{ background:repeating-linear-gradient(180deg,var(--blue) 0 6px,transparent 6px 10px); background-size:2px 20px; animation:flow-v .6s linear infinite; }
+      .node small{ display:block; }
+      .project,.project.is-portrait{ grid-template-columns:1fr; }
+      .project .fig{ order:-1; }
+      .contact .sheet-body{ grid-template-columns:1fr; align-items:start; }
+    }
+    @media (max-width:760px){
+      .nav{ display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; background:var(--paper); border-bottom:1px solid var(--ink); padding:.5rem var(--pad) 1rem; gap:0; }
+      .nav.open{ display:flex; }
+      .nav a{ padding:.8rem .2rem; border:0; border-bottom:1px solid var(--line); }
+      .nav .lang{ margin:.75rem 0 0; align-self:flex-start; }
+      .menu-btn{ display:inline-flex; }
+      .log thead{ display:none; }
+      .log,.log tbody,.log tr,.log td{ display:block; width:100%; }
+      .log tr{ border-bottom:1px solid var(--ink); padding:.4rem 0; }
+      .log tr:last-child{ border-bottom:0; }
+      .log td{ border:0!important; padding:.5rem 1rem; }
+      .log .when{ width:auto; display:flex; gap:.75rem; }
+      .log .when span + span{ margin-top:0; }
+      .certs thead{ display:none; }
+      .certs,.certs tbody,.certs td{ display:block; width:100%; }
+      .certs tr{ display:grid; grid-template-columns:1fr auto; border-bottom:1px solid var(--line); padding:.6rem 0; }
+      .certs tr:last-child{ border-bottom:0; }
+      .certs td{ border:0!important; padding:.2rem 1rem; width:auto; }
+      .certs td:first-child{ grid-column:1 / -1; }
+      .certs td:nth-child(3){ grid-column:1; }
+      .certs td:nth-child(4){ grid-column:2; grid-row:2 / span 2; align-self:center; }
+      .skills{ grid-template-columns:1fr; }
+      .strip span:last-child{ display:none; }
+    }
+    @keyframes flow-v{ to{ background-position:0 20px; } }
+    @media (max-width:420px){
+      .tb-row,.spec div{ grid-template-columns:6rem 1fr; }
+      .tb-photo{ grid-template-columns:5.5rem 1fr; }
+      .tb-photo img{ width:5.5rem; height:5.5rem; }
+    }
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{ animation:none!important; transition:none!important; }
+      html{ scroll-behavior:auto; }
+      html.js .flow .wire{ transform:none; }
+    }
   </style>
 </head>
 <body>
 
-<canvas id="particles-canvas"></canvas>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+</svg>
 
-<nav class="glass-card fixed top-0 left-0 right-0 z-50 border-t-0 border-x-0 transition-all duration-300" style="background:rgba(5,5,10,.72);">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
-    <a href="#" class="text-lg font-display font-bold tracking-tight glow-text" style="color:#e8e8ed">&lt; <span style="color:#00f0ff">AKR</span> /&gt;</a>
-    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400/80">
-      <li><a href="#hero" class="nav-link" data-i18n="nav.inicio">Início</a></li>
-      <li><a href="#experience" class="nav-link" data-i18n="nav.experiencias">Experiências</a></li>
-      <li><a href="#skills" class="nav-link" data-i18n="nav.habilidades">Habilidades</a></li>
-      <li><a href="#projects" class="nav-link" data-i18n="nav.projetos">Projetos</a></li>
-      <li><a href="#certificates" class="nav-link" data-i18n="nav.certificados">Certificados</a></li>
-    </ul>
-    <div class="flex items-center gap-3">
-      <button id="langToggle" class="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-cyberCyan transition-colors border border-glassBorder hover:border-cyberCyan/30 rounded-full px-3 py-1">EN</button>
-      <button id="hamburgerBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
-        <span class="hamburger-line block w-5 h-[1.5px] bg-gray-300 rounded"></span>
-        <span class="hamburger-line block w-5 h-[1.5px] bg-gray-300 rounded"></span>
-        <span class="hamburger-line block w-5 h-[1.5px] bg-gray-300 rounded"></span>
-      </button>
+<header class="bar">
+  <div class="bar-in">
+    <a class="mark" href="#topo"><span class="mark-box" aria-hidden="true">BA</span><span>Bruno Akira</span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg><span data-i18n="nav.menu">Menu</span></button>
+    <nav class="nav" id="nav" aria-label="Seções" data-i18n-aria="aria.nav">
+      <a href="#projetos" data-i18n="nav.proj">Projetos</a>
+      <a href="#trajetoria" data-i18n="nav.exp">Trajetória</a>
+      <a href="#competencias" data-i18n="nav.skills">Competências</a>
+      <a href="#certificados" data-i18n="nav.certs">Certificados</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+      <button class="lang" id="langToggle" type="button" aria-label="Read in English" data-i18n-aria="aria.lang">EN</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== CAPA ===== -->
+<section class="sheet" id="topo" aria-labelledby="nome">
+  <div class="sheet-body">
+    <div class="cover-grid">
+      <div>
+        <h1 id="nome"><span>Bruno Akira</span><span>Furumori</span></h1>
+        <p class="role"><mark data-i18n="hero.role">Back-end &amp; Dados</mark></p>
+        <p class="lede" data-i18n="hero.lede">Mantenho sistemas críticos no ar como <strong>estagiário de sustentação na Digiage</strong> (WSO2, ITIL, Kubernetes) e construo projetos que vão da coleta de dados até a interface, com Python, SQL e APIs REST.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="#projetos"><span data-i18n="hero.cta">Ver projetos</span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+          <a class="btn" href="mailto:akirafurumori@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>akirafurumori@gmail.com</a>
+        </div>
+      </div>
+
+      <aside class="tb" aria-label="Ficha" data-i18n-aria="aria.tb">
+        <div class="tb-photo">
+          <img src="FotosProjetos/Bruno.jpg" alt="Foto de Bruno Akira Furumori" data-i18n-alt="alt.photo" width="800" height="800">
+          <div><b>Bruno Akira Furumori</b><span class="data">Sumaré, SP · BR</span></div>
+        </div>
+        <dl>
+          <div class="tb-row"><dt data-i18n="tb.role">Cargo</dt><dd><span data-i18n="tb.roleV">Estágio Sustentação</span> · Digiage</dd></div>
+          <div class="tb-row"><dt data-i18n="tb.edu">Formação</dt><dd data-i18n="tb.eduV">Ciência da Computação · Anhembi Morumbi</dd></div>
+          <div class="tb-row"><dt data-i18n="tb.focus">Foco</dt><dd>Python · Java · SQL · APIs REST</dd></div>
+          <div class="tb-row"><dt data-i18n="tb.status">Status</dt><dd><span class="live" data-i18n="tb.statusV">Aberto a conversas</span></dd></div>
+          <div class="tb-row" id="visitRow" hidden><dt data-i18n="tb.visits">Leituras</dt><dd><span class="data" id="visitDisplay">0</span></dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="flow" id="flow">
+      <div class="flow-cap">
+        <h2 data-i18n="flow.title">Como meus projetos funcionam</h2>
+        <p data-i18n="flow.hint">Cada linha é um sistema, da origem do dado até a tela. Clique para abrir a ficha.</p>
+      </div>
+      <div class="flow-head" aria-hidden="true">
+        <span data-i18n="flow.c1">Origem</span><span data-i18n="flow.c2">Processamento</span><span data-i18n="flow.c3">Dados</span><span data-i18n="flow.c4">Interface</span>
+      </div>
+      <a class="flow-row" href="#akrscout">
+        <span class="flow-name">AkrScout<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <span class="node"><small data-i18n="flow.c1">Origem</small><b data-i18n="flow.s1">Vagas tech · Programathor</b></span><span class="wire" style="--d:.05s"></span>
+        <span class="node"><small data-i18n="flow.c2">Processamento</small><b data-i18n="flow.s2">Scraper Python · Actions diário</b></span><span class="wire" style="--d:.2s"></span>
+        <span class="node"><small data-i18n="flow.c3">Dados</small><b>Supabase · PostgreSQL</b></span><span class="wire" style="--d:.35s"></span>
+        <span class="node"><small data-i18n="flow.c4">Interface</small><b>React 19 · Vercel</b></span>
+      </a>
+      <a class="flow-row" href="#akrgym">
+        <span class="flow-name">AkrGym<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <span class="node"><small data-i18n="flow.c1">Origem</small><b data-i18n="flow.g1">Treinos e refeições</b></span><span class="wire" style="--d:.15s"></span>
+        <span class="node"><small data-i18n="flow.c2">Processamento</small><b data-i18n="flow.g2">Gemini AI · macros</b></span><span class="wire" style="--d:.3s"></span>
+        <span class="node"><small data-i18n="flow.c3">Dados</small><b>Firebase · Firestore</b></span><span class="wire" style="--d:.45s"></span>
+        <span class="node"><small data-i18n="flow.c4">Interface</small><b>React 19 · Firebase Hosting</b></span>
+      </a>
+      <a class="flow-row" href="#estacao">
+        <span class="flow-name">EstacaoAkira<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <span class="node"><small data-i18n="flow.c1">Origem</small><b data-i18n="flow.e1">APIs REST de clima</b></span><span class="wire" style="--d:.25s"></span>
+        <span class="node"><small data-i18n="flow.c2">Processamento</small><b>Axios · React Navigation</b></span><span class="wire" style="--d:.4s"></span>
+        <span class="node"><small data-i18n="flow.c3">Dados</small><b data-i18n="flow.e3">AsyncStorage (local)</b></span><span class="wire" style="--d:.55s"></span>
+        <span class="node"><small data-i18n="flow.c4">Interface</small><b>React Native · Expo</b></span>
+      </a>
     </div>
   </div>
-  <div id="mobile-menu" class="md:hidden px-5 sm:px-8 pb-4">
-    <ul class="flex flex-col gap-4 text-sm font-medium text-gray-400 pt-3 border-t border-glassBorder">
-      <li><a href="#hero" class="nav-link block" data-i18n="nav.inicio">Início</a></li>
-      <li><a href="#experience" class="nav-link block" data-i18n="nav.experiencias">Experiências</a></li>
-      <li><a href="#skills" class="nav-link block" data-i18n="nav.habilidades">Habilidades</a></li>
-      <li><a href="#projects" class="nav-link block" data-i18n="nav.projetos">Projetos</a></li>
-      <li><a href="#certificates" class="nav-link block" data-i18n="nav.certificados">Certificados</a></li>
-    </ul>
+  <div class="strip"><span class="data" data-i18n="strip.rev">Revisão nov/2026</span></div>
+</section>
+
+<!-- ===== PROJETOS ===== -->
+<section class="sheet" id="projetos" aria-labelledby="h-proj">
+  <div class="sheet-body">
+    <div class="sheet-head">
+      <h2 id="h-proj" data-i18n="proj.title">Projetos</h2>
+      <p data-i18n="proj.sub">Três sistemas completos, cada um com o código aberto no GitHub.</p>
+    </div>
+
+    <article class="project" id="akrscout" aria-labelledby="h-scout">
+      <div>
+        <h3 id="h-scout">AkrScout</h3>
+        <p class="one" data-i18n="scout.one">Coleta vagas de tecnologia todo dia e transforma os anúncios em dados de mercado.</p>
+        <p class="desc" data-i18n="scout.desc">Um cron diário no GitHub Actions dispara um scraper em Python (httpx e BeautifulSoup) que busca as vagas, extrai as skills, normaliza os anúncios e descarta duplicatas por hash de conteúdo antes do upsert no Supabase. O front em React lê views agregadas do PostgreSQL, protegidas por RLS, para mostrar skills em alta, salários por senioridade e vagas salvas.</p>
+        <dl class="spec">
+          <div><dt data-i18n="spec.collect">Coleta</dt><dd>Python 3.12 · httpx · BeautifulSoup · lxml</dd></div>
+          <div><dt data-i18n="spec.data">Dados</dt><dd data-i18n="scout.data">PostgreSQL no Supabase · 6 tabelas, 6 views, RLS</dd></div>
+          <div><dt data-i18n="spec.auto">Automação</dt><dd data-i18n="scout.auto">GitHub Actions · cron diário</dd></div>
+          <div><dt data-i18n="spec.ui">Interface</dt><dd>React 19 · Vite · Tailwind 4 · Recharts</dd></div>
+          <div><dt>Deploy</dt><dd>Vercel</dd></div>
+        </dl>
+        <div class="links">
+          <a class="btn btn-solid" href="https://akrscout.vercel.app" target="_blank" rel="noopener"><span data-i18n="link.open">Abrir o app</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="btn" href="https://github.com/BrunoAkiraSenai/akrscout" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="link.code">Código</span></a>
+        </div>
+      </div>
+      <figure class="fig">
+        <img src="FotosProjetos/AkrScout-analises.png" alt="Painel de análises do AkrScout com vagas por modalidade, salário por senioridade e principais habilidades" data-i18n-alt="alt.scout" width="1919" height="919" loading="lazy" decoding="async">
+        <figcaption><span data-i18n="fig.scout">Painel de análises do AkrScout</span><span class="data">FIG. 1</span></figcaption>
+      </figure>
+    </article>
+
+    <article class="project" id="akrgym" aria-labelledby="h-gym">
+      <div>
+        <h3 id="h-gym">AkrGym</h3>
+        <p class="one" data-i18n="gym.one">App web de treino e dieta, mobile-first, com análise de refeições por IA.</p>
+        <p class="desc" data-i18n="gym.desc">Registra treinos no protocolo Top Set / Back-Off com referência automática do último treino, um diário alimentar com heatmap mensal de calorias e medidas corporais com gráfico de tendência. Ao descrever um prato, a IA Gemini preenche os macros, com rate limiting e cache. Os dados ficam no Firestore em <code>users/{uid}</code>, com regras que restringem o acesso de cada usuário e cache offline.</p>
+        <dl class="spec">
+          <div><dt data-i18n="spec.ui">Interface</dt><dd>React 19 · Vite 8 · Tailwind 4</dd></div>
+          <div><dt data-i18n="spec.data">Dados</dt><dd>Firebase Auth · Firestore</dd></div>
+          <div><dt data-i18n="spec.ai">IA</dt><dd data-i18n="gym.ai">Gemini · cálculo de macros</dd></div>
+          <div><dt>Deploy</dt><dd data-i18n="gym.deploy">Firebase Hosting · preview channels</dd></div>
+        </dl>
+        <div class="links">
+          <a class="btn btn-solid" href="https://akrgym.web.app" target="_blank" rel="noopener"><span data-i18n="link.open">Abrir o app</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="btn" href="https://github.com/BrunoAkiraSenai/akrgym" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="link.code">Código</span></a>
+        </div>
+      </div>
+      <figure class="fig">
+        <img src="FotosProjetos/AkrGym-dieta.png" alt="Diário alimentar do AkrGym com progresso de calorias e macros e as refeições do dia" data-i18n-alt="alt.gym" width="870" height="480" loading="lazy" decoding="async">
+        <figcaption><span data-i18n="fig.gym">Diário alimentar do AkrGym</span><span class="data">FIG. 2</span></figcaption>
+      </figure>
+    </article>
+
+    <article class="project is-portrait" id="estacao" aria-labelledby="h-est">
+      <div>
+        <h3 id="h-est">EstacaoAkira</h3>
+        <p class="one" data-i18n="est.one">App mobile de monitoramento climático com dashboards e calendário meteorológico.</p>
+        <p class="desc" data-i18n="est.desc">Consulta clima e previsão por APIs REST com Axios, organiza as informações em dashboards e num calendário meteorológico e guarda dados no aparelho com AsyncStorage. Os gráficos usam Victory Charts e Recharts, e a navegação entre telas usa React Navigation.</p>
+        <dl class="spec">
+          <div><dt data-i18n="spec.ui">Interface</dt><dd>React Native · Expo</dd></div>
+          <div><dt data-i18n="spec.data">Dados</dt><dd data-i18n="est.data">APIs REST de clima (Axios) · AsyncStorage</dd></div>
+          <div><dt data-i18n="spec.charts">Gráficos</dt><dd>Victory Charts · Recharts</dd></div>
+          <div><dt>Status</dt><dd data-i18n="est.status">Projeto de estudo</dd></div>
+        </dl>
+        <div class="links">
+          <a class="btn" href="https://github.com/BrunoAkiraSenai/EstacaoAkira" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="link.code">Código</span></a>
+        </div>
+      </div>
+      <figure class="fig">
+        <img src="FotosProjetos/EstacaoAkira.jfif" alt="Tela do app EstacaoAkira" data-i18n-alt="alt.est" width="887" height="1920" loading="lazy" decoding="async">
+        <figcaption><span data-i18n="fig.est">Tela do app</span><span class="data">FIG. 3</span></figcaption>
+      </figure>
+    </article>
   </div>
-</nav>
+  <div class="strip"><span data-i18n="strip.proj">Fonte: READMEs dos repositórios no GitHub</span></div>
+</section>
 
-<main class="relative z-10">
+<!-- ===== TRAJETÓRIA ===== -->
+<section class="sheet" id="trajetoria" aria-labelledby="h-exp">
+  <div class="sheet-body">
+    <div class="sheet-head">
+      <h2 id="h-exp" data-i18n="exp.title">Trajetória</h2>
+      <p data-i18n="exp.sub">Do técnico no SENAI à sustentação de middleware em produção.</p>
+    </div>
+    <table class="log">
+      <thead><tr><th data-i18n="exp.th1">Período</th><th data-i18n="exp.th2">Onde</th><th data-i18n="exp.th3">O que faço / fiz</th></tr></thead>
+      <tbody>
+        <tr class="now">
+          <td class="when"><span class="data" data-i18n="exp.d0">Jun 2026 — hoje</span><span class="data" data-desde="2026-06"></span></td>
+          <td><div class="org"><img src="FotosProjetos/digiage_it_logo.jpg" alt="" width="200" height="200" loading="lazy"><div><b>Digiage <span class="tag" data-i18n="exp.nowTag">Atual</span></b><span data-i18n="exp.r0">Estágio Sustentação · Campinas, SP · híbrido</span></div></div></td>
+          <td>
+            <p data-i18n="exp.p0a">Atendo e resolvo incidentes, requisições, mudanças e problemas em ambientes corporativos críticos, seguindo as práticas do ITIL, e participo do CAB e das janelas de mudança.</p>
+            <p data-i18n="exp.p0b">Dou suporte ao portfólio WSO2 (API Manager, Enterprise Integrator e Micro Integrator) em várias versões: análise de logs, troubleshooting e acompanhamento de deploys on-premise e em Kubernetes.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="when"><span class="data" data-i18n="exp.d1">Jan 2026 — Dez 2029</span><span class="data" data-i18n="exp.s1">em curso</span></td>
+          <td><div class="org"><img src="FotosProjetos/anhembiMorumbi.png" alt="" width="447" height="447" loading="lazy"><div><b>Anhembi Morumbi</b><span data-i18n="exp.r1">Bacharelado em Ciência da Computação</span></div></div></td>
+          <td><p data-i18n="exp.p1">Estruturas de dados, algoritmos, banco de dados e engenharia de software, com projetos práticos em Java e Python.</p></td>
+        </tr>
+        <tr>
+          <td class="when"><span class="data" data-i18n="exp.d2">Jan 2024 — Dez 2025</span><span class="data" data-i18n="exp.s2">2 anos</span></td>
+          <td><div class="org"><img src="FotosProjetos/Senai.jpg" alt="" width="696" height="464" loading="lazy"><div><b>SENAI Sumaré</b><span data-i18n="exp.r2">Técnico em Desenvolvimento de Sistemas</span></div></div></td>
+          <td><p data-i18n="exp.p2">Aplicações com Python, APIs REST e SQL, projetos de IoT e integração de dados, Git/GitHub e Linux, em equipe.</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="strip"><span data-i18n="strip.exp">Fonte: perfil no LinkedIn, nov/2026</span></div>
+</section>
 
-<section id="hero" class="min-h-screen flex items-center justify-center py-28 sm:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-30" style="background:radial-gradient(ellipse at 50% 50%,rgba(0,240,255,.08) 0%,transparent 50%)"></div>
-  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-medium text-cyberCyan/80 mb-6" id="visitBadge" style="opacity:0;transform:translateY(-10px);transition:all .6s cubic-bezier(.34,1.56,.64,1)">
-      <span class="w-2 h-2 rounded-full bg-cyberCyan/60" style="animation:pulseGlow 2s infinite"></span>
-      <span><span id="visitDisplay">0</span> <span data-i18n="visits">visitas</span></span>
+<!-- ===== COMPETÊNCIAS ===== -->
+<section class="sheet" id="competencias" aria-labelledby="h-skills">
+  <div class="sheet-body">
+    <div class="sheet-head">
+      <h2 id="h-skills" data-i18n="skills.title">Competências</h2>
+      <p data-i18n="skills.sub">O que uso no estágio e nos projetos acima.</p>
     </div>
-    <p class="text-cyberCyan/80 font-medium text-sm tracking-[.3em] uppercase mb-4 font-display reveal" data-i18n="hero.greeting">Olá, eu sou</p>
-    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] text-white glow-text reveal">
-      Bruno Akira<br>
-      <span class="bg-gradient-to-r from-cyberCyan to-cyberMagenta bg-clip-text text-transparent">Furumori</span>
-    </h1>
-    <p class="mt-3 text-lg sm:text-xl font-medium text-cyberCyan/60 font-display reveal" data-i18n="hero.sub">Back-end &amp; Data</p>
-    <p class="mt-5 text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto reveal" data-i18n="hero.bio">
-      Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.
-    </p>
-    <div class="flex items-center justify-center gap-4 mt-8 reveal">
-      <a href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
-      <a href="https://www.linkedin.com/in/bruno-furumori-6585ba371/" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
-      <a href="https://www.instagram.com/akiravsk/" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
-      <a href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full glass-card text-gray-300 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300 ml-2"><i class="fa-solid fa-download"></i> <span data-i18n="curriculo">Currículo</span></a>
-    </div>
-    <div class="flex flex-wrap justify-center gap-3 mt-8 reveal">
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">Java</span>
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">Python</span>
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">JavaScript</span>
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">React</span>
-    </div>
+    <dl class="skills">
+      <div><dt data-i18n="sk.lang">Linguagens</dt><dd>Python · Java · JavaScript · SQL</dd></div>
+      <div><dt data-i18n="sk.int">Integração</dt><dd data-i18n="sk.intV">APIs REST · WSO2 API Manager · Enterprise e Micro Integrator · CI/CD com GitHub Actions</dd></div>
+      <div><dt data-i18n="sk.data">Dados</dt><dd>PostgreSQL · Supabase · Firebase Firestore · MySQL</dd></div>
+      <div><dt data-i18n="sk.ops">Operação</dt><dd data-i18n="sk.opsV">Linux · ITIL / ITSM · deploys em Kubernetes · AWS básico (S3, EC2, IAM)</dd></div>
+      <div><dt>Interface</dt><dd>React · React Native · Tailwind · Vite</dd></div>
+      <div><dt data-i18n="sk.tools">Ferramentas</dt><dd>Git / GitHub · Postman · IntelliJ</dd></div>
+    </dl>
   </div>
 </section>
 
-<section id="experience" class="py-24 sm:py-32 relative">
-  <div class="max-w-5xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="exp.section">Trajetória</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="exp.title">Experiências</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
+<!-- ===== CERTIFICADOS ===== -->
+<section class="sheet" id="certificados" aria-labelledby="h-certs">
+  <div class="sheet-body">
+    <div class="sheet-head">
+      <h2 id="h-certs" data-i18n="certs.title">Certificados</h2>
+      <p data-i18n="certs.sub">Cursos concluídos, com o certificado original de cada um.</p>
     </div>
-    <div class="relative flex flex-col items-center gap-0">
-      <svg class="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full hidden md:block" style="overflow:visible">
-        <line x1="1" y1="0" x2="1" y2="100%" class="node-line" style="stroke-dasharray:6 8"/>
-      </svg>
-
-      <div class="relative w-full max-w-2xl node-item" data-expand>
-        <div class="flex items-center gap-4 md:gap-6 cursor-pointer node-dot" data-target="exp1">
-          <div class="w-5 h-5 rounded-full bg-cyberCyan/20 border-2 border-cyberCyan/40 shrink-0 relative">
-            <div class="absolute inset-1 rounded-full bg-cyberCyan/60" style="animation:nodePulse 3s infinite"></div>
-          </div>
-          <div class="glass-card rounded-2xl p-5 sm:p-6 flex-1 glow-border">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 class="font-display text-lg font-semibold text-white" data-i18n="exp.1.title">Ciência da Computação</h3>
-              <span class="text-xs text-gray-500 font-mono">Jan 2026 — Dez 2029</span>
-            </div>
-            <p class="text-sm text-cyberCyan/60 mt-1" data-i18n="exp.1.company">Anhembi Morumbi — Graduação</p>
-          </div>
-        </div>
-        <div id="exp1" class="node-content ml-12 md:ml-14">
-          <div class="glass-card rounded-2xl p-5 sm:p-6 mt-3 glow-border">
-            <p class="text-sm text-gray-400 leading-relaxed" data-i18n="exp.1.desc">Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Java</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Python</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">SQL</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Estrutura de Dados</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative w-full max-w-2xl mt-8 node-item" data-expand>
-        <div class="flex items-center gap-4 md:gap-6 cursor-pointer node-dot" data-target="exp2">
-          <div class="w-5 h-5 rounded-full bg-cyberMagenta/20 border-2 border-cyberMagenta/40 shrink-0 relative">
-            <div class="absolute inset-1 rounded-full bg-cyberMagenta/60" style="animation:nodePulse 3s infinite"></div>
-          </div>
-          <div class="glass-card rounded-2xl p-5 sm:p-6 flex-1 glow-border">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 class="font-display text-lg font-semibold text-white" data-i18n="exp.2.title">Desenvolvimento de Sistemas</h3>
-              <span class="text-xs text-gray-500 font-mono">Jan 2024 — Dez 2025</span>
-            </div>
-            <p class="text-sm text-cyberMagenta/60 mt-1" data-i18n="exp.2.company">SENAI — Curso Técnico</p>
-          </div>
-        </div>
-        <div id="exp2" class="node-content ml-12 md:ml-14">
-          <div class="glass-card rounded-2xl p-5 sm:p-6 mt-3 glow-border">
-            <p class="text-sm text-gray-400 leading-relaxed" data-i18n="exp.2.desc">Formação técnica em Desenvolvimento de Sistemas com ênfase em lógica de programação, banco de dados, versionamento com Git e desenvolvimento web.</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">JavaScript</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">React</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Firebase</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Git</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">SQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <table class="certs">
+      <thead><tr><th data-i18n="certs.th1">Curso</th><th data-i18n="certs.th2">Emissor</th><th data-i18n="certs.th3">Data</th><th><span class="sr-only" data-i18n="certs.th4">Certificado</span></th></tr></thead>
+      <tbody>
+        <tr><td class="t" data-i18n="c.bd">Big Data &amp; Analytics</td><td><span class="who"><img src="FotosProjetos/FIAPc.jpg" alt="" width="640" height="640" loading="lazy">FIAP</span></td><td class="data" data-i18n="c.may26">Mai 2026</td><td><a href="PDFs/Certificados/90dd24886be4993d4769d5673a309a3f (2).png" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+        <tr><td class="t">Crash Course: AWS Basics</td><td><span class="who"><img src="FotosProjetos/KODEc.jpg" alt="" width="447" height="447" loading="lazy">KodeKloud</span></td><td class="data" data-i18n="c.may26">Mai 2026</td><td><a href="PDFs/Certificados/KodeKloud_Course Completion.pdf" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+        <tr><td class="t">Python</td><td><span class="who"><img src="FotosProjetos/FIAPc.jpg" alt="" width="640" height="640" loading="lazy">FIAP</span></td><td class="data" data-i18n="c.aug25">Ago 2025</td><td><a href="PDFs/Certificados/31ea89d1e6c24ccba581ad506960b3d7 (2).png" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+        <tr><td class="t" data-i18n="c.gen">IA Generativa Aplicada à Programação</td><td><span class="who"><img src="FotosProjetos/Senai.jpg" alt="" width="696" height="464" loading="lazy">SENAI</span></td><td class="data">Jul 2025</td><td><a href="PDFs/Certificados/Certificado_Inteligências Artificiais Generativas Aplicada a Programação - ChatGPT (3).pdf" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+        <tr><td class="t">Python Development</td><td><span class="who"><img src="FotosProjetos/FIAPc.jpg" alt="" width="640" height="640" loading="lazy">FIAP</span></td><td class="data">Jun 2025</td><td><a href="PDFs/Certificados/0f30b0868e6f68c8fad73ba88e8bd705 (2).png" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+        <tr><td class="t" data-i18n="c.iac">Inteligência Artificial e Computacional</td><td><span class="who"><img src="FotosProjetos/FIAPc.jpg" alt="" width="640" height="640" loading="lazy">FIAP</span></td><td class="data">Jun 2025</td><td><a href="PDFs/Certificados/Bruno (2).pdf" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+        <tr><td class="t">Chatbots</td><td><span class="who"><img src="FotosProjetos/FIAPc.jpg" alt="" width="640" height="640" loading="lazy">FIAP</span></td><td class="data">Jun 2025</td><td><a href="PDFs/Certificados/doc (2) (1).pdf" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+        <tr><td class="t" data-i18n="c.fia">Fundamentos da Inteligência Artificial</td><td><span class="who"><img src="FotosProjetos/Senai.jpg" alt="" width="696" height="464" loading="lazy">SENAI</span></td><td class="data">Jun 2025</td><td><a href="PDFs/Certificados/FLUÊNCIA___FUNDAMENTOS_DA_INTELIGÊNCIA_ARTIFICIAL-Certificado_2711422 (3).pdf" target="_blank" rel="noopener"><span data-i18n="c.view">Ver</span><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></td></tr>
+      </tbody>
+    </table>
   </div>
+  <div class="strip"><span data-i18n="strip.certs">Cada link abre o certificado original (PDF ou imagem)</span></div>
 </section>
 
-<section id="skills" class="py-24 sm:py-32 relative">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="skills.section">Expertise</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="skills.title">Habilidades</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
+<!-- ===== CONTATO ===== -->
+<section class="sheet contact" id="contato" aria-labelledby="h-contact">
+  <div class="sheet-body">
+    <div>
+      <h2 id="h-contact" data-i18n="contact.title">Vamos conversar</h2>
+      <p data-i18n="contact.text">Estou aberto a vagas de back-end e dados e a projetos freelance. O jeito mais rápido de falar comigo é por e-mail ou pelo LinkedIn.</p>
+      <a class="mail" href="mailto:akirafurumori@gmail.com">akirafurumori@gmail.com</a>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-
-      <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
-        <div class="w-11 h-11 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4"><i class="fa-solid fa-code"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.frontend">Front-end</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">React</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">React Native</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">JavaScript</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Tailwind</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">HTML/CSS</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Vite</span>
-        </div>
-      </div>
-
-      <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
-        <div class="w-11 h-11 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4"><i class="fa-solid fa-server"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.backend">Back-end</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Java</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Python</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Node.js</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">APIs REST</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">SQL</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">PostgreSQL</span>
-        </div>
-      </div>
-
-      <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
-        <div class="w-11 h-11 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.tools">Ferramentas &amp; Dados</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Git</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Firebase</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Supabase</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">MySQL</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Postman</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">IntelliJ</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="py-24 sm:py-32 relative">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="projects.section">Portfólio</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="projects.title">Projetos</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
-    </div>
-    <div id="projectsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
-        <div class="h-44 overflow-hidden">
-          <img src="FotosProjetos/AkrScout.png" alt="AkrScout" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-        </div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-base font-semibold text-white mb-1">AkrScout</h3>
-          <p class="text-xs text-gray-500 mb-3">Plataforma de busca inteligente de vagas tech</p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">React 19</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Supabase</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Python</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Tailwind</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/BrunoAkiraSenai/akrscout" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
-            <a href="https://akrscout.vercel.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-gray-300 hover:text-cyberCyan transition-all"><i class="fa-solid fa-arrow-up-right-from-square"></i> Projeto</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
-        <div class="h-44 overflow-hidden">
-          <img src="FotosProjetos/AkrGym.png" alt="AkrGym" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-        </div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-base font-semibold text-white mb-1">AkrGym</h3>
-          <p class="text-xs text-gray-500 mb-3">App web para gestão de treinos e acompanhamento fitness</p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">React</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">TypeScript</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Vite</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Tailwind</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/BrunoAkiraSenai/akrgym" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
-            <a href="https://akrgym.web.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-gray-300 hover:text-cyberCyan transition-all"><i class="fa-solid fa-dumbbell"></i> Fitness</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
-        <div class="h-44 overflow-hidden">
-          <img src="FotosProjetos/EstacaoAkira.jfif" alt="EstacaoAkira" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-        </div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-base font-semibold text-white mb-1">EstacaoAkira</h3>
-          <p class="text-xs text-gray-500 mb-3">App mobile de monitoramento climático</p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">React Native</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Expo</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Axios</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Charts</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/BrunoAkiraSenai/EstacaoAkira" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
-            <span class="inline-flex items-center gap-1.5 text-[11px] px-3.5 py-2 rounded-full glass-card text-gray-500 cursor-default"><i class="fa-solid fa-mobile"></i> Mobile</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<section id="certificates" class="py-24 sm:py-32 relative">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="certs.section">Certificações</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="certs.title">Certificados</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-
-      <a href="PDFs/Certificados/FLUÊNCIA___FUNDAMENTOS_DA_INTELIGÊNCIA_ARTIFICIAL-Certificado_2711422 (3).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Senai.png" alt="Senai" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Fundamentos da Inteligência Artificial</h3>
-        <p class="text-xs text-gray-500">Senai — Jun 2025</p>
-      </a>
-
-      <a href="PDFs/Certificados/Certificado_Inteligências Artificiais Generativas Aplicada a Programação - ChatGPT (3).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Senai.png" alt="Senai" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">IA Generativa Aplicada à Programação</h3>
-        <p class="text-xs text-gray-500">ChatGPT & Senai — Jul 2025</p>
-      </a>
-
-      <a href="PDFs/Certificados/KodeKloud_Course Completion.pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_KODEKLOUD.png" alt="KodeKloud" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">KodeKloud AWS</h3>
-        <p class="text-xs text-gray-500">KodeKloud — Mai 2026</p>
-      </a>
-
-      <a href="PDFs/Certificados/Bruno (2).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Inteligência Artificial e Computacional</h3>
-        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
-      </a>
-
-      <a href="PDFs/Certificados/doc (2) (1).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Chatbots</h3>
-        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
-      </a>
-
-      <a href="PDFs/Certificados/0f30b0868e6f68c8fad73ba88e8bd705 (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Python Development</h3>
-        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
-      </a>
-
-      <a href="PDFs/Certificados/31ea89d1e6c24ccba581ad506960b3d7 (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Python</h3>
-        <p class="text-xs text-gray-500">FIAP — Ago 2025</p>
-      </a>
-
-      <a href="PDFs/Certificados/90dd24886be4993d4769d5673a309a3f (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Big Data & Analytics</h3>
-        <p class="text-xs text-gray-500">FIAP — Mai 2026</p>
-      </a>
-
+    <div class="social">
+      <a class="btn btn-solid" href="https://www.linkedin.com/in/bruno-furumori-6585ba371/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+      <a class="btn" href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+      <a class="btn" href="https://www.instagram.com/akiravsk/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a>
+      <a class="btn" href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><span data-i18n="contact.cv">Currículo (PDF)</span></a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="relative z-10 border-t border-glassBorder py-10">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-gray-500" data-i18n="footer">&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.</p>
-    <div class="flex items-center gap-6 text-sm text-gray-500">
-      <a href="#hero" class="hover:text-cyberCyan transition-colors" data-i18n="nav.inicio">Início</a>
-      <a href="#experience" class="hover:text-cyberCyan transition-colors" data-i18n="nav.experiencias">Experiências</a>
-      <a href="#projects" class="hover:text-cyberCyan transition-colors" data-i18n="nav.projetos">Projetos</a>
-      <a href="#certificates" class="hover:text-cyberCyan transition-colors" data-i18n="nav.certificados">Certificados</a>
-    </div>
-  </div>
+<footer>
+  <span>© 2026 Bruno Akira Furumori</span>
+  <span>Sumaré, SP · Brasil</span>
 </footer>
 
-<button id="backToTop" class="back-to-top fixed bottom-6 right-6 w-11 h-11 rounded-full glass-card text-cyberCyan flex items-center justify-center opacity-0 invisible scale-75 hover:bg-cyberCyan/10 hover:border-cyberCyan/30 transition-all z-40" aria-label="Voltar ao topo">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
-
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js" defer></script>
 <script>
-// ===== PARTICLES =====
-(()=>{
-  const c=document.getElementById('particles-canvas'),ctx=c.getContext('2d');
-  let w,h,particles=[],mouse={x:null,y:null};
-  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
-  window.addEventListener('resize',resize);resize();
-  window.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
-  class P{
-    constructor(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-.5)*.5;this.vy=(Math.random()-.5)*.5;this.r=Math.random()*1.5+.5;this.a=Math.random()*.5+.2}
-    update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w)this.vx*=-1;if(this.y<0||this.y>h)this.vy*=-1}
-    draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,240,255,${this.a})`;ctx.fill()}
-  }
-  for(let i=0;i<80;i++)particles.push(new P());
-  function drawLines(){
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<180){
-          let alpha=(1-dist/180)*.12;
-          if(mouse.x!==null){
-            const mx=mouse.x-particles[i].x,my=mouse.y-particles[i].y;
-            if(Math.sqrt(mx*mx+my*my)<300)alpha=Math.min(alpha+.15,.45);
-          }
-          ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);
-          ctx.strokeStyle=`rgba(0,240,255,${alpha})`;ctx.lineWidth=.5;ctx.stroke();
-        }
-      }
-    }
-  }
-  function anim(){ctx.clearRect(0,0,w,h);particles.forEach(p=>{p.update();p.draw()});drawLines();requestAnimationFrame(anim)}
-  anim();
-})();
-
-// ===== REVEAL =====
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target)}})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// ===== EXPERIENCE NODES =====
-document.querySelectorAll('.node-dot').forEach(dot=>{
-  dot.addEventListener('click',function(){
-    const target=document.getElementById(this.dataset.target);
-    if(!target)return;
-    const isOpen=target.classList.contains('open');
-    document.querySelectorAll('.node-content').forEach(n=>n.classList.remove('open'));
-    if(!isOpen)target.classList.add('open');
-  });
-});
-
-// ===== HAMBURGER =====
-const hamburgerBtn=document.getElementById('hamburgerBtn');
-const mobileMenu=document.getElementById('mobile-menu');
-if(hamburgerBtn&&mobileMenu){
-  hamburgerBtn.addEventListener('click',function(){this.classList.toggle('hamburger-open');mobileMenu.classList.toggle('open')});
-  mobileMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{hamburgerBtn.classList.remove('hamburger-open');mobileMenu.classList.remove('open')}));
-}
-
-// ===== BACK TO TOP =====
-const backToTop=document.getElementById('backToTop');
-if(backToTop){
-  window.addEventListener('scroll',function(){if(window.scrollY>400)backToTop.classList.add('show');else backToTop.classList.remove('show')});
-  backToTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
-}
-
-// ===== NAV ACTIVE LINK =====
-const secs=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-link');
-function updateActive(){
-  let c='';
-  secs.forEach(s=>{const t=s.offsetTop-150;if(window.scrollY>=t)c=s.getAttribute('id')});
-  navLinks.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+c)l.classList.add('active')});
-}
-window.addEventListener('scroll',updateActive);window.addEventListener('load',updateActive);
-
-// ===== LANGUAGE TOGGLE =====
+// ===== IDIOMA =====
+const I18N_EN={
+  'nav.menu':'Menu','nav.proj':'Projects','nav.exp':'Experience','nav.skills':'Skills','nav.certs':'Certificates','nav.contact':'Contact',
+  'aria.nav':'Sections','aria.lang':'Ler em português','aria.tb':'Profile card',
+  'hero.role':'Back-end &amp; Data',
+  'hero.lede':'I keep critical systems running as a <strong>support intern at Digiage</strong> (WSO2, ITIL, Kubernetes) and build projects that go from data collection to the interface, with Python, SQL and REST APIs.',
+  'hero.cta':'See projects',
+  'alt.photo':'Photo of Bruno Akira Furumori',
+  'tb.role':'Role','tb.roleV':'Support Intern','tb.edu':'Education','tb.eduV':'Computer Science · Anhembi Morumbi','tb.focus':'Focus','tb.status':'Status','tb.statusV':'Open to conversations','tb.visits':'Visits',
+  'flow.title':'How my projects work','flow.hint':'Each row is a system, from where the data comes from to the screen. Click to open its sheet.',
+  'flow.c1':'Source','flow.c2':'Processing','flow.c3':'Data','flow.c4':'Interface',
+  'flow.s1':'Tech jobs · Programathor','flow.s2':'Python scraper · daily Actions',
+  'flow.g1':'Workouts and meals','flow.g2':'Gemini AI · macros',
+  'flow.e1':'Weather REST APIs','flow.e3':'AsyncStorage (local)',
+  'strip.rev':'Revised Nov 2026','strip.proj':'Source: repository READMEs on GitHub','strip.exp':'Source: LinkedIn profile, Nov 2026','strip.certs':'Each link opens the original certificate (PDF or image)',
+  'proj.title':'Projects','proj.sub':'Three complete systems, each with its source code open on GitHub.',
+  'scout.one':'Collects tech job listings every day and turns them into market data.',
+  'scout.desc':'A daily GitHub Actions cron triggers a Python scraper (httpx and BeautifulSoup) that fetches the listings, extracts skills, normalizes the posts and drops duplicates by content hash before upserting into Supabase. The React front end reads aggregate PostgreSQL views, protected by RLS, to show trending skills, salaries by seniority and saved jobs.',
+  'spec.collect':'Collection','spec.data':'Data','spec.auto':'Automation','spec.ui':'Interface','spec.ai':'AI','spec.charts':'Charts',
+  'scout.data':'PostgreSQL on Supabase · 6 tables, 6 views, RLS','scout.auto':'GitHub Actions · daily cron',
+  'link.open':'Open the app','link.code':'Code',
+  'alt.scout':'AkrScout analytics dashboard with jobs by work mode, salary by seniority and top skills','fig.scout':'AkrScout analytics dashboard',
+  'gym.one':'Mobile-first workout and diet web app with AI meal analysis.',
+  'gym.desc':'Logs workouts with the Top Set / Back-Off protocol and an automatic reference to the last session, a food diary with a monthly calorie heatmap, and body measurements with a trend chart. Describe a dish and Gemini AI fills in the macros, with rate limiting and caching. Data lives in Firestore under <code>users/{uid}</code>, with rules restricting each user\'s access and an offline cache.',
+  'gym.ai':'Gemini · macro calculation','gym.deploy':'Firebase Hosting · preview channels',
+  'alt.gym':'AkrGym food diary with calorie and macro progress and the day\'s meals','fig.gym':'AkrGym food diary',
+  'est.one':'Mobile weather monitoring app with dashboards and a weather calendar.',
+  'est.desc':'Fetches weather and forecasts from REST APIs with Axios, organizes them into dashboards and a weather calendar, and stores data on the device with AsyncStorage. Charts use Victory Charts and Recharts, and screen navigation uses React Navigation.',
+  'est.data':'Weather REST APIs (Axios) · AsyncStorage','est.status':'Study project',
+  'alt.est':'EstacaoAkira app screen','fig.est':'App screen',
+  'exp.title':'Experience','exp.sub':'From a technical course at SENAI to supporting middleware in production.',
+  'exp.th1':'Period','exp.th2':'Where','exp.th3':'What I do / did',
+  'exp.d0':'Jun 2026 — now','exp.nowTag':'Current','exp.r0':'Support Intern · Campinas, SP · hybrid',
+  'exp.p0a':'I handle and resolve incidents, requests, changes and problems in critical corporate environments following ITIL practices, and take part in the CAB and change windows.',
+  'exp.p0b':'I support the WSO2 portfolio (API Manager, Enterprise Integrator and Micro Integrator) across several versions: log analysis, troubleshooting and following deploys on-premise and on Kubernetes.',
+  'exp.d1':'Jan 2026 — Dec 2029','exp.s1':'in progress','exp.r1':'B.Sc. in Computer Science',
+  'exp.p1':'Data structures, algorithms, databases and software engineering, with hands-on projects in Java and Python.',
+  'exp.d2':'Jan 2024 — Dec 2025','exp.s2':'2 years','exp.r2':'Technical degree in Systems Development',
+  'exp.p2':'Applications with Python, REST APIs and SQL, IoT and data integration projects, Git/GitHub and Linux, as a team.',
+  'skills.title':'Skills','skills.sub':'What I use at the internship and in the projects above.',
+  'sk.lang':'Languages','sk.int':'Integration','sk.intV':'REST APIs · WSO2 API Manager · Enterprise and Micro Integrator · CI/CD with GitHub Actions',
+  'sk.data':'Data','sk.ops':'Operations','sk.opsV':'Linux · ITIL / ITSM · Kubernetes deploys · AWS basics (S3, EC2, IAM)','sk.tools':'Tools',
+  'certs.title':'Certificates','certs.sub':'Completed courses, each with its original certificate.',
+  'certs.th1':'Course','certs.th2':'Issuer','certs.th3':'Date','certs.th4':'Certificate',
+  'c.bd':'Big Data &amp; Analytics','c.may26':'May 2026','c.aug25':'Aug 2025',
+  'c.gen':'Generative AI Applied to Programming','c.iac':'Artificial and Computational Intelligence','c.fia':'Artificial Intelligence Fundamentals','c.view':'View',
+  'contact.title':'Let\'s talk','contact.text':'I\'m open to back-end and data roles and to freelance projects. The fastest way to reach me is by email or LinkedIn.','contact.cv':'Resume (PDF)',
+};
+const I18N_PT={}, ARIA_PT={}, ALT_PT={};
+document.querySelectorAll('[data-i18n]').forEach(el=>{ if(!(el.dataset.i18n in I18N_PT)) I18N_PT[el.dataset.i18n]=el.innerHTML; });
+document.querySelectorAll('[data-i18n-aria]').forEach(el=>{ ARIA_PT[el.dataset.i18nAria]=el.getAttribute('aria-label'); });
+document.querySelectorAll('[data-i18n-alt]').forEach(el=>{ ALT_PT[el.dataset.i18nAlt]=el.getAttribute('alt'); });
 const langToggle=document.getElementById('langToggle');
 let currentLang='pt';
-const i18n={
-  pt:{
-    'nav.inicio':'Início','nav.experiencias':'Experiências','nav.habilidades':'Habilidades','nav.projetos':'Projetos','nav.certificados':'Certificados',
-    'hero.greeting':'Olá, eu sou','hero.sub':'Back-end &amp; Data',
-    'hero.bio':'Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.',
-    'exp.section':'Trajetória','exp.title':'Experiências',
-    'exp.1.title':'Ciência da Computação','exp.1.company':'Anhembi Morumbi — Graduação',
-    'exp.1.desc':'Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.',
-    'exp.2.title':'Desenvolvimento de Sistemas','exp.2.company':'SENAI — Curso Técnico',
-    'exp.2.desc':'Formação técnica em Desenvolvimento de Sistemas com ênfase em lógica de programação, banco de dados, versionamento com Git e desenvolvimento web.',
-    'skills.section':'Expertise','skills.title':'Habilidades',
-    'skills.frontend':'Front-end','skills.backend':'Back-end','skills.tools':'Ferramentas &amp; Dados',
-    'projects.section':'Portfólio','projects.title':'Projetos',
-    'certs.section':'Certificações','certs.title':'Certificados',
-    'curriculo':'Currículo','visits':'visitas',
-    'footer':'&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.',
-  },
-  en:{
-    'nav.inicio':'Home','nav.experiencias':'Experience','nav.habilidades':'Skills','nav.projetos':'Projects','nav.certificados':'Certificates',
-    'hero.greeting':'Hello, I\'m','hero.sub':'Back-end &amp; Data',
-    'hero.bio':'Computer Science student. I build backend solutions with Java and Python, explore AI and systems & data analysis, and turn ideas into functional projects.',
-    'exp.section':'Career','exp.title':'Experience',
-    'exp.1.title':'Computer Science','exp.1.company':'Anhembi Morumbi — Bachelor\'s Degree',
-    'exp.1.desc':'Studying Computer Science focusing on data structures, algorithms, databases and software engineering. Developing practical projects with Java, Python and backend.',
-    'exp.2.title':'Systems Development','exp.2.company':'SENAI — Technical Course',
-    'exp.2.desc':'Technical training in Systems Development with emphasis on programming logic, databases, Git versioning and web development.',
-    'skills.section':'Expertise','skills.title':'Skills',
-    'skills.frontend':'Front-end','skills.backend':'Back-end','skills.tools':'Tools &amp; Data',
-    'projects.section':'Portfolio','projects.title':'Projects',
-    'certs.section':'Certifications','certs.title':'Certificates',
-    'curriculo':'Resume','visits':'visits',
-    'footer':'&copy; 2026 Bruno Akira Furumori. All rights reserved.',
-  },
-};
+
+// Duração "desde AAAA-MM" contada como no LinkedIn (mês inicial e atual inclusos).
+function duracaoDesde(desde,lang){
+  const [a,m]=desde.split('-').map(Number), d=new Date();
+  const total=Math.max(1,(d.getFullYear()-a)*12+(d.getMonth()+1-m)+1);
+  const anos=Math.floor(total/12), meses=total%12;
+  const w=lang==='en'?{a:['yr','yrs'],m:['mo','mos'],e:' '}:{a:['ano','anos'],m:['mês','meses'],e:' e '};
+  const p=[];
+  if(anos)p.push(anos+' '+w.a[anos>1?1:0]);
+  if(meses)p.push(meses+' '+w.m[meses>1?1:0]);
+  return p.join(w.e);
+}
 function applyLang(lang){
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key=el.dataset.i18n;
-    if(i18n[lang]&&i18n[lang][key])el.innerHTML=i18n[lang][key];
-  });
+  const T=lang==='en'?I18N_EN:I18N_PT, A=lang==='en'?I18N_EN:ARIA_PT, L=lang==='en'?I18N_EN:ALT_PT;
+  document.documentElement.lang=lang==='en'?'en':'pt-BR';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const v=T[el.dataset.i18n]; if(v!=null)el.innerHTML=v; });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{ const v=A[el.dataset.i18nAria]; if(v)el.setAttribute('aria-label',v); });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{ const v=L[el.dataset.i18nAlt]; if(v)el.setAttribute('alt',v); });
+  document.querySelectorAll('[data-desde]').forEach(el=>{ el.textContent=duracaoDesde(el.dataset.desde,lang); });
+  langToggle.textContent=lang==='pt'?'EN':'PT';
 }
-if(langToggle){
-  langToggle.addEventListener('click',function(){
-    currentLang=currentLang==='pt'?'en':'pt';
-    this.textContent=currentLang==='pt'?'EN':'PT';
-    applyLang(currentLang);
-  });
+langToggle.addEventListener('click',()=>{
+  currentLang=currentLang==='pt'?'en':'pt';
+  try{localStorage.setItem('akr_lang',currentLang)}catch(e){}
+  applyLang(currentLang);
+});
+try{ if(localStorage.getItem('akr_lang')==='en')currentLang='en'; }catch(e){}
+applyLang(currentLang);
+
+// ===== MENU (celular) =====
+const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{
+  const open=nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',String(open));
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }));
+
+// ===== DIAGRAMA: conectores se desenham uma vez ao entrar na tela =====
+const flow=document.getElementById('flow');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)){ flow.classList.add('is-drawn'); io.disconnect(); } },{threshold:.2});
+  io.observe(flow);
+}else{ flow.classList.add('is-drawn'); }
+
+// ===== CONTADOR DE VISITAS (Firestore) =====
+async function sha256(txt){
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(txt));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
 }
-
-// ===== FIREBASE =====
-const firebaseConfig={apiKey:"AIzaSyCp8EsD7kQj3Q3sCOC8fMIoTT_fHpi5P9A",authDomain:"portifolio-5c039.firebaseapp.com",projectId:"portifolio-5c039",storageBucket:"portifolio-5c039.firebasestorage.app",messagingSenderId:"541915361921",appId:"1:541915361921:web:61129b1f2a7f0c0b9ad380"};
-let db;
-try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initializeApp(firebaseConfig);db=firebase.firestore(app)}}catch(e){console.warn('Firebase não configurado.')}
-
-// VISIT COUNTER
-(async()=>{
-  const badge=document.getElementById('visitBadge');
-  const display=document.getElementById('visitDisplay');
-  if(!badge||!display)return;
-  let total=0;
-  if(db){
-    try{
-      const ref=db.collection('visitas').doc('contador');
-      const ipRef=db.collection('visitas_unicas');
-      // Get IP via free API
+// Os scripts do Firebase são "defer": rodam antes do DOMContentLoaded.
+window.addEventListener('DOMContentLoaded',async()=>{
+  const row=document.getElementById('visitRow'), display=document.getElementById('visitDisplay');
+  const firebaseConfig={apiKey:"AIzaSyC6ReigJo_Dub5Q30ge0Ezunjz0KUJscMM",authDomain:"portfolio-akr-site.firebaseapp.com",projectId:"portfolio-akr-site",storageBucket:"portfolio-akr-site.firebasestorage.app",messagingSenderId:"994251192136",appId:"1:994251192136:web:b45f7f3db687d6cac8257d"};
+  let total=null;
+  try{
+    if(!window.firebase)throw new Error('Firebase não carregou');
+    const db=firebase.firestore(firebase.initializeApp(firebaseConfig));
+    const ref=db.collection('visitas').doc('contador');
+    // Este navegador já foi contado: só lê o total, sem consultar o IP de novo.
+    if(localStorage.getItem('akr_visita')!=='1'){
       const ipRes=await fetch('https://api.ipify.org?format=json').catch(()=>null);
-      const ip=ipRes?await ipRes.json():null;
-      // Simple hash function for IP privacy
-      let hash='anon';
-      if(ip&&ip.ip){
-        let h=0;
-        for(let i=0;i<ip.ip.length;i++){h=((h<<5)-h)+ip.ip.charCodeAt(i);h|=0}
-        hash='v_'+Math.abs(h).toString(36);
-      }
-      // Check if this IP already visited
-      const ipDoc=await ipRef.doc(hash).get().catch(()=>null);
-      if((!ipDoc||!ipDoc.exists)&&hash!=='anon'){
-        await ipRef.doc(hash).set({firstVisit:new Date().toISOString()});
+      const ip=ipRes&&ipRes.ok?await ipRes.json().catch(()=>null):null;
+      if(ip&&ip.ip&&window.crypto&&crypto.subtle){
+        const id='v_'+await sha256('akrport:'+ip.ip);
+        const visRef=db.collection('visitas_unicas').doc(id);
+        // Registro do visitante e +1 no total na MESMA transação (exigido pelas regras do Firestore).
         await db.runTransaction(async t=>{
-          const d=await t.get(ref);
-          if(!d.exists)t.set(ref,{total:1});else t.update(ref,{total:firebase.firestore.FieldValue.increment(1)})
+          const v=await t.get(visRef);
+          const c=await t.get(ref);
+          if(v.exists)return;
+          t.set(visRef,{firstVisit:firebase.firestore.FieldValue.serverTimestamp()});
+          t.set(ref,{total:(c.exists&&c.data().total||0)+1,lastId:id});
         });
+        localStorage.setItem('akr_visita','1');
       }
-      const snap=await ref.get();
-      total=snap.data()?.total||0;
-    }catch(e){total=42}
-  }else{total=42}
-  let current=0;
-  const step=Math.max(1,Math.floor(total/40));
-  const interval=setInterval(()=>{
-    current+=step;
-    if(current>=total){current=total;clearInterval(interval)}
-    display.textContent=current;
-  },30);
-  requestAnimationFrame(()=>{badge.style.opacity='1';badge.style.transform='translateY(0)'});
-})();
-
+    }
+    const snap=await ref.get();
+    total=snap.exists?snap.data().total:null;
+  }catch(e){ console.warn('Contador de visitas indisponível:',e); }
+  // Sem número real, a linha não aparece.
+  if(typeof total!=='number')return;
+  display.textContent=total.toLocaleString('pt-BR');
+  row.hidden=false;
+});
 </script>
 </body>
 </html>
