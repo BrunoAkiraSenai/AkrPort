@@ -3,33 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bruno Akira — Data & Back-end</title>
-  <meta property="og:title" content="Bruno Akira Furumori — Desenvolvedor Back-end">
-  <meta property="og:description" content="Portfólio imersivo com projetos, certificados e experiências em Java, Python, React e dados.">
+<title>Bruno Akira Furumori — Desenvolvedor Back-end & Data</title>
+  <meta property="og:title" content="Bruno Akira Furumori — Desenvolvedor Back-end & Data">
+  <meta property="og:description" content="Bruno Akira Furumori — Desenvolvedor Back-end & Data. Estudante de Ciência da Computação. Java, Python, IA e análise de dados. Veja projetos, experiências e certificados.">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/163860585?v=4">
-  <meta property="og:url" content="https://portifolio-5c039.web.app">
+  <meta property="og:url" content="https://akirafurumori.com.br">
   <meta property="og:type" content="website">
-  <meta name="description" content="Portfólio de Bruno Akira Furumori — Back-end & Data.">
+  <meta name="description" content="Bruno Akira Furumori — Desenvolvedor Back-end & Data. Estudante de Ciência da Computação em Sumaré, SP. Especialista em Java, Python e análise de dados. Veja projetos, experiências e certificados.">
+  <meta name="keywords" content="Bruno Akira Furumori, Bruno Akira, Akira Furumori, desenvolvedor back-end, programador Java, desenvolvedor Python, ciência da computação, Sumaré SP, portfólio desenvolvedor, fullstack, backend, data, IA, Firebase">
+  <meta name="author" content="Bruno Akira Furumori">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#050505">
+  <link rel="canonical" href="https://akirafurumori.com.br/">
+  <link rel="icon" type="image/png" href="FotosProjetos/IconeAkr2.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="FotosProjetos/IconeAkr2.png">
+
+  <!-- Open Graph expandido -->
+  <meta property="og:site_name" content="Bruno Akira Furumori">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="article:author" content="Bruno Akira Furumori">
+  <meta property="article:published_time" content="2026-07-01T00:00:00-03:00">
+  <meta property="article:modified_time" content="2026-07-08T00:00:00-03:00">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bruno Akira Furumori — Desenvolvedor Back-end & Data">
+  <meta name="twitter:description" content="Portfólio de Bruno Akira Furumori. Java, Python, IA e dados. Veja projetos, experiências e certificados.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/163860585?v=4">
+
+  <!-- Structured Data: Person (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bruno Akira Furumori",
+    "alternateName": ["Bruno Akira", "Akira Furumori", "AKR"],
+    "jobTitle": "Desenvolvedor Back-end & Data",
+    "description": "Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados.",
+    "url": "https://akirafurumori.com.br",
+    "image": "https://avatars.githubusercontent.com/u/163860585?v=4",
+    "email": "mailto:akirafurumori@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sumaré",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "Anhembi Morumbi" },
+      { "@type": "EducationalOrganization", "name": "SENAI" }
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Digiage"
+    },
+    "knowsAbout": ["Java", "Python", "JavaScript", "React", "Node.js", "SQL", "PostgreSQL", "Firebase", "Supabase", "APIs REST", "Back-end", "Ciência de Dados", "Inteligência Artificial"],
+    "sameAs": [
+      "https://github.com/BrunoAkiraSenai",
+      "https://www.linkedin.com/in/bruno-furumori-6585ba371/",
+      "https://www.instagram.com/akiravsk/"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: ProfilePage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Bruno Akira Furumori",
+      "url": "https://akirafurumori.com.br"
+    },
+    "dateCreated": "2026-07-01",
+    "dateModified": "2026-07-08"
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            cyberCyan: '#00f0ff',
-            cyberMagenta: '#ff00e5',
-            deepBg: '#05050a',
-            cardGlass: 'rgba(255,255,255,0.04)',
-            glassBorder: 'rgba(255,255,255,0.06)',
-            glowCyan: 'rgba(0,240,255,0.15)',
-            glowMagenta: 'rgba(255,0,229,0.12)',
+            ink: '#050505',
+            ink2: '#0e0e0e',
+            paper: '#f5f5f7',
+            ember: '#ff4d2e',
+            ember2: '#ff7a4d',
+            muted: '#8a8a96',
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
             display: ['Space Grotesk', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Roboto Mono', 'monospace'],
           },
         },
       },
@@ -37,66 +111,197 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    html { scroll-behavior:smooth; }
-    body { font-family:'Inter',system-ui,sans-serif; background-color:#05050a; color:#e8e8ed; overflow-x:hidden; }
-    ::selection { background:#00f0ff; color:#05050a; }
-    ::-webkit-scrollbar { width:6px; }
-    ::-webkit-scrollbar-track { background:#0a0a14; }
-    ::-webkit-scrollbar-thumb { background:rgba(0,240,255,.3); border-radius:3px; }
-    @keyframes pulseGlow { 0%,100% { opacity:.3 } 50% { opacity:.7 } }
-    @keyframes nodePulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,240,255,.4)} 50%{box-shadow:0 0 0 12px rgba(0,240,255,0)} }
+    :root{
+      --ink:#050505; --ink2:#0e0e0e; --paper:#f5f5f7; --ember:#ff4d2e; --ember2:#ff7a4d; --muted:#8a8a96;
+    }
+    html{ scroll-behavior:smooth; }
+    body{ font-family:'Inter',system-ui,sans-serif; background:var(--ink); color:var(--paper); overflow-x:hidden; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; letter-spacing:-0.01em; }
+    ::selection{ background:var(--ember); color:var(--ink); }
+    ::-webkit-scrollbar{ width:8px; }
+    ::-webkit-scrollbar-track{ background:var(--ink); }
+    ::-webkit-scrollbar-thumb{ background:rgba(255,255,255,.12); border-radius:4px; }
+    ::-webkit-scrollbar-thumb:hover{ background:var(--ember); }
 
-    .glass-card { background:rgba(255,255,255,.04); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.06); }
-    .glass-card:hover { border-color:rgba(0,240,255,.15); }
-    .glow-text { text-shadow:0 0 40px rgba(0,240,255,.15); }
-    .glow-border { box-shadow:0 0 30px rgba(0,240,255,.06); }
-    .nav-link::after { content:'';display:block;width:0;height:1.5px;background:linear-gradient(90deg,#00f0ff,#ff00e5);transition:width .35s ease;margin-top:2px; }
-    .nav-link:hover::after, .nav-link.active::after { width:100%; }
+    @keyframes pulseGlow{ 0%,100%{opacity:.35} 50%{opacity:.85} }
+    @keyframes nodePulse{ 0%,100%{box-shadow:0 0 0 0 rgba(255,77,46,.4)} 50%{box-shadow:0 0 0 14px rgba(255,77,46,0)} }
+    @keyframes spin-slow{ to{ transform:rotate(360deg) } }
+    @keyframes marquee{ to{ transform:translateX(-50%) } }
+    @keyframes shimmer{ 0%{background-position:-200% 0} 100%{background-position:200% 0} }
 
-    .project-card { transform-origin:center bottom; transition:transform .45s cubic-bezier(.34,1.56,.64,1),opacity .4s ease,box-shadow .4s ease; }
-    .project-card:hover { transform:translateY(-8px) scale(1.01); box-shadow:0 24px 60px -12px rgba(0,240,255,.12); }
+    /* Grain overlay for cinematic texture */
+    body::after{
+      content:''; position:fixed; inset:0; pointer-events:none; z-index:2; opacity:.05; mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    /* Ember radial backdrop */
+    #grid-bg{ position:fixed; inset:0; z-index:0; pointer-events:none;
+      background:
+        radial-gradient(60rem 60rem at 10% -10%, rgba(255,77,46,.10), transparent 60%),
+        radial-gradient(50rem 50rem at 110% 10%, rgba(255,122,77,.07), transparent 55%),
+        radial-gradient(40rem 40rem at 50% 120%, rgba(255,77,46,.06), transparent 60%);
+    }
+    #particles-canvas{ position:fixed; inset:0; z-index:1; pointer-events:none; }
 
-    #particles-canvas { position:fixed;inset:0;z-index:0;pointer-events:none; }
+    /* Lines grid underlay */
+    .lines-underlay{ position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.5;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size:80px 80px; mask-image:radial-gradient(ellipse at center, black 30%, transparent 75%); -webkit-mask-image:radial-gradient(ellipse at center, black 30%, transparent 75%);
+    }
 
-    .node-line { stroke:rgba(0,240,255,.12); stroke-width:1.5; stroke-dasharray:4 4; animation:lineAnim 30s linear infinite; }
+    .glass-card{ background:rgba(255,255,255,.025); backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); border:1px solid rgba(255,255,255,.06); border-radius:1.25rem; }
+    .glass-card:hover{ border-color:rgba(255,77,46,.25); background:rgba(255,255,255,.04); }
 
-    .reveal { opacity:0; transform:translateY(30px); transition:all .7s cubic-bezier(.2,.9,.3,1); }
-    .reveal.show { opacity:1; transform:translateY(0); }
+    .nav-link{ position:relative; }
+    .nav-link::after{ content:''; position:absolute; left:0; bottom:-6px; width:0; height:1px; background:var(--ember); transition:width .35s cubic-bezier(.16,1,.3,1); }
+    .nav-link:hover::after, .nav-link.active::after{ width:100%; }
+    .nav-link.active{ color:var(--paper); }
 
-    .back-to-top { transition:opacity .4s ease,transform .4s cubic-bezier(.34,1.56,.64,1),visibility .4s ease; }
-    .back-to-top.show { opacity:1; visibility:visible; transform:scale(1); }
+    /* ===== TYPOGRAPHY SYSTEM ===== */
+    .eyebrow{ font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.45em; text-transform:uppercase; color:var(--muted); }
+    .display-xl{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(2.4rem,8vw,6.5rem); line-height:.95; letter-spacing:-0.035em; }
+    .display-lg{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(1.9rem,5.5vw,4rem); line-height:1; letter-spacing:-0.03em; }
+    .display-md{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(1.3rem,3vw,2rem); line-height:1.05; letter-spacing:-0.02em; }
+    .mono-sm{ font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.05em; }
 
-    #mobile-menu { transition:max-height .4s cubic-bezier(.34,1.56,.64,1),opacity .3s ease; max-height:0; opacity:0; overflow:hidden; }
-    #mobile-menu.open { max-height:500px; opacity:1; }
-    .hamburger-line { transition:transform .35s ease,opacity .35s ease; }
-    .hamburger-open .hamburger-line:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
-    .hamburger-open .hamburger-line:nth-child(2) { opacity:0; }
-    .hamburger-open .hamburger-line:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+    /* gradient stroke animated */
+    .ember-grad{ background:linear-gradient(120deg, #fff 0%, #fff 30%, var(--ember) 50%, var(--ember2) 70%, #fff 100%); background-size:200% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; animation:shimmer 8s linear infinite; }
 
-    .skill-cluster { transition:all .4s cubic-bezier(.34,1.56,.64,1); }
-    .skill-cluster:hover { transform:scale(1.03); }
-    .skill-tag { transition:all .3s ease; }
-    .skill-tag:hover { transform:scale(1.08); filter:brightness(1.2); }
+    /* word/letter mask reveal */
+    .line-mask{ display:block; overflow:hidden; padding-bottom:.06em; }
+    .line-mask > span{ display:inline-block; will-change:transform,opacity; }
 
-    .node-dot { cursor:pointer; transition:all .4s cubic-bezier(.34,1.56,.64,1); }
-    .node-dot:hover { transform:scale(1.15); }
-    .node-content { max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.2,.9,.3,1),opacity .4s ease; opacity:0; }
-    .node-content.open { max-height:600px; opacity:1; }
+    /* Outline text for headline */
+    .outlined{
+      color:transparent;
+      -webkit-text-stroke:1.2px rgba(245,245,247,.55);
+    }
 
-    .profile-ring { animation:nodePulse 3s ease-in-out infinite; }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; gap:.6rem;
+      font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+      padding:.9rem 1.4rem; border-radius:2rem;
+      border:1px solid rgba(255,255,255,.12);
+      transition:all .3s cubic-bezier(.16,1,.3,1);
+      position:relative; overflow:hidden;
+    }
+    .btn::before{
+      content:''; position:absolute; inset:0; background:var(--ember); transform:scaleX(0); transform-origin:left; transition:transform .35s cubic-bezier(.16,1,.3,1); z-index:-1;
+    }
+    .btn:hover{ color:var(--ink); border-color:var(--ember); }
+    .btn:hover::before{ transform:scaleX(1); }
+    .btn-solid{ background:var(--ember); color:var(--ink); border-color:var(--ember); font-weight:600; }
+    .btn-solid::before{ background:var(--ember2); }
+
+    /* Project cards */
+    .project-card{ position:relative; border-radius:1.25rem; overflow:hidden; border:1px solid rgba(255,255,255,.06); background:var(--ink2); transition:border-color .3s ease; }
+    .project-card:hover{ border-color:rgba(255,77,46,.35); }
+    .project-img{ transition:transform .8s cubic-bezier(.16,1,.3,1), filter .5s ease; filter:saturate(.85) contrast(1.05); }
+    .project-card:hover .project-img{ transform:scale(1.06); filter:saturate(1.1) contrast(1.05); }
+    .project-card .overlay{ opacity:0; transition:opacity .4s ease; }
+
+    /* Horizontal track (projects) */
+    .h-track{ display:flex; gap:1.5rem; will-change:transform; }
+    @media(max-width:767px){
+      .h-track{ overflow-x:auto; scroll-snap-type:x mandatory; padding:0 1.25rem 1rem; -webkit-overflow-scrolling:touch; }
+      .h-track::-webkit-scrollbar{ display:none; }
+      .h-track > *{ scroll-snap-align:center; flex:0 0 80vw; }
+    }
+    @media(min-width:768px){
+      .h-track > *{ flex:0 0 30vw; max-width:26rem; }
+      .h-track.lead{ padding-left:max(1.5rem, calc((100vw - 72rem)/2 + 1.5rem)); padding-right:max(1.5rem, calc((100vw - 72rem)/2 + 1.5rem)); }
+    }
+
+    /* Divider bar */
+    .divider-bar{ display:block; height:1px; width:0; background:linear-gradient(90deg, var(--ember), transparent); transition:width .9s cubic-bezier(.16,1,.3,1); }
+
+    /* Skill cluster */
+    .skill-cluster{ transition:transform .3s cubic-bezier(.16,1,.3,1), border-color .25s ease, background .3s ease; }
+    .skill-cluster:hover{ transform:translateY(-6px); border-color:rgba(255,77,46,.25); background:rgba(255,77,46,.025); }
+    .skill-tag{ transition:all .2s ease; }
+    .skill-tag:hover{ transform:translateY(-2px); border-color:rgba(255,77,46,.3); color:var(--ember2); }
+
+    /* Timeline */
+    .node-line{ stroke:rgba(255,255,255,.12); stroke-width:1.5; stroke-dasharray:4 4; animation:lineAnim 30s linear infinite; }
+    .node-dot{ cursor:pointer; transition:transform .25s cubic-bezier(.16,1,.3,1); }
+    .node-dot:hover{ transform:scale(1.08); }
+    .node-content{ max-height:0; overflow:hidden; transition:max-height .55s cubic-bezier(.16,1,.3,1),opacity .35s ease,margin .35s ease; opacity:0; margin-top:0; }
+    .node-content.open{ max-height:600px; opacity:1; margin-top:.75rem; }
+
+    .profile-ring{ animation:nodePulse 3.5s ease-in-out infinite; position:relative; }
+    .profile-ring::before{ content:''; position:absolute; inset:-10px; border:1px dashed rgba(255,77,46,.25); border-radius:50%; animation:spin-slow 30s linear infinite; }
+
+    /* Reveal fallback (always visible if GSAP fails) */
+    .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.2,.9,.3,1), transform .8s cubic-bezier(.2,.9,.3,1); }
+    .reveal.show{ opacity:1; transform:translateY(0); }
+
+    .back-to-top{ transition:opacity .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), visibility .4s ease; }
+    .back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0) scale(1); }
+
+    #mobile-menu{ transition:max-height .35s cubic-bezier(.16,1,.3,1),opacity .25s ease; max-height:0; opacity:0; overflow:hidden; }
+    #mobile-menu.open{ max-height:560px; opacity:1; }
+    .hamburger-line{ transition:transform .35s ease,opacity .35s ease; }
+    .hamburger-open .hamburger-line:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+    .hamburger-open .hamburger-line:nth-child(2){ opacity:0; }
+    .hamburger-open .hamburger-line:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
+
+    /* Marquee strip */
+    .marquee{ display:flex; gap:3rem; white-space:nowrap; animation:marquee 28s linear infinite; }
+    .marquee-item{ font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:clamp(1.8rem,4vw,3.2rem); letter-spacing:-.02em; color:transparent; -webkit-text-stroke:1px rgba(245,245,247,.18); display:flex; align-items:center; gap:3rem; }
+    .marquee-item .dot{ width:.4em; height:.4em; border-radius:50%; background:var(--ember); -webkit-text-stroke:0; }
+
+    /* status pill */
+    .status-pill{ display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .9rem; border-radius:2rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+    .status-pill .live{ width:6px; height:6px; border-radius:50%; background:#3df57a; box-shadow:0 0 8px #3df57a; animation:pulseGlow 2s infinite; }
+
+    /* ===== ALIVE LAYER (disabled on touch + reduce) ===== */
+    /* Scroll progress bar */
+    #scroll-progress{ position:fixed; top:0; left:0; height:2px; width:0%; background:linear-gradient(90deg, var(--ember), var(--ember2)); z-index:9998; transition:width .1s linear; box-shadow:0 0 8px rgba(255,77,46,.5); }
+
+    /* 3D tilt card perspective */
+    .tilt-card{ transform-style:preserve-3d; transition:transform .15s ease-out; }
+    .tilt-card .tilt-inner{ transform-style:preserve-3d; }
+    .tilt-card .tilt-pop{ transform:translateZ(40px); }
+    .tilt-card .tilt-pop-sm{ transform:translateZ(25px); }
+
+    /* Live clock */
+    #live-clock{ font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.1em; color:var(--muted); }
+    #live-clock .clock-sep{ animation:blink 1s steps(2) infinite; }
+    @keyframes blink{ 50%{ opacity:.3 } }
+
+    /* Typing caret */
+    .caret{ display:inline-block; width:2px; height:1em; background:var(--ember); margin-left:3px; vertical-align:-2px; animation:blink 1s steps(2) infinite; }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{ animation-duration:.01ms!important; transition-duration:.01ms!important; animation-iteration-count:1!important; }
+      .reveal{ opacity:1!important; transform:none!important; }
+      .line-mask{ overflow:visible!important; }
+      .line-mask > span{ transform:none!important; opacity:1!important; }
+      .divider-bar{ width:5rem!important; }
+      .profile-ring::before{ display:none; }
+      #scroll-progress{ display:none!important; }
+      .tilt-card{ transform:none!important; }
+      .tilt-card .tilt-pop, .tilt-card .tilt-pop-sm{ transform:none!important; }
+    }
   </style>
 </head>
 <body>
 
+<div id="grid-bg"></div>
 <canvas id="particles-canvas"></canvas>
+<div id="scroll-progress"></div>
 
-<nav class="glass-card fixed top-0 left-0 right-0 z-50 border-t-0 border-x-0 transition-all duration-300" style="background:rgba(5,5,10,.72);">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
-    <a href="#" class="text-lg font-display font-bold tracking-tight glow-text" style="color:#e8e8ed">&lt; <span style="color:#00f0ff">AKR</span> /&gt;</a>
-    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400/80">
+<!-- ===== NAV ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="background:linear-gradient(180deg, rgba(10,10,15,.85), rgba(10,10,15,.6)); backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%); border-bottom:1px solid rgba(255,255,255,.04);">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
+    <a href="#hero" class="font-display font-bold tracking-tight text-lg flex items-center gap-1">
+      <span class="text-paper" style="color:var(--paper)">AKR</span>
+      <span style="color:var(--ember)">.</span>
+      <span class="text-xs mono-sm" style="color:var(--muted)">dev</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-9 text-sm font-medium" style="color:rgba(245,245,247,.75)">
       <li><a href="#hero" class="nav-link" data-i18n="nav.inicio">Início</a></li>
       <li><a href="#experience" class="nav-link" data-i18n="nav.experiencias">Experiências</a></li>
       <li><a href="#skills" class="nav-link" data-i18n="nav.habilidades">Habilidades</a></li>
@@ -104,16 +309,20 @@
       <li><a href="#certificates" class="nav-link" data-i18n="nav.certificados">Certificados</a></li>
     </ul>
     <div class="flex items-center gap-3">
-      <button id="langToggle" class="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-cyberCyan transition-colors border border-glassBorder hover:border-cyberCyan/30 rounded-full px-3 py-1">EN</button>
+      <span id="live-clock" class="hidden lg:inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10">
+        <span class="clock-h">00</span><span class="clock-sep">:</span><span class="clock-m">00</span><span class="clock-sep">:</span><span class="clock-s">00</span>
+        <span style="color:var(--ember);font-size:.6rem;margin-left:.2rem;">SP</span>
+      </span>
+      <button id="langToggle" class="mono-sm text-paper/70 hover:text-paper transition-colors px-3 py-1.5 rounded-full border border-white/10 hover:border-ember/40">EN</button>
       <button id="hamburgerBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
-        <span class="hamburger-line block w-5 h-[1.5px] bg-gray-300 rounded"></span>
-        <span class="hamburger-line block w-5 h-[1.5px] bg-gray-300 rounded"></span>
-        <span class="hamburger-line block w-5 h-[1.5px] bg-gray-300 rounded"></span>
+        <span class="hamburger-line block w-5 h-[1.5px] bg-paper rounded"></span>
+        <span class="hamburger-line block w-5 h-[1.5px] bg-paper rounded"></span>
+        <span class="hamburger-line block w-5 h-[1.5px] bg-paper rounded"></span>
       </button>
     </div>
   </div>
   <div id="mobile-menu" class="md:hidden px-5 sm:px-8 pb-4">
-    <ul class="flex flex-col gap-4 text-sm font-medium text-gray-400 pt-3 border-t border-glassBorder">
+    <ul class="flex flex-col gap-4 text-sm font-medium pt-3 border-t border-white/5" style="color:rgba(245,245,247,.75)">
       <li><a href="#hero" class="nav-link block" data-i18n="nav.inicio">Início</a></li>
       <li><a href="#experience" class="nav-link block" data-i18n="nav.experiencias">Experiências</a></li>
       <li><a href="#skills" class="nav-link block" data-i18n="nav.habilidades">Habilidades</a></li>
@@ -125,97 +334,192 @@
 
 <main class="relative z-10">
 
-<section id="hero" class="min-h-screen flex items-center justify-center py-28 sm:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-30" style="background:radial-gradient(ellipse at 50% 50%,rgba(0,240,255,.08) 0%,transparent 50%)"></div>
-  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-medium text-cyberCyan/80 mb-6" id="visitBadge" style="opacity:0;transform:translateY(-10px);transition:all .6s cubic-bezier(.34,1.56,.64,1)">
-      <span class="w-2 h-2 rounded-full bg-cyberCyan/60" style="animation:pulseGlow 2s infinite"></span>
-      <span><span id="visitDisplay">0</span> <span data-i18n="visits">visitas</span></span>
+<!-- ===== HERO ===== -->
+<section id="hero" class="min-h-screen flex flex-col justify-center pt-28 sm:pt-32 pb-20 relative overflow-hidden">
+  <div class="lines-underlay"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 w-full relative">
+
+    <div class="flex flex-wrap items-center gap-3 mb-10">
+      <span class="status-pill" id="visitBadge" style="opacity:0;transform:translateY(-8px);transition:all .6s cubic-bezier(.34,1.56,.64,1)">
+        <span class="live"></span>
+        <span><span id="visitDisplay">0</span> <span data-i18n="visits">visitas</span></span>
+      </span>
+      <span class="status-pill">
+        <span style="color:var(--ember)">●</span>
+        <span>Back-end &amp; Data</span>
+      </span>
+      <span class="status-pill hidden sm:inline-flex">
+        Sumaré, SP
+      </span>
     </div>
-    <p class="text-cyberCyan/80 font-medium text-sm tracking-[.3em] uppercase mb-4 font-display reveal" data-i18n="hero.greeting">Olá, eu sou</p>
-    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] text-white glow-text reveal">
-      Bruno Akira<br>
-      <span class="bg-gradient-to-r from-cyberCyan to-cyberMagenta bg-clip-text text-transparent">Furumori</span>
-    </h1>
-    <p class="mt-3 text-lg sm:text-xl font-medium text-cyberCyan/60 font-display reveal" data-i18n="hero.sub">Back-end &amp; Data</p>
-    <p class="mt-5 text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto reveal" data-i18n="hero.bio">
-      Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.
-    </p>
-    <div class="flex items-center justify-center gap-4 mt-8 reveal">
-      <a href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
-      <a href="https://www.linkedin.com/in/bruno-furumori-6585ba371/" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
-      <a href="https://www.instagram.com/akiravsk/" target="_blank" rel="noopener" class="w-11 h-11 flex items-center justify-center rounded-full glass-card text-gray-400 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
-      <a href="PDFs/Linkedin/Profile.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full glass-card text-gray-300 hover:text-cyberCyan hover:border-cyberCyan/30 transition-all duration-300 ml-2"><i class="fa-solid fa-download"></i> <span data-i18n="curriculo">Currículo</span></a>
+
+    <div class="grid lg:grid-cols-[1.45fr_0.55fr] gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="eyebrow mb-7 reveal" data-i18n="hero.greeting">Olá, eu sou</p>
+
+        <h1 id="heroTitle" class="display-xl text-paper">
+          <span class="line-mask"><span class="block" data-h="1" style="color:var(--paper)">Bruno</span></span>
+          <span class="line-mask"><span class="block" data-h="2" style="color:var(--paper)">Akira</span></span>
+          <span class="line-mask"><span class="block" data-h="3" style="color:transparent;-webkit-text-stroke:1.5px var(--ember);background:none;-webkit-text-fill-color:transparent">Furumori</span></span>
+        </h1>
+
+        <div class="mt-8 flex flex-wrap items-end gap-x-6 gap-y-3 max-w-xl reveal">
+          <p class="display-md ember-grad" data-i18n="hero.sub">Back-end &amp; Data</p>
+          <span class="mono-sm" style="color:var(--muted)">EST. 2008</span>
+        </div>
+
+        <p class="mt-6 text-base sm:text-lg leading-relaxed max-w-xl reveal" style="color:rgba(245,245,247,.65)" data-i18n="hero.bio">
+          Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3 mt-10 reveal">
+          <a href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener" class="btn" aria-label="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/bruno-furumori-6585ba371/" target="_blank" rel="noopener" class="btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://www.instagram.com/akiravsk/" target="_blank" rel="noopener" class="btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+
+      <div id="badgeWrap" class="flex justify-center lg:justify-end reveal">
+        <div class="profile-ring rounded-full p-[2px]" style="background:linear-gradient(140deg, var(--ember), var(--ember2));">
+          <img src="FotosProjetos/Bruno.jpg" alt="Bruno Akira Furumori" class="w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 rounded-full object-cover border-2 border-ink" style="border-color:var(--ink)">
+        </div>
+      </div>
     </div>
-    <div class="flex flex-wrap justify-center gap-3 mt-8 reveal">
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">Java</span>
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">Python</span>
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">JavaScript</span>
-      <span class="px-4 py-1.5 rounded-full glass-card text-xs font-medium text-gray-300 border border-glassBorder">React</span>
-    </div>
-  </div>
+
+      </div>
 </section>
 
-<section id="experience" class="py-24 sm:py-32 relative">
-  <div class="max-w-5xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="exp.section">Trajetória</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="exp.title">Experiências</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
+<!-- ===== MARQUEE STRIP ===== -->
+<div class="relative z-10 py-7 overflow-hidden border-y" style="border-color:rgba(255,255,255,.04); background:rgba(255,77,46,.02)">
+  <div class="marquee">
+    <span class="marquee-item">Java <span class="dot"></span></span>
+    <span class="marquee-item">Python <span class="dot"></span></span>
+    <span class="marquee-item">Backend <span class="dot"></span></span>
+    <span class="marquee-item">Data <span class="dot"></span></span>
+    <span class="marquee-item">IA <span class="dot"></span></span>
+    <span class="marquee-item">Sistemas <span class="dot"></span></span>
+    <span class="marquee-item">Java <span class="dot"></span></span>
+    <span class="marquee-item">Python <span class="dot"></span></span>
+    <span class="marquee-item">Backend <span class="dot"></span></span>
+    <span class="marquee-item">Data <span class="dot"></span></span>
+    <span class="marquee-item">IA <span class="dot"></span></span>
+    <span class="marquee-item">Sistemas <span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="py-28 sm:py-36 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="mb-20 reveal">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="mono-sm" style="color:var(--ember)">01 /</span>
+        <p class="eyebrow" data-i18n="exp.section">Trajetória</p>
+      </div>
+      <h2 class="display-lg outlined" data-i18n="exp.title">Experiências</h2>
+      <span class="divider-bar mt-8"></span>
     </div>
+
     <div class="relative flex flex-col items-center gap-0">
       <svg class="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full hidden md:block" style="overflow:visible">
         <line x1="1" y1="0" x2="1" y2="100%" class="node-line" style="stroke-dasharray:6 8"/>
       </svg>
 
-      <div class="relative w-full max-w-2xl node-item" data-expand>
-        <div class="flex items-center gap-4 md:gap-6 cursor-pointer node-dot" data-target="exp1">
-          <div class="w-5 h-5 rounded-full bg-cyberCyan/20 border-2 border-cyberCyan/40 shrink-0 relative">
-            <div class="absolute inset-1 rounded-full bg-cyberCyan/60" style="animation:nodePulse 3s infinite"></div>
+      <div class="relative w-full max-w-2xl node-item reveal" data-expand>
+        <div class="flex items-center gap-4 md:gap-6 cursor-pointer node-dot" data-target="exp0">
+          <div class="w-5 h-5 rounded-full shrink-0 relative" style="background:rgba(255,77,46,.18); border:2px solid rgba(255,77,46,.4)">
+            <div class="absolute inset-1 rounded-full" style="background:rgba(255,77,46,.6); animation:nodePulse 3s infinite"></div>
           </div>
-          <div class="glass-card rounded-2xl p-5 sm:p-6 flex-1 glow-border">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 class="font-display text-lg font-semibold text-white" data-i18n="exp.1.title">Ciência da Computação</h3>
-              <span class="text-xs text-gray-500 font-mono">Jan 2026 — Dez 2029</span>
+          <div class="glass-card p-5 sm:p-6 flex-1">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-white/5 border border-white/10" data-tilt="1">
+                <img src="FotosProjetos/digiage_it_logo.jpg" alt="Digiage" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <h3 class="font-display text-lg font-semibold text-paper" data-i18n="exp.0.title">Estágio Sustentação</h3>
+                  <span class="mono-sm" style="color:var(--muted)" data-i18n="exp.0.date">Jun 2026 — Presente</span>
+                </div>
+                <p class="text-sm mt-1" style="color:var(--ember2)" data-i18n="exp.0.company">Digiage · Meio período · Híbrido</p>
+                <p class="text-xs mt-0.5" style="color:var(--muted)" data-i18n="exp.0.location">Campinas, São Paulo, Brasil · 2 meses</p>
+              </div>
             </div>
-            <p class="text-sm text-cyberCyan/60 mt-1" data-i18n="exp.1.company">Anhembi Morumbi — Graduação</p>
+          </div>
+        </div>
+        <div id="exp0" class="node-content ml-12 md:ml-14">
+          <div class="glass-card p-5 sm:p-6">
+            <p class="text-sm leading-relaxed" style="color:rgba(245,245,247,.7)" data-i18n="exp.0.desc">Estágio em sustentação de sistemas na Digiage, atuando na manutenção, correção de bugs e suporte a aplicações em produção. Trabalho híbrido em Campinas/SP, com foco em garantir a estabilidade e o bom funcionamento dos sistemas dos clientes.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--paper)">Java</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--ember2)">SQL</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" data-i18n="exp.0.tag1" style="color:var(--paper)">Sustentação</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--ember2)">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative w-full max-w-2xl mt-8 node-item reveal" data-expand>
+        <div class="flex items-center gap-4 md:gap-6 cursor-pointer node-dot" data-target="exp1">
+          <div class="w-5 h-5 rounded-full shrink-0 relative" style="background:rgba(255,255,255,.18); border:2px solid rgba(255,255,255,.4)">
+            <div class="absolute inset-1 rounded-full" style="background:rgba(255,255,255,.6); animation:nodePulse 3s infinite"></div>
+          </div>
+          <div class="glass-card p-5 sm:p-6 flex-1">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-white/5 border border-white/10" data-tilt="1">
+                <img src="FotosProjetos/anhembiMorumbi.png" alt="Anhembi Morumbi" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <h3 class="font-display text-lg font-semibold text-paper" data-i18n="exp.1.title">Ciência da Computação</h3>
+                  <span class="mono-sm" style="color:var(--muted)">Jan 2026 — Dez 2029</span>
+                </div>
+                <p class="text-sm mt-1" style="color:rgba(245,245,247,.7)" data-i18n="exp.1.company">Anhembi Morumbi — Graduação</p>
+              </div>
+            </div>
           </div>
         </div>
         <div id="exp1" class="node-content ml-12 md:ml-14">
-          <div class="glass-card rounded-2xl p-5 sm:p-6 mt-3 glow-border">
-            <p class="text-sm text-gray-400 leading-relaxed" data-i18n="exp.1.desc">Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.</p>
+          <div class="glass-card p-5 sm:p-6">
+            <p class="text-sm leading-relaxed" style="color:rgba(245,245,247,.7)" data-i18n="exp.1.desc">Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.</p>
             <div class="flex flex-wrap gap-2 mt-4">
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Java</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Python</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">SQL</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Estrutura de Dados</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--paper)">Java</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--ember2)">Python</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--paper)">SQL</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--ember2)">Estrutura de Dados</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="relative w-full max-w-2xl mt-8 node-item" data-expand>
+      <div class="relative w-full max-w-2xl mt-8 node-item reveal" data-expand>
         <div class="flex items-center gap-4 md:gap-6 cursor-pointer node-dot" data-target="exp2">
-          <div class="w-5 h-5 rounded-full bg-cyberMagenta/20 border-2 border-cyberMagenta/40 shrink-0 relative">
-            <div class="absolute inset-1 rounded-full bg-cyberMagenta/60" style="animation:nodePulse 3s infinite"></div>
+          <div class="w-5 h-5 rounded-full shrink-0 relative" style="background:rgba(255,77,46,.18); border:2px solid rgba(255,77,46,.4)">
+            <div class="absolute inset-1 rounded-full" style="background:rgba(255,77,46,.6); animation:nodePulse 3s infinite"></div>
           </div>
-          <div class="glass-card rounded-2xl p-5 sm:p-6 flex-1 glow-border">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 class="font-display text-lg font-semibold text-white" data-i18n="exp.2.title">Desenvolvimento de Sistemas</h3>
-              <span class="text-xs text-gray-500 font-mono">Jan 2024 — Dez 2025</span>
+          <div class="glass-card p-5 sm:p-6 flex-1">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-white/5 border border-white/10" data-tilt="1">
+                <img src="FotosProjetos/Senai.jpg" alt="SENAI" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <h3 class="font-display text-lg font-semibold text-paper" data-i18n="exp.2.title">Desenvolvimento de Sistemas</h3>
+                  <span class="mono-sm" style="color:var(--muted)">Jan 2024 — Dez 2025</span>
+                </div>
+                <p class="text-sm mt-1" style="color:var(--ember2)" data-i18n="exp.2.company">SENAI — Curso Técnico</p>
+              </div>
             </div>
-            <p class="text-sm text-cyberMagenta/60 mt-1" data-i18n="exp.2.company">SENAI — Curso Técnico</p>
           </div>
         </div>
         <div id="exp2" class="node-content ml-12 md:ml-14">
-          <div class="glass-card rounded-2xl p-5 sm:p-6 mt-3 glow-border">
-            <p class="text-sm text-gray-400 leading-relaxed" data-i18n="exp.2.desc">Formação técnica em Desenvolvimento de Sistemas com ênfase em lógica de programação, banco de dados, versionamento com Git e desenvolvimento web.</p>
+          <div class="glass-card p-5 sm:p-6">
+            <p class="text-sm leading-relaxed" style="color:rgba(245,245,247,.7)" data-i18n="exp.2.desc">Formação técnica em Desenvolvimento de Sistemas com ênfase em lógica de programação, banco de dados, versionamento com Git e desenvolvimento web.</p>
             <div class="flex flex-wrap gap-2 mt-4">
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">JavaScript</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">React</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Firebase</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Git</span>
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">SQL</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--paper)">JavaScript</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--ember2)">React</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--paper)">Firebase</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--ember2)">Git</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium border border-white/10" style="color:var(--paper)">SQL</span>
             </div>
           </div>
         </div>
@@ -225,51 +529,65 @@
   </div>
 </section>
 
-<section id="skills" class="py-24 sm:py-32 relative">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="skills.section">Expertise</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="skills.title">Habilidades</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="py-28 sm:py-36 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="mb-20 reveal">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="mono-sm" style="color:var(--ember)">02 /</span>
+        <p class="eyebrow" data-i18n="skills.section">Expertise</p>
+      </div>
+      <h2 class="display-lg outlined" data-i18n="skills.title">Habilidades</h2>
+      <span class="divider-bar mt-8"></span>
     </div>
+
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 
-      <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
-        <div class="w-11 h-11 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4"><i class="fa-solid fa-code"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.frontend">Front-end</h3>
+      <div class="skill-cluster glass-card p-6 sm:p-7 reveal">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-11 h-11 rounded-xl flex items-center justify-center text-lg" style="background:rgba(255,255,255,.05); color:var(--paper)"><i class="fa-solid fa-code"></i></div>
+          <span class="mono-sm" style="color:var(--muted)">01</span>
+        </div>
+        <h3 class="display-md mb-5" data-i18n="skills.frontend">Front-end</h3>
         <div class="flex flex-wrap gap-2">
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">React</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">React Native</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">JavaScript</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Tailwind</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">HTML/CSS</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Vite</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">React</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">React Native</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">JavaScript</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Tailwind</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">HTML/CSS</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Vite</span>
         </div>
       </div>
 
-      <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
-        <div class="w-11 h-11 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4"><i class="fa-solid fa-server"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.backend">Back-end</h3>
+      <div class="skill-cluster glass-card p-6 sm:p-7 reveal">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-11 h-11 rounded-xl flex items-center justify-center text-lg" style="background:rgba(255,77,46,.1); color:var(--ember)"><i class="fa-solid fa-server"></i></div>
+          <span class="mono-sm" style="color:var(--muted)">02</span>
+        </div>
+        <h3 class="display-md mb-5" data-i18n="skills.backend">Back-end</h3>
         <div class="flex flex-wrap gap-2">
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Java</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Python</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Node.js</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">APIs REST</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">SQL</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">PostgreSQL</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Java</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Python</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Node.js</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">APIs REST</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">SQL</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">PostgreSQL</span>
         </div>
       </div>
 
-      <div class="skill-cluster glass-card rounded-2xl p-6 sm:p-7 glow-border reveal">
-        <div class="w-11 h-11 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-        <h3 class="font-display text-base font-semibold text-white mb-4" data-i18n="skills.tools">Ferramentas &amp; Dados</h3>
+      <div class="skill-cluster glass-card p-6 sm:p-7 reveal">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-11 h-11 rounded-xl flex items-center justify-center text-lg" style="background:rgba(255,255,255,.05); color:var(--paper)"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <span class="mono-sm" style="color:var(--muted)">03</span>
+        </div>
+        <h3 class="display-md mb-5" data-i18n="skills.tools">Ferramentas &amp; Dados</h3>
         <div class="flex flex-wrap gap-2">
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Git</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Firebase</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Supabase</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">MySQL</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberCyan/10 text-cyberCyan/80">Postman</span>
-          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium bg-cyberMagenta/10 text-cyberMagenta/80">IntelliJ</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Git</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Firebase</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Supabase</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">MySQL</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">Postman</span>
+          <span class="skill-tag px-3 py-1.5 rounded-full text-xs font-medium border border-white/10">IntelliJ</span>
         </div>
       </div>
 
@@ -277,136 +595,170 @@
   </div>
 </section>
 
-<section id="projects" class="py-24 sm:py-32 relative">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="projects.section">Portfólio</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="projects.title">Projetos</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-28 sm:py-36 reveal">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="mono-sm" style="color:var(--ember)">03 /</span>
+      <p class="eyebrow" data-i18n="projects.section">Portfólio</p>
     </div>
-    <div id="projectsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+    <h2 class="display-lg outlined" data-i18n="projects.title">Projetos</h2>
+    <span class="divider-bar mt-8"></span>
+    <p class="mt-6 mono-sm hidden md:block" style="color:var(--muted)">↓ ROLE PARA EXPLORAR OS PROJETOS HORIZONTALMENTE →</p>
+  </div>
 
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
-        <div class="h-44 overflow-hidden">
-          <img src="FotosProjetos/AkrScout.png" alt="AkrScout" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-        </div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-base font-semibold text-white mb-1">AkrScout</h3>
-          <p class="text-xs text-gray-500 mb-3">Plataforma de busca inteligente de vagas tech</p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">React 19</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Supabase</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Python</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Tailwind</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/BrunoAkiraSenai/akrscout" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
-            <a href="https://akrscout.vercel.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-gray-300 hover:text-cyberCyan transition-all"><i class="fa-solid fa-arrow-up-right-from-square"></i> Projeto</a>
-          </div>
+  <div id="projectsPin" class="h-track lead md:overflow-hidden">
+    <article class="project-card group">
+      <div class="h-56 sm:h-72 overflow-hidden relative">
+        <img src="FotosProjetos/AkrScout.png" alt="AkrScout" class="project-img w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex items-end p-5">
+          <span class="mono-sm" style="color:var(--ember2)"><i class="fa-solid fa-eye mr-1"></i> ver preview</span>
         </div>
       </div>
-
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
-        <div class="h-44 overflow-hidden">
-          <img src="FotosProjetos/AkrGym.png" alt="AkrGym" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+      <div class="p-5 sm:p-6">
+        <h3 class="font-display text-lg font-semibold text-paper mb-1">AkrScout</h3>
+        <p class="text-xs mb-4" style="color:var(--muted)">Plataforma de busca inteligente de vagas tech</p>
+        <div class="flex flex-wrap gap-1.5 mb-5">
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">React 19</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Supabase</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Python</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Tailwind</span>
         </div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-base font-semibold text-white mb-1">AkrGym</h3>
-          <p class="text-xs text-gray-500 mb-3">App web para gestão de treinos e acompanhamento fitness</p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">React</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">TypeScript</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Vite</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Tailwind</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/BrunoAkiraSenai/akrgym" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
-            <a href="https://akrgym.web.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-gray-300 hover:text-cyberCyan transition-all"><i class="fa-solid fa-dumbbell"></i> Fitness</a>
-          </div>
+        <div class="flex gap-2">
+          <a href="https://github.com/BrunoAkiraSenai/akrscout" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> Código</a>
+          <a href="https://akrscout.vercel.app" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-solid fa-arrow-up-right-from-square"></i> Projeto</a>
         </div>
       </div>
+    </article>
 
-      <div class="project-card glass-card rounded-2xl overflow-hidden glow-border">
-        <div class="h-44 overflow-hidden">
-          <img src="FotosProjetos/EstacaoAkira.jfif" alt="EstacaoAkira" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-        </div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-base font-semibold text-white mb-1">EstacaoAkira</h3>
-          <p class="text-xs text-gray-500 mb-3">App mobile de monitoramento climático</p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">React Native</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Expo</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberCyan/10 text-cyberCyan/80">Axios</span>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-medium bg-cyberMagenta/10 text-cyberMagenta/80">Charts</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/BrunoAkiraSenai/EstacaoAkira" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3.5 py-2 rounded-full glass-card text-cyberCyan hover:bg-cyberCyan/10 transition-all"><i class="fa-brands fa-github"></i> Código</a>
-            <span class="inline-flex items-center gap-1.5 text-[11px] px-3.5 py-2 rounded-full glass-card text-gray-500 cursor-default"><i class="fa-solid fa-mobile"></i> Mobile</span>
-          </div>
+    <article class="project-card group">
+      <div class="h-56 sm:h-72 overflow-hidden relative">
+        <img src="FotosProjetos/AkrGym.png" alt="AkrGym" class="project-img w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex items-end p-5">
+          <span class="mono-sm" style="color:var(--ember2)"><i class="fa-solid fa-eye mr-1"></i> ver preview</span>
         </div>
       </div>
+      <div class="p-5 sm:p-6">
+        <h3 class="font-display text-lg font-semibold text-paper mb-1">AkrGym</h3>
+        <p class="text-xs mb-4" style="color:var(--muted)">App web para gestão de treinos e acompanhamento fitness</p>
+        <div class="flex flex-wrap gap-1.5 mb-5">
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">React</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">TypeScript</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Vite</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Tailwind</span>
+        </div>
+        <div class="flex gap-2">
+          <a href="https://github.com/BrunoAkiraSenai/akrgym" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> Código</a>
+          <a href="https://akrgym.web.app" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-solid fa-dumbbell"></i> Fitness</a>
+        </div>
+      </div>
+    </article>
 
-    </div>
+    <article class="project-card group">
+      <div class="h-56 sm:h-72 overflow-hidden relative">
+        <img src="FotosProjetos/EstacaoAkira.jfif" alt="EstacaoAkira" class="project-img w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex items-end p-5">
+          <span class="mono-sm" style="color:var(--ember2)"><i class="fa-solid fa-eye mr-1"></i> ver preview</span>
+        </div>
+      </div>
+      <div class="p-5 sm:p-6">
+        <h3 class="font-display text-lg font-semibold text-paper mb-1">EstacaoAkira</h3>
+        <p class="text-xs mb-4" style="color:var(--muted)">App mobile de monitoramento climático</p>
+        <div class="flex flex-wrap gap-1.5 mb-5">
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">React Native</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Expo</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Axios</span>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-medium border border-white/10 mono-sm">Charts</span>
+        </div>
+        <div class="flex gap-2">
+          <a href="https://github.com/BrunoAkiraSenai/EstacaoAkira" target="_blank" rel="noopener" class="btn text-[10px] py-2 px-3 rounded-full"><i class="fa-brands fa-github"></i> Código</a>
+          <span class="btn text-[10px] py-2 px-3 rounded-full cursor-default opacity-50"><i class="fa-solid fa-mobile"></i> Mobile</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 mt-10 md:hidden">
+    <p class="mono-sm" style="color:var(--muted)">← arraste para ver mais →</p>
   </div>
 </section>
 
-
-
-<section id="certificates" class="py-24 sm:py-32 relative">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-16 reveal">
-      <p class="text-cyberCyan/60 font-medium text-sm tracking-[.3em] uppercase font-display" data-i18n="certs.section">Certificações</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 glow-text" data-i18n="certs.title">Certificados</h2>
-      <div class="w-12 h-[2px] bg-gradient-to-r from-cyberCyan to-cyberMagenta mx-auto mt-4 rounded-full"></div>
+<!-- ===== CERTIFICATES ===== -->
+<section id="certificates" class="py-28 sm:py-36 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="mb-20 reveal">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="mono-sm" style="color:var(--ember)">04 /</span>
+        <p class="eyebrow" data-i18n="certs.section">Certificações</p>
+      </div>
+      <h2 class="display-lg outlined" data-i18n="certs.title">Certificados</h2>
+      <span class="divider-bar mt-8"></span>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 
-      <a href="PDFs/Certificados/FLUÊNCIA___FUNDAMENTOS_DA_INTELIGÊNCIA_ARTIFICIAL-Certificado_2711422 (3).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Senai.png" alt="Senai" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Fundamentos da Inteligência Artificial</h3>
-        <p class="text-xs text-gray-500">Senai — Jun 2025</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+
+      <a href="PDFs/Certificados/FLUÊNCIA___FUNDAMENTOS_DA_INTELIGÊNCIA_ARTIFICIAL-Certificado_2711422 (3).pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/Senai.jpg" alt="Senai" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">Fundamentos da IA</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">Senai — Jun 2025</p>
+        </div>
       </a>
 
-      <a href="PDFs/Certificados/Certificado_Inteligências Artificiais Generativas Aplicada a Programação - ChatGPT (3).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Senai.png" alt="Senai" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">IA Generativa Aplicada à Programação</h3>
-        <p class="text-xs text-gray-500">ChatGPT & Senai — Jul 2025</p>
+      <a href="PDFs/Certificados/Certificado_Inteligências Artificiais Generativas Aplicada a Programação - ChatGPT (3).pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/Senai.jpg" alt="Senai" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">IA Generativa Aplicada à Programação</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">ChatGPT &amp; Senai — Jul 2025</p>
+        </div>
       </a>
 
-      <a href="PDFs/Certificados/KodeKloud_Course Completion.pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_KODEKLOUD.png" alt="KodeKloud" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">KodeKloud AWS</h3>
-        <p class="text-xs text-gray-500">KodeKloud — Mai 2026</p>
+      <a href="PDFs/Certificados/KodeKloud_Course Completion.pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/KODEc.jpg" alt="KodeKloud" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">KodeKloud AWS</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">KodeKloud — Mai 2026</p>
+        </div>
       </a>
 
-      <a href="PDFs/Certificados/Bruno (2).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Inteligência Artificial e Computacional</h3>
-        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
+      <a href="PDFs/Certificados/Bruno (2).pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">IA e Computacional</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Jun 2025</p>
+        </div>
       </a>
 
-      <a href="PDFs/Certificados/doc (2) (1).pdf" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Chatbots</h3>
-        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
+      <a href="PDFs/Certificados/doc (2) (1).pdf" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">Chatbots</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Jun 2025</p>
+        </div>
       </a>
 
-      <a href="PDFs/Certificados/0f30b0868e6f68c8fad73ba88e8bd705 (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Python Development</h3>
-        <p class="text-xs text-gray-500">FIAP — Jun 2025</p>
+      <a href="PDFs/Certificados/0f30b0868e6f68c8fad73ba88e8bd705 (2).png" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">Python Development</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Jun 2025</p>
+        </div>
       </a>
 
-      <a href="PDFs/Certificados/31ea89d1e6c24ccba581ad506960b3d7 (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberCyan/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Python</h3>
-        <p class="text-xs text-gray-500">FIAP — Ago 2025</p>
+      <a href="PDFs/Certificados/31ea89d1e6c24ccba581ad506960b3d7 (2).png" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,255,255,.05)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">Python</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Ago 2025</p>
+        </div>
       </a>
 
-      <a href="PDFs/Certificados/90dd24886be4993d4769d5673a309a3f (2).png" target="_blank" class="glass-card rounded-2xl p-6 glow-border hover:border-cyberMagenta/20 transition-all group reveal">
-        <div class="w-12 h-12 rounded-xl bg-cyberMagenta/10 flex items-center justify-center text-cyberMagenta text-lg mb-4 group-hover:scale-110 transition-transform"><img src="/PDFs/Icones/Gemini_Generated_Image_Fiap.png" alt="FIAP" width="24" height="24"></div>
-        <h3 class="text-sm font-semibold text-white mb-1">Big Data & Analytics</h3>
-        <p class="text-xs text-gray-500">FIAP — Mai 2026</p>
+      <a href="PDFs/Certificados/90dd24886be4993d4769d5673a309a3f (2).png" target="_blank" class="glass-card group reveal p-6 transition-all hover:border-ember/30 flex flex-col gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform overflow-hidden" style="background:rgba(255,77,46,.08)"><img src="FotosProjetos/FIAPc.jpg" alt="FIAP" class="w-full h-full object-cover"></div>
+        <div>
+          <h3 class="text-sm font-semibold text-paper mb-1">Big Data &amp; Analytics</h3>
+          <p class="text-xs mono-sm" style="color:var(--muted)">FIAP — Mai 2026</p>
+        </div>
       </a>
 
     </div>
@@ -415,19 +767,36 @@
 
 </main>
 
-<footer class="relative z-10 border-t border-glassBorder py-10">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-gray-500" data-i18n="footer">&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.</p>
-    <div class="flex items-center gap-6 text-sm text-gray-500">
-      <a href="#hero" class="hover:text-cyberCyan transition-colors" data-i18n="nav.inicio">Início</a>
-      <a href="#experience" class="hover:text-cyberCyan transition-colors" data-i18n="nav.experiencias">Experiências</a>
-      <a href="#projects" class="hover:text-cyberCyan transition-colors" data-i18n="nav.projetos">Projetos</a>
-      <a href="#certificates" class="hover:text-cyberCyan transition-colors" data-i18n="nav.certificados">Certificados</a>
+<!-- ===== FOOTER ===== -->
+<footer class="relative z-10 border-t py-14" style="border-color:rgba(255,255,255,.05)">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-col gap-8">
+      <div class="flex flex-col md:flex-row items-start justify-between gap-6">
+        <div>
+          <p class="eyebrow mb-3">VAMOS CONSTRUIR</p>
+          <a href="mailto:akirafurumori@gmail.com" class="display-md ember-grad inline-block">akirafurumori@gmail.com</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/BrunoAkiraSenai" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:border-ember/40 hover:text-ember transition-all"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/bruno-furumori-6585ba371/" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:border-ember/40 hover:text-ember transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/akiravsk/" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:border-ember/40 hover:text-ember transition-all"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t" style="border-color:rgba(255,255,255,.05)">
+        <p class="text-sm" style="color:var(--muted)" data-i18n="footer">&copy; 2026 Bruno Akira Furumori. Todos os direitos reservados.</p>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm" style="color:var(--muted)">
+          <a href="#hero" class="hover:text-paper transition-colors" data-i18n="nav.inicio">Início</a>
+          <a href="#experience" class="hover:text-paper transition-colors" data-i18n="nav.experiencias">Experiências</a>
+          <a href="#projects" class="hover:text-paper transition-colors" data-i18n="nav.projetos">Projetos</a>
+          <a href="#certificates" class="hover:text-paper transition-colors" data-i18n="nav.certificados">Certificados</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
-<button id="backToTop" class="back-to-top fixed bottom-6 right-6 w-11 h-11 rounded-full glass-card text-cyberCyan flex items-center justify-center opacity-0 invisible scale-75 hover:bg-cyberCyan/10 hover:border-cyberCyan/30 transition-all z-40" aria-label="Voltar ao topo">
+<button id="backToTop" class="back-to-top fixed bottom-6 right-6 w-11 h-11 rounded-full glass-card flex items-center justify-center opacity-0 invisible translate-y-4 scale-75 hover:border-ember/40 transition-all z-30" aria-label="Voltar ao topo" style="color:var(--ember)">
   <i class="fa-solid fa-arrow-up"></i>
 </button>
 
@@ -442,9 +811,9 @@
   class P{
     constructor(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-.5)*.5;this.vy=(Math.random()-.5)*.5;this.r=Math.random()*1.5+.5;this.a=Math.random()*.5+.2}
     update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w)this.vx*=-1;if(this.y<0||this.y>h)this.vy*=-1}
-    draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,240,255,${this.a})`;ctx.fill()}
+    draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,77,46,${this.a})`;ctx.fill()}
   }
-  for(let i=0;i<80;i++)particles.push(new P());
+  for(let i=0;i<70;i++)particles.push(new P());
   function drawLines(){
     for(let i=0;i<particles.length;i++){
       for(let j=i+1;j<particles.length;j++){
@@ -456,16 +825,16 @@
             if(Math.sqrt(mx*mx+my*my)<300)alpha=Math.min(alpha+.15,.45);
           }
           ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);
-          ctx.strokeStyle=`rgba(0,240,255,${alpha})`;ctx.lineWidth=.5;ctx.stroke();
+          ctx.strokeStyle=`rgba(255,77,46,${alpha})`;ctx.lineWidth=.5;ctx.stroke();
         }
       }
     }
   }
   function anim(){ctx.clearRect(0,0,w,h);particles.forEach(p=>{p.update();p.draw()});drawLines();requestAnimationFrame(anim)}
-  anim();
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) anim();
 })();
 
-// ===== REVEAL =====
+// ===== REVEAL (IntersectionObserver - always-on fallback) =====
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
@@ -513,6 +882,8 @@ const i18n={
     'hero.greeting':'Olá, eu sou','hero.sub':'Back-end &amp; Data',
     'hero.bio':'Estudante de Ciência da Computação. Crio soluções backend com Java e Python, exploro IA e análise de sistemas e dados, e transformo ideias em projetos funcionais.',
     'exp.section':'Trajetória','exp.title':'Experiências',
+    'exp.0.title':'Estágio Sustentação','exp.0.date':'Jun 2026 — Presente','exp.0.company':'Digiage · Meio período · Híbrido','exp.0.location':'Campinas, São Paulo, Brasil · 2 meses','exp.0.tag1':'Sustentação',
+    'exp.0.desc':'Estágio em sustentação de sistemas na Digiage, atuando na manutenção, correção de bugs e suporte a aplicações em produção. Trabalho híbrido em Campinas/SP, com foco em garantir a estabilidade e o bom funcionamento dos sistemas dos clientes.',
     'exp.1.title':'Ciência da Computação','exp.1.company':'Anhembi Morumbi — Graduação',
     'exp.1.desc':'Cursando Ciência da Computação com foco em estruturas de dados, algoritmos, banco de dados e engenharia de software. Desenvolvimento de projetos práticos com Java, Python e backend.',
     'exp.2.title':'Desenvolvimento de Sistemas','exp.2.company':'SENAI — Curso Técnico',
@@ -529,6 +900,8 @@ const i18n={
     'hero.greeting':'Hello, I\'m','hero.sub':'Back-end &amp; Data',
     'hero.bio':'Computer Science student. I build backend solutions with Java and Python, explore AI and systems & data analysis, and turn ideas into functional projects.',
     'exp.section':'Career','exp.title':'Experience',
+    'exp.0.title':'Support Internship','exp.0.date':'Jun 2026 — Present','exp.0.company':'Digiage · Part-time · Hybrid','exp.0.location':'Campinas, São Paulo, Brazil · 2 months','exp.0.tag1':'Maintenance',
+    'exp.0.desc':'Internship in systems support at Digiage, working on maintenance, bug fixing and production application support. Hybrid work in Campinas/SP, focused on ensuring stability and smooth operation of client systems.',
     'exp.1.title':'Computer Science','exp.1.company':'Anhembi Morumbi — Bachelor\'s Degree',
     'exp.1.desc':'Studying Computer Science focusing on data structures, algorithms, databases and software engineering. Developing practical projects with Java, Python and backend.',
     'exp.2.title':'Systems Development','exp.2.company':'SENAI — Technical Course',
@@ -556,7 +929,7 @@ if(langToggle){
 }
 
 // ===== FIREBASE =====
-const firebaseConfig={apiKey:"AIzaSyCp8EsD7kQj3Q3sCOC8fMIoTT_fHpi5P9A",authDomain:"portifolio-5c039.firebaseapp.com",projectId:"portifolio-5c039",storageBucket:"portifolio-5c039.firebasestorage.app",messagingSenderId:"541915361921",appId:"1:541915361921:web:61129b1f2a7f0c0b9ad380"};
+const firebaseConfig={apiKey:"AIzaSyC6ReigJo_Dub5Q30ge0Ezunjz0KUJscMM",authDomain:"portfolio-akr-site.firebaseapp.com",projectId:"portfolio-akr-site",storageBucket:"portfolio-akr-site.firebasestorage.app",messagingSenderId:"994251192136",appId:"1:994251192136:web:b45f7f3db687d6cac8257d"};
 let db;
 try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initializeApp(firebaseConfig);db=firebase.firestore(app)}}catch(e){console.warn('Firebase não configurado.')}
 
@@ -570,17 +943,14 @@ try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initi
     try{
       const ref=db.collection('visitas').doc('contador');
       const ipRef=db.collection('visitas_unicas');
-      // Get IP via free API
       const ipRes=await fetch('https://api.ipify.org?format=json').catch(()=>null);
       const ip=ipRes?await ipRes.json():null;
-      // Simple hash function for IP privacy
       let hash='anon';
       if(ip&&ip.ip){
         let h=0;
         for(let i=0;i<ip.ip.length;i++){h=((h<<5)-h)+ip.ip.charCodeAt(i);h|=0}
         hash='v_'+Math.abs(h).toString(36);
       }
-      // Check if this IP already visited
       const ipDoc=await ipRef.doc(hash).get().catch(()=>null);
       if((!ipDoc||!ipDoc.exists)&&hash!=='anon'){
         await ipRef.doc(hash).set({firstVisit:new Date().toISOString()});
@@ -603,6 +973,174 @@ try{if(firebaseConfig.apiKey&&firebaseConfig.projectId){const app=firebase.initi
   requestAnimationFrame(()=>{badge.style.opacity='1';badge.style.transform='translateY(0)'});
 })();
 
+// ===== ALIVE LAYER (independente de GSAP — sempre funciona) =====
+(()=>{
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch=('ontouchstart' in window)||!window.matchMedia('(hover:hover)').matches;
+
+  // --- Live Clock (São Paulo, Automático) ---
+  const clock={h:document.querySelector('#live-clock .clock-h'), m:document.querySelector('#live-clock .clock-m'), s:document.querySelector('#live-clock .clock-s')};
+  if(clock.h){
+    const tick=()=>{
+      const d=new Date();
+      // America/Sao_Paulo = UTC-3 (Simplificado — sem horário de verão dinâmico)
+      const utc=d.getTime()+d.getTimezoneOffset()*60000;
+      const sp=new Date(utc-3*3600000);
+      const pad=n=>String(n).padStart(2,'0');
+      clock.h.textContent=pad(sp.getHours());
+      clock.m.textContent=pad(sp.getMinutes());
+      clock.s.textContent=pad(sp.getSeconds());
+    };
+    tick(); setInterval(tick,1000);
+  }
+
+  // --- Skip rest on touch/reduce ---
+  if(reduce||!window.gsap)return;
+
+  // --- Scroll progress bar ---
+  const progress=document.getElementById('scroll-progress');
+  if(progress){
+    let raf=0;
+    window.addEventListener('scroll',()=>{
+      if(raf)return; raf=1;
+      requestAnimationFrame(()=>{ const h=document.documentElement; const max=h.scrollHeight-h.clientHeight; progress.style.width=(max>0?(h.scrollTop/max)*100:0)+'%'; raf=0; });
+    },{passive:true});
+  }
+
+  // --- 3D Tilt on skill & cert cards (desktop only, non-touch) ---
+  if(!isTouch){
+    document.querySelectorAll('.skill-cluster, .glass-card.group').forEach(card=>{
+      card.classList.add('tilt-card');
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const px=(e.clientX-r.left)/r.width-0.5;
+        const py=(e.clientY-r.top)/r.height-0.5;
+        gsap.to(card,{rotateY:px*7, rotateX:-py*7, transformPerspective:800, duration:.3, ease:'power2.out', transformOrigin:'center'});
+      });
+      card.addEventListener('mouseleave',()=>gsap.to(card,{rotateX:0, rotateY:0, duration:.7, ease:'power3.out'}));
+    });
+  }
+})();
+
+// ===== GSAP / ScrollTrigger ENHANCEMENTS =====
+// RULE: GSAP nunca seta opacity:0 inline em .reveal — IO+CSS controlam visibilidade.
+// GSAP adiciona motion de y/parallax/stagger preservando opacidade do fallback.
+window.addEventListener('load',()=>{
+  if(!window.gsap||!window.ScrollTrigger)return;
+  gsap.registerPlugin(ScrollTrigger);
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)return;
+
+  // --- Hero: split title into letters for mask reveal ---
+  const titleSpans=[...document.querySelectorAll('#heroTitle .line-mask > span')];
+  titleSpans.forEach(span=>{
+    const text=span.textContent;
+    span.textContent='';
+    [...text].forEach(ch=>{
+      const w=document.createElement('span');
+      w.className='inline-block';
+      w.style.willChange='transform,opacity';
+      w.textContent=ch===' '?'\u00A0':ch;
+      span.appendChild(w);
+    });
+  });
+
+  const heroWords=[...document.querySelectorAll('#heroTitle .line-mask > span > span')];
+  // Estado inicial INLINE — só persiste se GSAP carregou. Se falhar, palavras visíveis.
+  gsap.set(heroWords,{yPercent:115,opacity:0});
+  gsap.set('#heroTitle .line-mask',{overflow:'hidden'});
+
+  // Após completar entrada do título, limpar inline overflow e transforms para screenshot/zoom
+  const heroTl=gsap.timeline({delay:.25, onComplete:()=>{
+    gsap.set(['#heroTitle .line-mask', heroWords], {clearProps:'transform,opacity,willChange'});
+    gsap.set('#heroTitle .line-mask', {overflow:'visible'});
+  }});
+  heroTl.to('#visitBadge',{opacity:1,y:0,duration:.6,ease:'power3.out'},0)
+        .to(heroWords,{yPercent:0,opacity:1,duration:.85,ease:'power4.out',stagger:.035},.15)
+        // Visita foto: degradado mas visível mesmo se falhar (.reveal também cobre)
+        .from('#badgeWrap',{scale:.9,duration:.9,ease:'power3.out',clearProps:'scale'},.2);
+
+  // IMPORTANTE: NÃO animar [data-i18n="hero.sub"] (tem ember-grad CSS shimmer próprio).
+  // NÃO animar [data-i18n="hero.bio"], tags sociais, links — todos são `.reveal` IO-controlled.
+
+  // --- Divisores de seção (decoração, OK animar) ---
+  document.querySelectorAll('.divider-bar').forEach(bar=>{
+    gsap.to(bar,{
+      width:()=>Math.min(window.innerWidth*.18,220),
+      duration:.9,ease:'power3.out',
+      scrollTrigger:{trigger:bar,start:'top 92%',once:true}
+    });
+  });
+
+  // --- Headlines .display-lg: mover de y:60 -> 0 SEM tocar opacity (preserva outlined) ---
+  document.querySelectorAll('section .display-lg').forEach(h=>{
+    if(h.closest('#hero'))return; // hero já tratado
+    gsap.from(h,{
+      y:60,duration:1,ease:'power4.out',
+      scrollTrigger:{trigger:h,start:'top 88%',once:true}
+    });
+    // parallax scrub (movimento contínuo, sem opacity)
+    gsap.to(h,{
+      y:-30,ease:'none',
+      scrollTrigger:{trigger:h,start:'top bottom',end:'bottom top',scrub:1}
+    });
+  });
+
+  // --- Stagger entre cards de cada seção: alternar transition-delay via IO.add('show') ---
+  // Ao encontrar um `.reveal`, se for card skill/cert/exp, aplicar delay escalonado.
+  const staggerObserver=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const el=e.target;
+      // Calcular índice dentro do parent grid/track
+      const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('reveal'));
+      const idx=sibs.indexOf(el);
+      el.style.transitionDelay=(idx*0.08)+'s';
+      el.classList.add('show');
+      staggerObserver.unobserve(el);
+    });
+  },{threshold:.1});
+  document.querySelectorAll('.skill-cluster.reveal, .node-item.reveal, .glass-card.group.reveal').forEach(el=>staggerObserver.observe(el));
+
+  // --- Horizontal pin-scroll projects (desktop) ---
+  const mm=gsap.matchMedia();
+  mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)',()=>{
+    const pin=document.getElementById('projectsPin');
+    if(!pin||pin.children.length<2)return;
+    const getScrollAmount=()=>pin.scrollWidth - window.innerWidth + 80;
+    const tween=gsap.to(pin,{
+      x:()=>-getScrollAmount(),
+      ease:'none',
+      scrollTrigger:{
+        trigger:'#projects',
+        start:'top top',
+        end:()=>'+='+(getScrollAmount()+window.innerHeight),
+        pin:true,
+        scrub:1,
+        invalidateOnRefresh:true,
+        anticipatePin:1
+      }
+    });
+    return ()=>{ try{tween.scrollTrigger&&tween.scrollTrigger.kill();}catch(e){} try{tween.kill();}catch(e){} gsap.set(pin,{x:0,clearProps:'all'}); };
+  });
+
+  // --- Hero parallax backdrop on mouse ---
+  if(!('ontouchstart' in window)){
+    window.addEventListener('mousemove',e=>{
+      const x=(e.clientX/window.innerWidth-.5)*12;
+      const y=(e.clientY/window.innerHeight-.5)*12;
+      gsap.to('#grid-bg',{x,y,duration:.9,ease:'power2.out'});
+    });
+  }
+
+  // --- Logo micro-tilt ---
+  gsap.utils.toArray('[data-tilt="1"]').forEach(logo=>{
+    logo.addEventListener('mouseenter',()=>gsap.to(logo,{rotation:4,scale:1.08,duration:.3,ease:'power3.out'}));
+    logo.addEventListener('mouseleave',()=>gsap.to(logo,{rotation:0,scale:1,duration:.3,ease:'power3.out'}));
+  });
+
+  ScrollTrigger.refresh();
+});
 </script>
 </body>
 </html>
